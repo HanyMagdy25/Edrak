@@ -1,0 +1,145 @@
+.footer{
+    width: 100%;
+    /* height: auto; */
+    background-color: var(--first-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--light-white);
+}
+.footer-container{
+    width: 80%;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.footer-right{
+    width: 60%;
+    /* background: violet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer-social-media{
+    margin-bottom: 10px;
+}
+.footer-social-media span{
+    /* background-color: aqua; */
+    font-size: 20px;
+    margin: 0 15px;
+}
+.footer-right h2{
+    margin-bottom: 10px;
+}
+
+.footer-email{
+    border: 1px solid white;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    /* background-color: rgb(0, 93, 62); */
+
+}
+.footer-email input{
+    padding: 8px 14px;
+    background: transparent;
+    border:none;
+    color: white;
+    font-size: 17px;
+    
+}
+/* input:focus, textarea:focus, select:focus{
+        outline: none;
+    } */
+.footer-email input:focus{
+    outline: none;
+}
+.footer-email input::placeholder{
+    color: aliceblue;
+    font-size: 17px;
+}
+.footer-email button{
+    padding:4px 12px; 
+    background-color: var(--light-white);
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-left{
+    width: 40%;
+    /* background: rgb(65, 58, 85); */
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left-r{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    /* background-color: brown; */
+}
+.footer-left-l{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    width: 50%;
+    /* background-color: rgb(78, 15, 15); */
+}
+
+/*========= Copy Right ============ */
+.copy-right{
+    margin: 20px 0 8px 0;
+    direction: rtl;
+}
+.copy-right span{
+    color: var(--light-white);
+}
+
+/* Screen Media */
+@media screen and (max-width:900px) {
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .footer-right{
+        width: 100%;
+        /* background: violet; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+    }
+    .footer-email{
+        width: auto;
+        margin: 10px 0;
+    }
+    .footer-email input{
+        padding: 8px;
+        background: transparent;
+        border:none;
+        color: white;
+        
+    }
+    .footer-left{
+        width: 100%;
+        /* background: rgb(65, 58, 85); */
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin: 5px 0;
+        
+    }
+}

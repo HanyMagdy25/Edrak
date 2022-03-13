@@ -1,87 +1,59 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchAsyncMovies } from "../Redux/MovieSlice";
-// import {BiCameraMovie} from 'react-icons/bi';
-// import './Navbar.css';
+import "./Navbar.css";
+import logoImage from "../assets/logo.png"
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const [search, setSearch] = useState("");
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const dispatch = useDispatch()
-  const submitHandle = (e) =>{
-      e.preventDefault();
-      if(search ==="") return alert("invalid")
-      dispatch(fetchAsyncMovies(search))
-  }
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener("resize", showButton);
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <a to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Cima4Life
-          </a>
+          <Link to="/" className="navbar-logo">
+            <img src={logoImage} alt='edrak-logo' />
+          </Link>
 
-          <ul className="nav-links">
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          </div>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <a href="/" onClick={closeMobileMenu}>
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="/service" onClick={closeMobileMenu}>
-                Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link to="/product" onClick={closeMobileMenu}>
-                Products
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                الرئيسية
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/sign-up" onClick={closeMobileMenu}>
-                Sign Up
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                بودكاست
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                مقالات
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/watchlist" onClick={closeMobileMenu}>
-                WatchList
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                ملخصات وأوراق
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                كتاب إدراك
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={handleClick}>
+                تلفزيون إدراك
               </Link>
             </li>
           </ul>
-
-          <div>
-            <form onSubmit={submitHandle}>
-              <input
-                type="text"
-                
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <button type="submit">search</button>
-            </form>
-          </div>
         </div>
       </nav>
     </>

@@ -1,0 +1,51 @@
+.card{
+    width: 100%;
+    height:122px ;
+    /* background-color:teal; */
+    display: flex;
+    flex-direction: row;
+    margin-top:20px;
+}
+.card-container-img{
+    width: 40%;
+    height: 100%;
+    
+}
+.card-img{
+    width: 100%;
+    height: 100%;
+    /* object-fit:cover;
+   object-position:50% 50%; */
+}
+
+.card-container-content{
+    width: 60%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: flex-end;
+}
+.card-container-content-container{
+    /* background-color:steelblue; */
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ======== about author in card ====== */
+
+
+.card-container-content-container p,
+.card-container-content-container h3{
+    color: var(--black);
+
+}
+
+.about-author-in-card{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--off-white);
+}
