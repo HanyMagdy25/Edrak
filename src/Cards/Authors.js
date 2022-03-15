@@ -1,11 +1,11 @@
 import React from 'react';
 import "./Authors.css"
 
-const Authors = ({ammarImg,authorName}) => {
+const Authors = ({author}) => {
   return (
     <div className='authors'>
-        <img src={ammarImg} alt='' />
-        <h4 style={{fontWeight:'400'}}>{authorName}</h4>
+        <img src={author.imgUrl} alt='author' />
+        <h4 style={{fontWeight:'400'}}>{author.name}</h4>
     </div>
   )
 }

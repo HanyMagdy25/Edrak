@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 50%;
+    flex-wrap: wrap;
     /* height: 100%; */
     /* background-color: aquamarine; */
     margin-top: 10px;
@@ -15,5 +16,28 @@
     width:30%;
 }
 .authors h4{
+    margin: 0px 5px 0 0 ;
+}
+
+/* this is the style of AuthorsBlock */
+
+.authors-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    /* flex-wrap: wrap; */
+    /* height: 100%; */
+    /* background-color: aquamarine; */
+    margin-top: 15px;
+    
+
+    /* margin: 5px 5px; */
+}
+.authors-block img{
+    width:22%;
+}
+.authors-block h3{
     margin: 0px 5px 0 0 ;
 }

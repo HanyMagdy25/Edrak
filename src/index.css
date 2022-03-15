@@ -6,6 +6,13 @@
   --off-white:#919192;
   --black:#4D4F5C;
   --purple:#6F277D;
+  --hashtag: #39267F1A;
+  --red:#7D2726;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -14,18 +21,33 @@ body {
   font-family: 'Markazi Text', serif;
   direction: rtl;
   overflow-x: hidden;
+  /* overflow: hidden; Hide scrollbars */
+  
 }
 
-.global-simi-btn{
+
+.global-simi-btn,
+.global-simi-btn-purple,
+.global-simi-btn-red{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80px;
   height: 30px;
-  background-color: var(--first-color);
   font-size: 18px;
   color: var(--white);
 }
+.global-simi-btn{
+  background-color: var(--first-color);
+}
+.global-simi-btn-purple{
+  background-color: var(--purple);
+}
+.global-simi-btn-red{
+  background-color: var(--red);
+}
+
+
 .global-simi-btn-small-blue,
 .global-simi-btn-small-purple{
   display: flex;
@@ -48,9 +70,16 @@ body {
 .header-left-container h2,
 .most-popular-container h1,
 .podcast-container h1,
-.edrak-tv-container h1{
+.edrak-tv-container h1,
+.more-blogs h1,
+.categories-container h3{
   color: var(--black);
   margin-bottom: 8px;
+}
+
+hr{
+  border: 0.2px solid var(--black);
+  opacity: 0.2;
 }
 
 @media screen and (max-width:900px) {

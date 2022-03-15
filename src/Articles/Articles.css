@@ -1,0 +1,138 @@
+.articles-parent{
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.articles-parent-container{
+    width: 80%;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+}
+
+.articles{
+    width: 75%;
+    /* background-color:tomato; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.categories{
+    width: 25%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: flex-end;
+    /* margin-right: 15px; */
+}
+.categories-container{
+    width: 85%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0px 25px; */
+    padding-right: 10px;
+
+}
+
+.categories label{
+    /* background-color: aquamarine; */
+    margin: 10px 0;
+    display: flex;
+    /* justify-content: center; */
+    /* text-align: center; */
+
+}
+
+.categories label input[type='radio'] {
+    width: 17px;
+    height: 17px;
+    margin: 2px 0 2px 5px;
+    background: rgb(148, 0, 0);
+    accent-color: var(--first-color);
+  }
+
+  /* ====كتاب ادراك ===== */
+/* .edrak-authors-block{
+    background-color: blueviolet;
+} */
+
+/* ======== Hashtags==== */
+.hashtags{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* .hashtags span:first-of-type{
+    margin-right: 0px;
+} */
+.hashtags span{
+    margin: 10px 0 0 10px;
+    background-color: var(--hashtag);
+    padding: 2px 8px;
+
+}
+.hashtags span a{
+    
+    text-decoration: none;
+    color: var(--black);
+    /* font-size: 16px; */
+}
+
+
+/* =========================== */
+
+@media screen and (max-width:900px) {
+    .articles-parent{
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+        
+    }
+    .articles-parent-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .articles{
+        width: 90%;
+        /* background-color:tomato; */
+        display: flex;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        
+    }
+    .categories{
+        width: 100%;
+        /* background-color: aquamarine; */
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 20px 0;
+        /* margin-right: 15px; */
+        }
+        /* .categories-container{
+            width: 85%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            margin: 0px 25px;
+            padding-right: 10px;
+        
+        }     */
+        .categories label{ 
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .categories label input[type='radio'] {
+            width: 17px;
+            height: 17px;
+            margin: 2px 0 2px 5px;
+            background: rgb(148, 0, 0);
+            accent-color: var(--first-color);
+          }
+}

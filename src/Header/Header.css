@@ -81,10 +81,11 @@ color: var(--off-white);
 .edrak-authors{
     width: 100%;
     /* background-color: coral; */
-    height: 100px;
+    /* height: 100px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     /* margin-top: 10px; */
     /* background-color: aquamarine; */
@@ -95,9 +96,9 @@ color: var(--off-white);
     width: 100%;
     background-color: rgb(110, 29, 0);
 } */
-
+/* 
 .edrak-authors .edrak-authors-top{
-    /* background-color: crimson; */
+    background-color: crimson;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -106,13 +107,13 @@ color: var(--off-white);
 }
 
 .edrak-authors .edrak-authors-bottom{
-    /* background-color: crimson; */
+    background-color: crimson;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-}
+} */
 
 
 /* ======= الأكثر مشاهدة ========= */

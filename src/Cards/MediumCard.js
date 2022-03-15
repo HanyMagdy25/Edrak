@@ -11,7 +11,7 @@ const MediumCard = ({headerImg}) => {
           <div className='about-author-in-medium-card'>
                 <h6>أمجد عبد الرازق</h6>
                 <h5 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> 15</h5>
-                <h5 className='cal'><i class="fa-solid fa-calendar-days"></i> 22-2-2022</h5>
+                <h5 className='cal'><i className="fa-solid fa-calendar-days"></i> 22-2-2022</h5>
           </div>
         </div>
     </div>

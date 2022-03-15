@@ -12,7 +12,7 @@
   align-items: center;
   font-size: 1.2rem;
   top: 0;
-  
+  position: sticky;
 }
 
 .navbar-container {
@@ -84,7 +84,7 @@
     align-items: center;
     /* justify-content: center; */
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     position: absolute;
     top: 80px;
     left: +100%;
@@ -121,7 +121,7 @@
 
   .navbar-logo {
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 10px;
   }
 
