@@ -4,11 +4,16 @@ import "./Navbar.css";
 // import logoImage from "../assets/logo.png"
 // import {images} from "../constants";
 import looo from "../assets/looo.svg"
+// import { copy } from "gh-pages/lib/util";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+
+  function coming() {
+    alert('Coming Soon');
+  }
 
   return (
     <>
@@ -31,7 +36,7 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <Link to="/podcast" className="nav-links" onClick={handleClick}>
+              <Link to="/" className="nav-links" onClick={()=>{handleClick();coming()}} >
                 بودكاست
               </Link>
             </li>
@@ -42,17 +47,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={handleClick}>
+              <Link to="/" className="nav-links" onClick={()=>{handleClick();coming()}}>
                 ملخصات وأوراق
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={handleClick}>
+              <Link to="/" className="nav-links" onClick={()=>{handleClick();coming()}}>
                 كتاب إدراك
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={handleClick}>
+              <Link to="/" className="nav-links" onClick={()=>{handleClick();coming()}}>
                 تلفزيون إدراك
               </Link>
             </li>
