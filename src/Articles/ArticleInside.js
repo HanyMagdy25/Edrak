@@ -3,6 +3,7 @@ import "./ArticleInside.css";
 import { images } from "../constants";
 import BigCard from "../Cards/BigCard";
 import HeaderLeft from "../Header/HeaderLeft";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
 // import HeaderLeft from "../../Header/HeaderLeft";
 
 const cards = [
@@ -54,6 +55,17 @@ const edrakAuthors =[
   },
 ]
 
+// To Copy The URL
+function copy() {
+  const el = document.createElement('input');
+  el.value = window.location.href;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  alert('URL Copied');
+}
+
 const ArticleInside = () => {
   return (
     <div className="header">
@@ -72,14 +84,22 @@ const ArticleInside = () => {
               </div>
             </div>
             <div className="social-icons-small">
-              <span>
+              <span onClick={copy}>
                 <i className="fa-solid fa-share-from-square"></i>
               </span>
               <span>
-                <i className="fa-brands fa-twitter"></i>
+                <TwitterShareButton
+                  url="https://www.npmjs.com/package/react-share"
+                >
+                  <i className="fa-brands fa-twitter"></i>
+                </TwitterShareButton> 
               </span>
               <span>
-                <i className="fa-brands fa-facebook-f"></i>
+                <FacebookShareButton
+                  url="https://www.npmjs.com/package/react-share"
+                >
+                  <i className="fa-brands fa-facebook-f"></i>
+                </FacebookShareButton>
               </span>
             </div>
           </div>

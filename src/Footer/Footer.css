@@ -143,13 +143,8 @@
     }
     
     .footer-email button{
-        padding:4px 4px; 
-        background-color: var(--light-white);
-        border: none;
-        border-radius: 1px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
+        padding:6px 0; 
+        width: 70px;
     }
     .footer-email input{
         padding: 8px 1px;

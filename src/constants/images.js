@@ -38,6 +38,9 @@
 // import newprofile from "../assets/newprofile.jpg";
 // import logoo from "../assets/logoo.jpg"
 // 
+import logo from "../assets/logo.png";
+import logo1s from "../assets/logo1s.png";
+
 import card1b from "../assets/card1b.png";
 import card2b from "../assets/card2b.png";
 import card3b from "../assets/card3b.png";
@@ -64,5 +67,6 @@ export default {
   author1,
   author2,
   author3,
-  
+  logo1s,
+  logo,
 };

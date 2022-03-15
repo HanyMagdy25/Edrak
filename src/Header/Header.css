@@ -167,7 +167,7 @@ color: var(--off-white);
 }
 
 
-/* تلفزيون ادراك */
+/*========================= تلفزيون ادراك ==============================*/
 .edrak-tv{
     margin: 25px 0;
     display: flex;
@@ -218,7 +218,8 @@ color: var(--off-white);
     }
     .header-right{
         width: 100%;
-        /* background-color:violet */
+        /* background-color:violet; */
+        margin-bottom: 20px;
     }
     .about-author{
         width: 100%;
@@ -249,7 +250,8 @@ color: var(--off-white);
     }
     .edrak-tv-container-inner .edrak-tv-right{
         width: 100%;
-        /* background-color:violet */
+        /* background-color:violet; */
+        margin-bottom: 20px;
     }
     .edrak-tv-container-inner .edrak-tv-left{
         width: 100%;
