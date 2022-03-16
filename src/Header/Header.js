@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Header.css";
 import headerImg from "../assets/header.png"
 import Card from '../Cards/Card';
@@ -7,42 +7,45 @@ import BigCard from '../Cards/BigCard';
 import CardPodcast from '../Cards/CardPodcast';
 import MediumCard from '../Cards/MediumCard';
 import {images} from "../constants"
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAsyncEdrak, getAllEdrak } from '../Redux/EdrakSlice';
 
+// ======== Old Data - now our new data from db.json =========
 
-const cards = [
-    {
-      title: "إنزال التعليم العالي أرضًا",
-      description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-      authorName: "أمجد عبدالرازق",
-      history:"20-3-2022",
-      share:"11",
-      imgUrl: images.card1b,
-    },
-    {
-      title: "إنزال التعليم العالي أرضًا",
-      description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-      authorName: "أمجد عبدالرازق",
-      history:"9-3-2021",
-      share:"20",
-      imgUrl: images.card2b,
-    },
-    {
-      title: "إنزال التعليم العالي أرضًا",
-      description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-      authorName: "هانى مجدىٍ",
-      history:"22-1-2022",
-      share:"10",
-      imgUrl: images.card3b,
-    },
-    {
-      title: "إنزال التعليم العالي أرضًا",
-      description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-      authorName: "أمجد منير",
-      history:"25-3-2022",
-      share:"15",
-      imgUrl: images.card1b,
-    },
-  ];
+// const cards = [
+//     {
+//       title: "إنزال التعليم العالي أرضًا",
+//       description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//       authorName: "أمجد عبدالرازق",
+//       history:"20-3-2022",
+//       share:"11",
+//       imgUrl: images.card1b,
+//     },
+//     {
+//       title: "إنزال التعليم العالي أرضًا",
+//       description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//       authorName: "أمجد عبدالرازق",
+//       history:"9-3-2021",
+//       share:"20",
+//       imgUrl: images.card2b,
+//     },
+//     {
+//       title: "إنزال التعليم العالي أرضًا",
+//       description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//       authorName: "هانى مجدىٍ",
+//       history:"22-1-2022",
+//       share:"10",
+//       imgUrl: images.card3b,
+//     },
+//     {
+//       title: "إنزال التعليم العالي أرضًا",
+//       description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//       authorName: "أمجد منير",
+//       history:"25-3-2022",
+//       share:"15",
+//       imgUrl: images.card1b,
+//     },
+//   ];
 
   const edrakAuthors =[
     {
@@ -98,6 +101,17 @@ const cards = [
 
 
 const Header = () => {
+
+    let dispatch = useDispatch();
+    const edraks = useSelector(getAllEdrak);
+    useEffect(() => {
+        dispatch(fetchAsyncEdrak());
+      },[dispatch]);
+    console.log("Header Data",edraks); 
+
+
+     
+
   return (
     <div className='header'>
         <div className='header-container'>
@@ -140,12 +154,14 @@ const Header = () => {
             </div>
         </div>
             {/* الاكثر مشاهدة */}
+            {/* our data come from db.json*/}
         <div className='most-popular'>
             <div className='most-popular-container'>
                 <h1>الأكثر مشاهدة</h1>
                 <hr/>
                 <div className='most-popular-cards'>
-                    {cards.map((card, index) => (
+                    {/*to Stop map method after certain number with slice method */}
+                    {edraks.slice(0,4).map((card, index) => (
                         <BigCard key={index} data={card} />
                     ))}
                 </div>
@@ -157,9 +173,13 @@ const Header = () => {
                 <h1>البودكاست</h1>
                 <hr/>
                 <div className='podcast-cards'>
+                    {edraks.slice(0,2).map((card, index) => (
+                        <CardPodcast key={index} data={card} headerImg={headerImg} />
+                    ))}
+
+                    {/* <CardPodcast headerImg={headerImg}/>
                     <CardPodcast headerImg={headerImg}/>
-                    <CardPodcast headerImg={headerImg}/>
-                    <CardPodcast headerImg={headerImg}/>
+                    <CardPodcast headerImg={headerImg}/> */}
                 </div>
             </div>
         </div>
@@ -180,7 +200,7 @@ const Header = () => {
                             <div className='about-author'>
                                 <h5>أمجد عبد الرازق</h5>
                                 <div className='share-icon'><i className="fa-solid fa-share-nodes"></i> 15</div>
-                                <div className='cal'><i class="fa-solid fa-calendar-days"></i> 22-2-2022</div>
+                                <div className='cal'><i className="fa-solid fa-calendar-days"></i> 22-2-2022</div>
                             </div>
                         </div>
                     </div>

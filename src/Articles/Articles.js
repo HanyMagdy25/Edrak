@@ -1,93 +1,99 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BigCard from "../Cards/BigCard";
 import "./Articles.css";
 // import card1b from "../assets/card1b.png";
 import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 
-const cards = [
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد عبدالرازق",
-    history: "20-3-2022",
-    share: "11",
-    cat: ["اقتصاد","هوية"],
-    imgUrl: images.card1b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد عبدالرازق",
-    history: "9-3-2021",
-    share: "20",
-    cat: ["ترجمات","هوية"],
-    imgUrl: images.card2b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "هانى مجدىٍ",
-    history: "22-1-2022",
-    share: "10",
-    cat: ["فكر","ترجمات"],
-    imgUrl: images.card3b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد منير",
-    history: "25-3-2022",
-    share: "15",
-    cat: ["اجتماع","هوية"],
-    imgUrl: images.card1b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد عبدالرازق",
-    history: "9-3-2021",
-    share: "20",
-    cat: ["فكر","هوية"],
-    imgUrl: images.card2b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "هانى مجدىٍ",
-    history: "22-1-2022",
-    share: "10",
-    cat: ["فكر","اجتماع"],
-    imgUrl: images.card3b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد منير",
-    history: "25-3-2022",
-    share: "15",
-    cat: ["تزكية","هوية"],
-    imgUrl: images.card1b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد عبدالرازق",
-    history: "9-3-2021",
-    share: "20",
-    cat: ["فكر","هوية"],
-    imgUrl: images.card2b,
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "هانى مجدىٍ",
-    history: "22-1-2022",
-    share: "10",
-    cat: ["تزكية","هوية"],
-    imgUrl: images.card3b,
-  },
-];
+
+// ======== Old Data - now our new data from db.json =========
+
+// const cards = [
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد عبدالرازق",
+//     history: "20-3-2022",
+//     share: "11",
+//     cat: ["اقتصاد","هوية"],
+//     imgUrl: images.card1b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد عبدالرازق",
+//     history: "9-3-2021",
+//     share: "20",
+//     cat: ["ترجمات","هوية"],
+//     imgUrl: images.card2b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "هانى مجدىٍ",
+//     history: "22-1-2022",
+//     share: "10",
+//     cat: ["فكر","ترجمات"],
+//     imgUrl: images.card3b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد منير",
+//     history: "25-3-2022",
+//     share: "15",
+//     cat: ["اجتماع","هوية"],
+//     imgUrl: images.card1b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد عبدالرازق",
+//     history: "9-3-2021",
+//     share: "20",
+//     cat: ["فكر","هوية"],
+//     imgUrl: images.card2b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "هانى مجدىٍ",
+//     history: "22-1-2022",
+//     share: "10",
+//     cat: ["فكر","اجتماع"],
+//     imgUrl: images.card3b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد منير",
+//     history: "25-3-2022",
+//     share: "15",
+//     cat: ["تزكية","هوية"],
+//     imgUrl: images.card1b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "أمجد عبدالرازق",
+//     history: "9-3-2021",
+//     share: "20",
+//     cat: ["فكر","هوية"],
+//     imgUrl: images.card2b,
+//   },
+//   {
+//     title: "إنزال التعليم العالي أرضًا",
+//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//     authorName: "هانى مجدىٍ",
+//     history: "22-1-2022",
+//     share: "10",
+//     cat: ["تزكية","هوية"],
+//     imgUrl: images.card3b,
+//   },
+// ];
+
 
 const edrakAuthors = [
   {
@@ -105,9 +111,21 @@ const edrakAuthors = [
 ];
 
 const Articles = () => {
-  const [category, setCategory] = useState(cards);
+
+  let dispatch = useDispatch();
+  const edraks = useSelector(getAllEdrak);
+  // const edrakAuthorss = useSelector(getAllEdrakAuthors);
+  // console.log("home authors",edraks); 
+  useEffect(() => {
+      dispatch(fetchAsyncEdrak());
+      // dispatch(fetchAsyncEdrakAuthors());
+      // console.log("this edraks",edraks)  
+    },[dispatch]);
+    console.log("articles page ",edraks); 
+
+  const [category, setCategory] = useState(edraks);
   const filterResult = (cartItem) => {
-    const result = cards.filter((curData) => {
+    const result = edraks.filter((curData) => {
       return curData.cat.includes(cartItem);
       // old=>  curData.cat===cartItem
     });
@@ -125,9 +143,10 @@ const Articles = () => {
           )} */}
           {/* try */}
 
-          {category.map((card, index) => (
+          {category.slice(0,9).map((card, index) => (
             <BigCard key={index} data={card} />
           ))}
+          {/* <img src={require("")} alt="f" /> */}
         </div>
         {/* ====== Left Side ======= */}
         <div className="categories">
@@ -140,7 +159,7 @@ const Articles = () => {
               <input
                 type="radio"
                 name="checkbox"
-                onClick={() => setCategory(cards)}
+                onClick={() => setCategory(edraks)}
               />
               جميع المقالات
             </label>
