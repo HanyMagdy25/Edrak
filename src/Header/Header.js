@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import "./Header.css";
-import headerImg from "../assets/header.png"
+// import headerImg from "../assets/header.png"
 import Card from '../Cards/Card';
 import Authors from '../Cards/Authors';
 import BigCard from '../Cards/BigCard';
@@ -173,8 +173,8 @@ const Header = () => {
                 <h1>البودكاست</h1>
                 <hr/>
                 <div className='podcast-cards'>
-                    {edraks.slice(0,2).map((card, index) => (
-                        <CardPodcast key={index} data={card} headerImg={headerImg} />
+                    {edraks.slice(0,3).map((card, index) => (
+                        <CardPodcast key={index} data={card}/>
                     ))}
 
                     {/* <CardPodcast headerImg={headerImg}/>

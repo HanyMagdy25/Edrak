@@ -1,6 +1,6 @@
 import React from 'react';
 import './BigCard.css';
-import card1b from "../assets/card1b.png"
+// import card1b from "../assets/card1b.png"
 import { Link } from 'react-router-dom';
 
 const BigCard = ({data}) => {
@@ -8,7 +8,7 @@ const BigCard = ({data}) => {
     <Link className='card-link' to={`/article-inside`} >
       <div className='big-card'>
         {/* here we use a default Image called 'card1b' */}
-        <img src={card1b} alt='BigCard' /> 
+        <img src={data.imgUrl} alt='BigCard' /> 
         <div className='big-card-content'>
           <h3>{data.title}</h3>
           <p>{data.description}</p>
