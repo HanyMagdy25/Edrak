@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // import dataJson from "./Edrak.json"
 export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async () => {
-  const response = await fetch(`http://localhost:8000/edrakJson`);
+  const response = await fetch(`http://localhost:3000/allP`);
     const data = await response.json();
       
 

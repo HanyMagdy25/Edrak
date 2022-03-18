@@ -8,12 +8,12 @@ const BigCard = ({data}) => {
     <Link className='card-link' to={`/article-inside`} >
       <div className='big-card'>
         {/* here we use a default Image called 'card1b' */}
-        <img src={data.imgUrl} alt='BigCard' /> 
+        <img src={data.icon} alt='BigCard' /> 
         <div className='big-card-content'>
-          <h3>{data.title}</h3>
-          <p>{data.description}</p>
+          <h3>{data.name}</h3>
+          <p>{data.about}</p>
           <div className='about-author-in-bigcard'>
-                <h6>{data.authorName}</h6>
+                <h6>{data.writer}</h6>
                 <h5 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> {data.share}</h5>
                 <h5 className='cal'><i className="fa-solid fa-calendar-days"></i> {data.history}</h5>
           </div>
