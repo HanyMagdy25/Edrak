@@ -8,7 +8,7 @@ import CardPodcast from '../Cards/CardPodcast';
 import MediumCard from '../Cards/MediumCard';
 import {images} from "../constants"
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAsyncEdrak, getAllEdrak } from '../Redux/EdrakSlice';
+import { fetchAsyncEdrak, fetchAsyncEdrakAuthors, getAllEdrak} from '../Redux/EdrakSlice';
 
 // ======== Old Data - now our new data from db.json =========
 
@@ -66,48 +66,53 @@ import { fetchAsyncEdrak, getAllEdrak } from '../Redux/EdrakSlice';
     },
   ];
 
-  const threeCards = [
-    {
-      id:"1",
-      title: "مراجعة كتاب : فجر كل شئ",
-      description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-      authorName: "أمجد عبدالرازق",
-      history:"20-3-2020",
-      share:"51",
-      imgUrl: images.card1b,
-      button:"مراجعات",
-    },
-    {
-        id:"2",
-        title: "إنزال التعليم العالي أرضًا",
-        description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-        authorName: "هانى مجدى",
-        history:"20-3-2021",
-        share:"11",
-        imgUrl: images.card2b,
-        button:"فكر",
-    },
-    {
-        id:"3",
-        title: "إنزال التعليم العالي أرضًا",
-        description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-        authorName: "أمجد أحمد",
-        history:"20-3-2022",
-        share:"16",
-        imgUrl: images.card3b,
-        button:"هوية",
-    },
-]
+//   const threeCards = [
+//     {
+//       id:"1",
+//       title: "مراجعة كتاب : فجر كل شئ",
+//       description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//       authorName: "أمجد عبدالرازق",
+//       history:"20-3-2020",
+//       share:"51",
+//       imgUrl: images.card1b,
+//       button:"مراجعات",
+//     },
+//     {
+//         id:"2",
+//         title: "إنزال التعليم العالي أرضًا",
+//         description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//         authorName: "هانى مجدى",
+//         history:"20-3-2021",
+//         share:"11",
+//         imgUrl: images.card2b,
+//         button:"فكر",
+//     },
+//     {
+//         id:"3",
+//         title: "إنزال التعليم العالي أرضًا",
+//         description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+//         authorName: "أمجد أحمد",
+//         history:"20-3-2022",
+//         share:"16",
+//         imgUrl: images.card3b,
+//         button:"هوية",
+//     },
+// ]
 
 
 const Header = () => {
 
     let dispatch = useDispatch();
     const edraks = useSelector(getAllEdrak);
+    // const edraksAuthors= useSelector(getAllEdrakAuthors)
     useEffect(() => {
         dispatch(fetchAsyncEdrak());
+        dispatch(fetchAsyncEdrakAuthors());
       },[dispatch]);
-    console.log("Header Data",edraks); 
+    console.log("new edraks from header ",edraks); 
+    // console.log("edrak au",edraksAuthors); 
+
+
 
 
      
@@ -136,12 +141,12 @@ const Header = () => {
                     <h2>الجديد فى الموقع</h2>
                     <hr/>
                     <div className='cards'>
-                    {threeCards.map((item,index)=>(
+                        {edraks.slice(0,3).map((item,index)=>(
                             <Card item={item} key={index} />
                         ))}
                     </div>
 
-                    <h2>كتاب إدراك</h2>
+                    <h2 style={{marginTop:"20px"}}>كتاب إدراك</h2>
                     <hr/>
                     <div className='edrak-authors'>
                         {edrakAuthors.map((author,index)=>(

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ArticleInside.css";
 import { images } from "../constants";
 import BigCard from "../Cards/BigCard";
 import HeaderLeft from "../Header/HeaderLeft";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import Paragraph from "./Paragraph";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAsyncEdrak,  getAllEdrak } from "../Redux/EdrakSlice";
+import { useParams } from "react-router-dom";
 // import HeaderLeft from "../../Header/HeaderLeft";
 
 const cards = [
@@ -88,20 +91,41 @@ function copy() {
 }
 
 const ArticleInside = () => {
+
+  const { _id } = useParams();
+  console.log("id:",_id)
+  let dispatch = useDispatch();
+  const edraks = useSelector(getAllEdrak);
+  // const edraksAuthors= useSelector(getAllEdrakAuthors)
+  useEffect(() => {
+      dispatch(fetchAsyncEdrak());
+      // dispatch(fetchAsyncEdrakAuthors(_id));
+    },[dispatch]);
+  console.log("new edraks",edraks);
+
+  const articleIn = edraks.find((a) => a._id === _id);
+  console.log("article in :",articleIn)
+
+  if(!articleIn){
+    return <div>Waiting</div>;
+  }
+
   return (
     <div className="header">
       <div className="header-container">
         <div className="header-right">
           <div className="header-right-content">
-            <div className="global-simi-btn">مراجعات</div>
-            <h1 className="header-headline">مراجعة كتاب : فجر كل شئ</h1>
+            <div className="global-simi-btn">{articleIn.type}</div>
+            <h1 className="header-headline">{articleIn.name}</h1>
             <div className="about-author">
-              <h5>أمجد عبد الرازق</h5>
+              <h5>{articleIn.writer}</h5>
               <div className="share-icon">
-                <i className="fa-solid fa-share-nodes"></i> 15
+                <i className="fa-solid fa-share-nodes"></i> 
+                {articleIn.numberOfShare}
               </div>
               <div className="cal">
-                <i className="fa-solid fa-calendar-days"></i> 22-2-2022
+                <i className="fa-solid fa-calendar-days"></i>
+                {articleIn.createdOn.substring(0, 10)}
               </div>
             </div>
             <div className="social-icons-small">
@@ -125,12 +149,12 @@ const ArticleInside = () => {
             </div>
           </div>
           <div className="img-container">
-            <img src={images.header} className="img-header" alt="headerImage" />
+            <img src={articleIn.img} className="img-header" alt="headerImage" />
           </div>
             {/* هنا المقالات بتغير الداتا من فوق */}
           <div className="big-paragraph">
-            {paragraphs.map((paragraph,index)=>(
-              <Paragraph paragraph={paragraph}/>
+            {articleIn.paragraphs.map((paragraph,index)=>(
+              <Paragraph paragraph={paragraph} key={index}/>
             ))}
           </div>
 
@@ -141,7 +165,7 @@ const ArticleInside = () => {
                 <h1>المزيد من المدونات</h1>
                 <hr/>
                 <div className="articles-inside">
-                {cards.map((card, index) => (
+                {edraks.slice(0,3).map((card, index) => (
                     <BigCard key={index} data={card} />
                 ))}
                 </div>
@@ -149,7 +173,7 @@ const ArticleInside = () => {
         </div>
 
         <div className="header-left">
-          <HeaderLeft data={cards} edrakAuthors={edrakAuthors} />
+          <HeaderLeft data={edraks} edrakAuthors={edrakAuthors} />
         </div>
       </div>
     </div>

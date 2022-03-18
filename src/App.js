@@ -19,7 +19,7 @@ class App extends Component  {
           <Route path='/' exact component={Header}/>
           <Route path='/test-all' exact component={Header}/>
           <Route path="/articles" component={Articles} />
-          <Route path="/article-inside" component={ArticleInside} />
+          <Route path="/article-inside/:_id" component={ArticleInside} />
         </Switch>
         
         <Footer/>
