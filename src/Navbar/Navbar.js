@@ -17,7 +17,7 @@ const Navbar = () => {
   function coming() {
     let timerInterval
     Swal.fire({
-        title: 'قريباً',
+        title: 'تأتي قريباً',
         timer: 5000,
         // timerProgressBar: true,
         didOpen: () => {

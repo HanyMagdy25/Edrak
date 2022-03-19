@@ -6,7 +6,35 @@ import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak} from "../Redux/EdrakSlice";
+import $ from 'jquery';
+import {isMobile} from 'react-device-detect';
+import Swal from "sweetalert2"
 
+function coming() {
+    let timerInterval
+    Swal.fire({
+        title: 'تأتي قريباً',
+        timer: 5000,
+        // timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+    })
+
+
+    if (isMobile) {
+        $(".navbar-toggler").trigger("click")
+    }
+}
 
 // ======== Old Data - now our new data from db.json =========
 
@@ -153,7 +181,7 @@ const Articles = () => {
           {/* try */}
 
           {category.slice(0,9).map((card, index) => (
-            <BigCard key={index} data={card} />
+            <BigCard key={index} data={card} inArt={true}/>
           ))}
           {/* <img src={require("")} alt="f" /> */}
         </div>
@@ -243,13 +271,13 @@ const Articles = () => {
             </h3>
             <hr />
             <div className="hashtags">
-              <span><a href="w">هوية</a></span> 
-              <span><a href="w">تعليم</a></span> 
-              <span><a href="w">معرض الكتاب</a></span> 
-              <span><a href="w">إمبريالية</a></span> 
-              <span><a href="w">روسيا</a></span> 
-              <span><a href="w">المعرفة</a></span> 
-              <span><a href="w">الحرب</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>هوية</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>تعليم</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>معرض الكتاب</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>إمبريالية</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>روسيا</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>المعرفة</a></span> 
+              <span><a href="#"  onClick={()=>{coming()}}>الحرب</a></span> 
             </div>
 
           </div>

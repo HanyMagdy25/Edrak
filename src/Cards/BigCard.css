@@ -1,6 +1,6 @@
 .big-card{
-    width: 83%;
-    height: auto;
+    width: 290px;
+    /* height: 300px; */
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,6 @@
     border-radius: 3px;
     margin-bottom: 20px;
     /* padding: 0; */
-    margin: auto;
     
 }
 .big-card img{
@@ -28,7 +27,6 @@
     margin-top: 15px;
     width: 100%;
     height: 30%;
-    padding: 0px 2px;
 }
 .big-card-content h3,
 .big-card p{
