@@ -116,8 +116,8 @@ const Header = () => {
           <h1>البودكاست</h1>
           <hr />
           <div className="podcast-cards">
-            <h1 style={{textAlign:"center"}}>قريباً</h1>
-            <div className="spinner"><Spinner/></div>
+            <h1 style={{textAlign:"center" , margin : "20px 0px 30px"}}>قريباً</h1>
+            <div className=""><Spinner/></div>
 
             {/* return it later */}
             {/* {edraks.slice(0, 3).map((card, index) => (
@@ -133,8 +133,8 @@ const Header = () => {
           <hr />
           <div className="edrak-tv-container-innerr"> 
 
-            <h1 style={{textAlign:"center"}}>قريباً</h1>
-            <div className="spinner"><Spinner/></div>
+            <h1 style={{textAlign:"center" , margin : "20px 0px 30px"}}>قريباً</h1>
+            <div className=""><Spinner/></div>
             {/* back className to inner not innerr */}
             {/* return it later */} 
             {/* <div className="edrak-tv-right">
