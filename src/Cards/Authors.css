@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .authors{
     display: flex;
     flex-direction: row;
@@ -12,20 +15,26 @@
 
     /* margin: 5px 5px; */
 }
+.img-contain{
+    width: 30%;
+}
+.name-contain{
+    width: 70%;
+}
 .authors img{
-    width:30%;
+    width:100%;
     border-radius: 50%;
 }
 .authors h4{
-    margin: 0px 5px 0 0 ;
+    margin: 0px 6px 0 0 ;
 }
 
-/* this is the style of AuthorsBlock */
+/*========= this is the style of AuthorsBlock =========*/
 
 .authors-block{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     /* flex-wrap: wrap; */
@@ -36,9 +45,16 @@
 
     /* margin: 5px 5px; */
 }
+.img-contain-block{
+    width: 30%;
+}
+.name-contain-block{
+    width: 70%;
+}
 .authors-block img{
-    width:22%;
+    width:100%;
+    border-radius: 50%;
 }
 .authors-block h3{
-    margin: 0px 5px 0 0 ;
+    margin: 0px 8px 0 0 ;
 }

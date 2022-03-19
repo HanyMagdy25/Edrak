@@ -1,6 +1,6 @@
 .big-card{
     width: 290px;
-    /* height: 300px; */
+    height: 352px;
     background-color: white;
     display: flex;
     flex-direction: column;

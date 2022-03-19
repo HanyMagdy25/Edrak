@@ -25,6 +25,12 @@ body {
   
 }
 
+.spinner{
+  height:100vh;
+  display:flex;
+  align-items:center;
+}
+
 
 .global-simi-btn,
 .global-simi-btn-purple,
