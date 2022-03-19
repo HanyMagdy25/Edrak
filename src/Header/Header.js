@@ -54,8 +54,8 @@ const Header = () => {
   console.log("new edraks from header ", edraks);
   // console.log("edrak au",edraksAuthors);
 
-  if (!edraks) {
-    return <div><Spinner/></div>;
+  if (!edraks.length > 0) {
+    return <div className="spinner"><Spinner/></div>;
   }
 
   return (
