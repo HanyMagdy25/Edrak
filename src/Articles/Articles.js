@@ -5,7 +5,7 @@ import "./Articles.css";
 import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
+import { fetchAsyncEdrak, getAllEdrak} from "../Redux/EdrakSlice";
 
 
 // ======== Old Data - now our new data from db.json =========
@@ -113,15 +113,13 @@ const edrakAuthors = [
 const Articles = () => {
 
   let dispatch = useDispatch();
-  const edraks = useSelector(getAllEdrak);
-  // const edrakAuthorss = useSelector(getAllEdrakAuthors);
-  // console.log("home authors",edraks); 
-  useEffect(() => {
-      dispatch(fetchAsyncEdrak());
-      // dispatch(fetchAsyncEdrakAuthors());
-      // console.log("this edraks",edraks)  
-    },[dispatch]);
-    console.log("articles page ",edraks); 
+    const edraks = useSelector(getAllEdrak);
+    // const edraksAuthors= useSelector(getAllEdrakAuthors)
+    useEffect(() => {
+        dispatch(fetchAsyncEdrak());
+        // dispatch(fetchAsyncEdrakAuthors());
+      },[dispatch]);
+    console.log("new edraks",edraks); 
 
   const [category, setCategory] = useState(edraks);
   const filterResult = (cartItem) => {
@@ -131,6 +129,17 @@ const Articles = () => {
     });
     setCategory(result);
   };
+
+
+  // let dispatch = useDispatch();
+  //   const edraks = useSelector(getAllEdrak);
+  //   const edraksAuthors= useSelector(getAllEdrakAuthors)
+  //   useEffect(() => {
+  //       dispatch(fetchAsyncEdrak());
+  //       dispatch(fetchAsyncEdrakAuthors());
+  //     },[dispatch]);
+  //   console.log("Header Data",edraks); 
+  //   console.log("edrak au",edraksAuthors); 
 
   return (
     <div className="articles-parent">

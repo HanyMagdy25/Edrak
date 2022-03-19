@@ -14,6 +14,7 @@
 }
 .authors img{
     width:30%;
+    border-radius: 50%;
 }
 .authors h4{
     margin: 0px 5px 0 0 ;

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // import dataJson from "./Edrak.json"
 export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async () => {
-  const response = await fetch(`http://localhost:3000/allP`);
+  const response = await fetch(`https://edrakback.herokuapp.com/allP`);
     const data = await response.json();
       
 
@@ -19,19 +19,19 @@ export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async (
 //         });
 
 })
-// export const fetchAsyncEdrakAuthors = createAsyncThunk("edrak/fetchAsyncEdrakAuthours", async () => {
-//     const response = await fetch(`http://localhost:8000/edrakAuthors`);
-//       const dataAuthors = await response.json();
+export const fetchAsyncEdrakAuthors = createAsyncThunk("edrak/fetchAsyncEdrakAuthors", async (_id) => {
+    const res = await fetch(`https://edrakback.herokuapp.com/allP/${_id}`);
+      const dataAuthors = await res.json();
         
   
-//       console.log("this from redux authors",dataAuthors);
-//       return dataAuthors;
+      console.log("this from redux authors",dataAuthors);
+      return dataAuthors;
   
-//   })
+  })
 
 const initialState = {
     edrak:[],
-    // edrakAuthours:[],
+    edrakAuthours:[],
  
   }
 
@@ -61,14 +61,25 @@ const initialState = {
         console.log("rejected");
         
       },
+      [fetchAsyncEdrakAuthors.pending]:()=>{
+        console.log("pending au")
+      },
+      [fetchAsyncEdrakAuthors.fulfilled]:(state,{payload})=>{
+        console.log("fulfilled au");
+        return{...state, edrak:payload}
+      },
+      [fetchAsyncEdrakAuthors.rejected]:()=>{
+        console.log("rejected au");
+        
+      },
 
   
     }
   })
 
   // Action creators are generated for each case reducer function
-export const { addEdrak} = edrakSlice.actions
+export const { addEdrak ,addEdrakAuthors} = edrakSlice.actions
 export const getAllEdrak = (state) => state.edrak.edrak;
-// export const getAllEdrakAuthors = (state) => state.edrak.edrakAuthours;
+export const getAllEdrakAuthors = (state) => state.edrak.edrakAuthours;
 
 export default edrakSlice.reducer

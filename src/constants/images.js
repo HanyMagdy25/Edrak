@@ -11,9 +11,10 @@ import card3s from "../assets/card3s.png";
 import header from "../assets/header.png";
 import header3 from "../assets/header3.png";
 
-import author1 from "../assets/author1.png"
-import author2 from "../assets/author2.png"
-import author3 from "../assets/author3.png"
+import author1 from "../assets/author1.jpg"
+import author2 from "../assets/author2.jpeg"
+import author3 from "../assets/author3.jpg"
+import author4 from "../assets/author4.jpg"
 
 export default {
   card1b,
@@ -27,6 +28,7 @@ export default {
   author1,
   author2,
   author3,
+  author4,
   logo1s,
   logo,
 };

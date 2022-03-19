@@ -5,15 +5,40 @@ import "./Navbar.css";
 // import {images} from "../constants";
 import looo from "../assets/looo.svg"
 // import { copy } from "gh-pages/lib/util";
-
+import $ from 'jquery';
+import {isMobile} from 'react-device-detect';
+import Swal from "sweetalert2";
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
+
   function coming() {
-    alert('Coming Soon');
-  }
+    let timerInterval
+    Swal.fire({
+        title: 'Coming Soon',
+        timer: 5000,
+        // timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+    })
+
+
+    if (isMobile) {
+        $(".navbar-toggler").trigger("click")
+    }
+}
 
   return (
     <>
