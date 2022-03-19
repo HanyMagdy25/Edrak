@@ -1,5 +1,5 @@
 .big-card{
-    width: 230px;
+    width: 83%;
     height: auto;
     background-color: white;
     display: flex;
@@ -10,6 +10,7 @@
     border-radius: 3px;
     margin-bottom: 20px;
     /* padding: 0; */
+    margin: auto;
     
 }
 .big-card img{

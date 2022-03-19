@@ -115,15 +115,18 @@ const Header = () => {
         <div className="podcast-container">
           <h1>البودكاست</h1>
           <hr />
-          <div className="podcast-cards">
-            <h1 style={{textAlign:"center" , margin : "20px 0px 30px"}}>قريباً</h1>
-            <div className=""><Spinner/></div>
-
-            {/* return it later */}
-            {/* {edraks.slice(0, 3).map((card, index) => (
+          <h2 style={{margin :"20px 0px 30px" , textAlign : "center"}}> يأتي قريباً</h2>
+          <div className=""><Spinner/></div>
+          
+          {/* <div className="podcast-cards">
+            {edraks.slice(0, 3).map((card, index) => (
               <CardPodcast key={index} data={card} />
-            ))} */}
-          </div>
+            ))}
+
+            <CardPodcast headerImg={headerImg}/>
+                    <CardPodcast headerImg={headerImg}/>
+                    <CardPodcast headerImg={headerImg}/>
+          </div> */}
         </div>
       </div>
       {/* تلفزيون إدراك */}
@@ -131,49 +134,46 @@ const Header = () => {
         <div className="edrak-tv-container">
           <h1>تلفزيون إدراك</h1>
           <hr />
-          <div className="edrak-tv-container-innerr"> 
-
-            <h1 style={{textAlign:"center" , margin : "20px 0px 30px"}}>قريباً</h1>
-            <div className=""><Spinner/></div>
-            {/* back className to inner not innerr */}
-            {/* return it later */} 
-            {/* <div className="edrak-tv-right">
-                <div className="img-container">
+          <h2 style={{margin :"20px 0px 30px" , textAlign : "center"}}> يأتي قريباً</h2>
+          <div className=""><Spinner/></div>
+          {/* <div className="edrak-tv-container-inner">
+            <div className="edrak-tv-right">
+              <div className="img-container">
                 <img
-                    src={images.header3}
-                    className="img-header"
-                    alt="headerImage"
+                  src={images.header3}
+                  className="img-header"
+                  alt="headerImage"
                 />
-                </div>
-                <div className="header-right-content">
+              </div>
+              <div className="header-right-content">
                 <div className="global-simi-btn-purple">فكر</div>
                 <h2 className="header-headline">مراجعة كتاب : فجر كل شئ</h2>
                 <p className="header-paragragh">
-                    لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ
-                    عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع
-                    الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ
-                    العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس
-                    نفسه على روايتين مختلفتين لأسطورة مماثلة.
+                  لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ
+                  عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع
+                  الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ
+                  العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس
+                  نفسه على روايتين مختلفتين لأسطورة مماثلة.
                 </p>
                 <div className="about-author">
-                    <h5>أمجد عبد الرازق</h5>
-                    <div className="share-icon">
+                  <h5>أمجد عبد الرازق</h5>
+                  <div className="share-icon">
                     <i className="fa-solid fa-share-nodes"></i> 15
-                    </div>
-                    <div className="cal">
+                  </div>
+                  <div className="cal">
                     <i className="fa-solid fa-calendar-days"></i> 22-2-2022
-                    </div>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
 
             <div className="edrak-tv-left">
-                <div className="edrak-tv-left-container">
+              <div className="edrak-tv-left-container">
                 <MediumCard headerImg={images.header3} />
                 <MediumCard headerImg={images.header3} />
-                </div>
-            </div> */}
-          </div>
+              </div>
+            </div>
+          </div> */}
         </div>
       </div>
     </div>
