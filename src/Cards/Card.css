@@ -56,3 +56,26 @@
     color: var(--off-white);
     margin: 5px 0 0px 0;
 }
+
+/* =========== media query ============= */
+@media screen and (max-width:900px) {
+    .card{
+        width: 100%;
+        height:auto ;
+        /* background-color:teal; */
+        display: flex;
+        flex-direction: column;
+        margin-top:20px;
+    }
+    .card-container-img{
+        width: 100%;
+        /* height: 100%; */
+        
+    }
+    .card-container-content{
+        width: 100%;
+        /* background-color: brown; */
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -19,19 +19,19 @@ export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async (
 //         });
 
 })
-export const fetchAsyncEdrakAuthors = createAsyncThunk("edrak/fetchAsyncEdrakAuthors", async (_id) => {
-    const res = await fetch(`https://edrakback.herokuapp.com/allP/${_id}`);
-      const dataAuthors = await res.json();
+// export const fetchAsyncEdrakAuthors = createAsyncThunk("edrak/fetchAsyncEdrakAuthors", async (_id) => {
+//     const res = await fetch(`https://edrakback.herokuapp.com/allP/${_id}`);
+//       const dataAuthors = await res.json();
         
   
-      console.log("this from redux authors",dataAuthors);
-      return dataAuthors;
+//       console.log("this from redux authors",dataAuthors);
+//       return dataAuthors;
   
-  })
+//   })
 
 const initialState = {
     edrak:[],
-    edrakAuthours:[],
+    // edrakAuthours:[],
  
   }
 
@@ -42,9 +42,9 @@ const initialState = {
       addEdrak: (state,{payload}) => {
         state.edrak = payload
       },
-      addEdrakAuthors: (state,{payload}) => {
-        state.edrakAuthours = payload
-      },
+      // addEdrakAuthors: (state,{payload}) => {
+      //   state.edrakAuthours = payload
+      // },
 
 
       
@@ -61,25 +61,25 @@ const initialState = {
         console.log("rejected");
         
       },
-      [fetchAsyncEdrakAuthors.pending]:()=>{
-        console.log("pending au")
-      },
-      [fetchAsyncEdrakAuthors.fulfilled]:(state,{payload})=>{
-        console.log("fulfilled au");
-        return{...state, edrak:payload}
-      },
-      [fetchAsyncEdrakAuthors.rejected]:()=>{
-        console.log("rejected au");
+      // [fetchAsyncEdrakAuthors.pending]:()=>{
+      //   console.log("pending au")
+      // },
+      // [fetchAsyncEdrakAuthors.fulfilled]:(state,{payload})=>{
+      //   console.log("fulfilled au");
+      //   return{...state, edrak:payload}
+      // },
+      // [fetchAsyncEdrakAuthors.rejected]:()=>{
+      //   console.log("rejected au");
         
-      },
+      // },
 
   
     }
   })
 
   // Action creators are generated for each case reducer function
-export const { addEdrak ,addEdrakAuthors} = edrakSlice.actions
+export const { addEdrak } = edrakSlice.actions
 export const getAllEdrak = (state) => state.edrak.edrak;
-export const getAllEdrakAuthors = (state) => state.edrak.edrakAuthours;
+// export const getAllEdrakAuthors = (state) => state.edrak.edrakAuthours;
 
 export default edrakSlice.reducer

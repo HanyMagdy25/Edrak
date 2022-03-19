@@ -97,15 +97,15 @@ import { fetchAsyncEdrak, getAllEdrak} from "../Redux/EdrakSlice";
 
 const edrakAuthors = [
   {
-    name: "عمار رزق",
+    name: "أ. عبدالرحمن النحياني",
     imgUrl: images.author1,
   },
   {
-    name: "مهند الهويدي",
+    name: "د. هبة رءوف عزت",
     imgUrl: images.author2,
   },
   {
-    name: "أمجد عبد الرازق",
+    name: "أ. نادية المطيري",
     imgUrl: images.author3,
   },
 ];
@@ -119,7 +119,7 @@ const Articles = () => {
         dispatch(fetchAsyncEdrak());
         // dispatch(fetchAsyncEdrakAuthors());
       },[dispatch]);
-    console.log("new edraks",edraks); 
+    // console.log("new edraks",edraks); 
 
   const [category, setCategory] = useState(edraks);
   const filterResult = (cartItem) => {
@@ -129,7 +129,7 @@ const Articles = () => {
     });
     setCategory(result);
   };
-
+  
 
   // let dispatch = useDispatch();
   //   const edraks = useSelector(getAllEdrak);
@@ -226,7 +226,7 @@ const Articles = () => {
             <h3
               style={{ fontSize: "23px", fontWeight: "200", marginTop: "20px" }}
             >
-              كتاب إدراك
+              كُتاب إدراك
             </h3>
             <hr />
             <div className="edrak-authors-block">

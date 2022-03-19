@@ -18,10 +18,10 @@ const HeaderLeft = ({data,edrakAuthors}) => {
                         
                     </div>
 
-                    <h2 style={{marginTop:"20px"}}>كتاب إدراك</h2>
+                    <h2 style={{marginTop:"20px"}}>كُتاب إدراك</h2>
                     <hr/>
                     <div className='edrak-authors'>
-                        {edrakAuthors.map((author,index)=>(
+                        {edrakAuthors.slice(0,4).map((author,index)=>(
                             <Authors author={author} key={index} />
                         ))}
 

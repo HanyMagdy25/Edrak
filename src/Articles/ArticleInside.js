@@ -8,37 +8,13 @@ import Paragraph from "./Paragraph";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import { useParams } from "react-router-dom";
-// import HeaderLeft from "../../Header/HeaderLeft";
+// jquery
+import $ from 'jquery';
+import {isMobile} from 'react-device-detect';
+import Swal from "sweetalert2";
+import Spinner from "../constants/Spinner";
 
-const cards = [
-  {
-    title: "مراجعة كتاب : فجر كل شئ",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد عبدالرازق",
-    history: "20-3-2020",
-    share: "51",
-    imgUrl: images.card1b,
-    button: "مراجعات",
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "هانى مجدى",
-    history: "20-3-2021",
-    share: "11",
-    imgUrl: images.card2b,
-    button: "فكر",
-  },
-  {
-    title: "إنزال التعليم العالي أرضًا",
-    description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-    authorName: "أمجد أحمد",
-    history: "20-3-2022",
-    share: "16",
-    imgUrl: images.card3b,
-    button: "هوية",
-  },
-]
+
 
 const edrakAuthors = [
   {
@@ -59,6 +35,7 @@ const edrakAuthors = [
   },
 ]
 
+
 // الداتا هتكون هنا مش على الريدكس مؤقتا
 
 
@@ -70,7 +47,7 @@ function copy() {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
-  alert('URL Copied');
+  // alert('URL Copied');
 }
 
 const ArticleInside = () => {
@@ -90,8 +67,39 @@ const ArticleInside = () => {
   console.log("article in :", articleIn)
 
   if (!articleIn) {
-    return <div>Waiting</div>;
+    return <div className="spinner"><Spinner/></div>;
   }
+
+  // to copy the url and pass to facebook icon
+  const url = window.location.href
+
+  // Copied Alert With JQuery
+  function copyAlert() {
+    let timerInterval
+    Swal.fire({
+        title: 'تم نسخ الرابط',
+        timer: 5000,
+        // timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+    })
+
+
+    if (isMobile) {
+        $(".navbar-toggler").trigger("click")
+    }
+}
+  
 
   return (
     <div className="header">
@@ -112,19 +120,19 @@ const ArticleInside = () => {
               </div>
             </div>
             <div className="social-icons-small">
-              <span onClick={copy}>
+              <span onClick={()=>{copy();copyAlert()}}>
                 <i className="fa-solid fa-share-from-square"></i>
               </span>
               <span>
                 <TwitterShareButton
-                  url="https://www.npmjs.com/package/react-share"
+                  url={url}
                 >
                   <i className="fa-brands fa-twitter"></i>
                 </TwitterShareButton>
               </span>
               <span>
                 <FacebookShareButton
-                  url="https://www.npmjs.com/package/react-share"
+                  url={url}
                 >
                   <i className="fa-brands fa-facebook-f"></i>
                 </FacebookShareButton>
