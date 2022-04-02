@@ -8,7 +8,7 @@ const AuthorsBlock = ({author}) => {
         <img src={author.imgUrl} alt='author' />
       </div>
       <div className='name-contain-block'>
-        <h3 style={{fontWeight:'400'}}>{author.name}</h3>
+        <h3 >{author.name}</h3>
       </div>
        
         

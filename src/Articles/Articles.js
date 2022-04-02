@@ -5,123 +5,36 @@ import "./Articles.css";
 import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncEdrak, getAllEdrak} from "../Redux/EdrakSlice";
-import $ from 'jquery';
-import {isMobile} from 'react-device-detect';
-import Swal from "sweetalert2"
+import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
+import $ from "jquery";
+import { isMobile } from "react-device-detect";
+import Swal from "sweetalert2";
+
+
 
 function coming() {
-    let timerInterval
-    Swal.fire({
-        title: 'تأتي قريباً',
-        timer: 5000,
-        // timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading()
-
-        },
-        willClose: () => {
-            clearInterval(timerInterval)
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-        }
-    })
-
-
-    if (isMobile) {
-        $(".navbar-toggler").trigger("click")
+  let timerInterval;
+  Swal.fire({
+    title: "تأتي قريباً",
+    timer: 5000,
+    // timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log("I was closed by the timer");
     }
+  });
+
+  if (isMobile) {
+    $(".navbar-toggler").trigger("click");
+  }
 }
-
-// ======== Old Data - now our new data from db.json =========
-
-// const cards = [
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد عبدالرازق",
-//     history: "20-3-2022",
-//     share: "11",
-//     cat: ["اقتصاد","هوية"],
-//     imgUrl: images.card1b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد عبدالرازق",
-//     history: "9-3-2021",
-//     share: "20",
-//     cat: ["ترجمات","هوية"],
-//     imgUrl: images.card2b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "هانى مجدىٍ",
-//     history: "22-1-2022",
-//     share: "10",
-//     cat: ["فكر","ترجمات"],
-//     imgUrl: images.card3b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد منير",
-//     history: "25-3-2022",
-//     share: "15",
-//     cat: ["اجتماع","هوية"],
-//     imgUrl: images.card1b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد عبدالرازق",
-//     history: "9-3-2021",
-//     share: "20",
-//     cat: ["فكر","هوية"],
-//     imgUrl: images.card2b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "هانى مجدىٍ",
-//     history: "22-1-2022",
-//     share: "10",
-//     cat: ["فكر","اجتماع"],
-//     imgUrl: images.card3b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد منير",
-//     history: "25-3-2022",
-//     share: "15",
-//     cat: ["تزكية","هوية"],
-//     imgUrl: images.card1b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "أمجد عبدالرازق",
-//     history: "9-3-2021",
-//     share: "20",
-//     cat: ["فكر","هوية"],
-//     imgUrl: images.card2b,
-//   },
-//   {
-//     title: "إنزال التعليم العالي أرضًا",
-//     description: "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
-//     authorName: "هانى مجدىٍ",
-//     history: "22-1-2022",
-//     share: "10",
-//     cat: ["تزكية","هوية"],
-//     imgUrl: images.card3b,
-//   },
-// ];
-
 
 const edrakAuthors = [
   {
@@ -139,19 +52,14 @@ const edrakAuthors = [
 ];
 
 const Articles = () => {
-
   let dispatch = useDispatch();
-    const edraks = useSelector(getAllEdrak);
-    // const edraksAuthors= useSelector(getAllEdrakAuthors)
-    useEffect(() => {
-        dispatch(fetchAsyncEdrak());
-        // dispatch(fetchAsyncEdrakAuthors());
-      
-       
-       
-       
-      },[dispatch]);
-    // console.log("new edraks",edraks); 
+  const edraks = useSelector(getAllEdrak);
+  // const edraksAuthors= useSelector(getAllEdrakAuthors)
+  useEffect(() => {
+    dispatch(fetchAsyncEdrak());
+    // dispatch(fetchAsyncEdrakAuthors());
+  }, [dispatch]);
+  // console.log("new edraks",edraks);
 
   const [category, setCategory] = useState(edraks);
   const filterResult = (cartItem) => {
@@ -161,7 +69,14 @@ const Articles = () => {
     });
     setCategory(result);
   };
-  
+
+  // Next And Prev
+  // const [next,setNext] = useState({
+  //   start:0,
+  //   end:9
+  // });
+  const [start,setStart] = useState(0);
+  const [end,setEnd] = useState(9);
 
   // let dispatch = useDispatch();
   //   const edraks = useSelector(getAllEdrak);
@@ -170,8 +85,8 @@ const Articles = () => {
   //       dispatch(fetchAsyncEdrak());
   //       dispatch(fetchAsyncEdrakAuthors());
   //     },[dispatch]);
-  //   console.log("Header Data",edraks); 
-  //   console.log("edrak au",edraksAuthors); 
+  //   console.log("Header Data",edraks);
+  //   console.log("edrak au",edraksAuthors);
 
   return (
     <div className="articles-parent">
@@ -184,11 +99,11 @@ const Articles = () => {
           )} */}
           {/* try */}
 
-          {category.slice(0,9).map((card, index) => (
-            <BigCard key={index} data={card} inArt={true}/>
+          {category.slice(start, end).map((card, index) => (
+            <BigCard key={index} data={card} inArt={true} />
           ))}
-          {/* <img src={require("")} alt="f" /> */}
         </div>
+
         {/* ====== Left Side ======= */}
         <div className="categories">
           <div className="categories-container">
@@ -200,8 +115,6 @@ const Articles = () => {
               <input
                 type="radio"
                 name="checkbox"
-                
-
                 onClick={() => setCategory(edraks)}
               />
               جميع المقالات
@@ -277,17 +190,92 @@ const Articles = () => {
             </h3>
             <hr />
             <div className="hashtags">
-              <span><a href="#"  onClick={()=>{coming()}}>هوية</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>تعليم</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>معرض الكتاب</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>إمبريالية</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>روسيا</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>المعرفة</a></span> 
-              <span><a href="#"  onClick={()=>{coming()}}>الحرب</a></span> 
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  هوية
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  تعليم
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  معرض الكتاب
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  إمبريالية
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  روسيا
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  المعرفة
+                </a>
+              </span>
+              <span>
+                <a
+                  href="#"
+                  onClick={() => {
+                    coming();
+                  }}
+                >
+                  الحرب
+                </a>
+              </span>
             </div>
-
           </div>
         </div>
+      </div>
+      <div className="bottom-arrows">
+        <span className="bottom-arrows-right" 
+        
+        onClick={()=>{setStart(start+9);setEnd(end +9)} }>
+          <i class="fa-solid fa-arrow-right"></i>
+          {/* <h3>التالى</h3> */}
+          
+        </span>
+        <span className="bottom-arrows-left"  onClick={()=>{setStart(start-9);setEnd(end -9)} }>
+          <i class="fa-solid fa-arrow-left"></i>
+          {/* <h3>السابق</h3>     */}
+        </span>
       </div>
     </div>
   );

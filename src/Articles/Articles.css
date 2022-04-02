@@ -2,8 +2,10 @@
     width: 100%;
     /* background-color: aquamarine; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 25px;
+    align-items: center;
 }
 .articles-parent-container{
     width: 80%;
@@ -80,6 +82,27 @@
     color: var(--black);
     /* font-size: 16px; */
 }
+/* ====================== bottom-arrows ============================ */
+.bottom-arrows{
+    /* background-color: blueviolet; */
+    margin-top: 40px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    
+    
+}
+.bottom-arrows-right,
+.bottom-arrows-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
 
 
 /* =========================== */

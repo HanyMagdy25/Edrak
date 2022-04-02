@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleClick = () => setClick(!click);
 
-  const [isActive, setIsActive] = useState("home");
+  // const [isActive, setIsActive] = useState("home");
 
   function coming() {
     let timerInterval;

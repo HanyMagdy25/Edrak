@@ -51,8 +51,11 @@
 .name-contain-block{
     width: 70%;
 }
+.name-contain-block h3{
+    font-size: 18px;
+}
 .authors-block img{
-    width:100%;
+    width:90%;
     border-radius: 50%;
 }
 .authors-block h3{
