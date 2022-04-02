@@ -1,15 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Tajawal:wght@200;300;500;800&display=swap');
-:root{
-  --first-color:#39267E;
-  --white:#fff;
-  --light-white:#F9F9F9;
-  --off-white:#919192;
-  --black:#4D4F5C;
-  --purple:#6F277D;
-  --hashtag: #39267F1A;
-  --red:#7D2726;
+/* @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Tajawal:wght@200;300;500;800&display=swap"); */
+/* ======== Fonts ========= */
+
+@font-face {
+  font-family: "Amariya-Bold";
+  src: url("../src/assets/fonts/Amariya-Bold.eot");
+  src: url("../src/assets/fonts/Amariya-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/Amariya-Bold.woff2") format("woff2"),
+    url("../src/assets/fonts/Amariya-Bold.woff") format("woff"),
+    url("../src/assets/fonts/Amariya-Bold.ttf") format("truetype"),
+    url("../src/assets/fonts/Amariya-Bold.svg#svgFontName")
+      format("svg");
+  font-display: swap;
+  font-style: normal;
 }
-*{
+@font-face {
+  font-family: "Amariya-Medium";
+  src: url("../src/assets/fonts/Amariya-Medium.eot");
+  src: url("../src/assets/fonts/Amariya-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/Amariya-Medium.woff2") format("woff2"),
+    url("../src/assets/fonts/Amariya-Medium.woff") format("woff"),
+    url("../src/assets/fonts/Amariya-Medium.ttf") format("truetype"),
+    url("../src/assets/fonts/Amariya-Medium.svg#svgFontName")
+      format("svg");
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amariya-Regular";
+  src: url("../src/assets/fonts/Amariya-Regular.eot");
+  src: url("../src/assets/fonts/Amariya-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../src/assets/fonts/Amariya-Regular.woff2") format("woff2"),
+    url("../src/assets/fonts/Amariya-Regular.woff") format("woff"),
+    url("../src/assets/fonts/Amariya-Regular.ttf") format("truetype"),
+    url("../src/assets/fonts/Amariya-Regular.svg#svgFontName")
+      format("svg");
+  font-display: swap;
+  font-style: normal;
+}
+/* ===================================== */
+
+:root {
+  --first-color: #39267e;
+  --white: #fff;
+  --light-white: #f9f9f9;
+  --off-white: #919192;
+  --black: #4d4f5c;
+  --purple: #6f277d;
+  --hashtag: #39267f1a;
+  --red: #7d2726;
+}
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,23 +61,21 @@ body {
   margin: 0;
   background: var(--light-white);
   /* background: cadetblue; */
-  font-family: 'Markazi Text', serif;
+  font-family: 'Amariya-Regular';
   direction: rtl;
   overflow-x: hidden;
   /* overflow: hidden; Hide scrollbars */
-  
 }
 
-.spinner{
-  height:100vh;
-  display:flex;
-  align-items:center;
+.spinner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
-
 
 .global-simi-btn,
 .global-simi-btn-purple,
-.global-simi-btn-red{
+.global-simi-btn-red {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,19 +84,18 @@ body {
   font-size: 18px;
   color: var(--white);
 }
-.global-simi-btn{
+.global-simi-btn {
   background-color: var(--first-color);
 }
-.global-simi-btn-purple{
+.global-simi-btn-purple {
   background-color: var(--purple);
 }
-.global-simi-btn-red{
+.global-simi-btn-red {
   background-color: var(--red);
 }
 
-
 .global-simi-btn-small-blue,
-.global-simi-btn-small-purple{
+.global-simi-btn-small-purple {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,13 +104,12 @@ body {
   font-size: 17px;
   color: var(--white);
 }
-.global-simi-btn-small-blue{
+.global-simi-btn-small-blue {
   background-color: var(--first-color);
 }
-.global-simi-btn-small-purple{
+.global-simi-btn-small-purple {
   background-color: var(--purple);
 }
-
 
 /* ====== حواف تحت كل عنوان =====*/
 .header-left-container h2,
@@ -78,18 +117,23 @@ body {
 .podcast-container h1,
 .edrak-tv-container h1,
 .more-blogs h1,
-.categories-container h3{
+.categories-container h3 {
   color: var(--black);
   margin-bottom: 8px;
+  font-weight: 500;
+  /* font-family: 'Amariya-bold'; */
+  font-family: 'Amariya-Medium';
+  font-size: 34px;
+  
 }
 
-hr{
+hr {
   border: 0.2px solid var(--black);
   opacity: 0.2;
 }
 
-@media screen and (max-width:900px) {
-  body{
+@media screen and (max-width: 900px) {
+  body {
     overflow-x: hidden;
   }
 }

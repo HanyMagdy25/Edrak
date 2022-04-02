@@ -53,9 +53,9 @@ const initialState = {
       [fetchAsyncEdrak.pending]:()=>{
         console.log("pending")
       },
-      [fetchAsyncEdrak.fulfilled]:(state,{payload})=>{
+      [fetchAsyncEdrak.fulfilled]:(state,action)=>{
         console.log("fulfilled");
-        return{...state, edrak:payload}
+        state.edrak=action.payload
       },
       [fetchAsyncEdrak.rejected]:()=>{
         console.log("rejected");

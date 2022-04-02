@@ -13,13 +13,13 @@ const Card = ({item}) => {
           <div className='card-container-content'>
               <div className='card-container-content-container'>
                   <div className='global-simi-btn-small-blue'>{item.type}</div>
-                  <h3>{item.name}</h3>
+                  <h3>{`${item.name.substring(0,25)} ...`}</h3>
                   <p>{`${item.about.substring(0,60)}...`}</p>
 
                   <div className='about-author-in-card'>
                           <h6>{item.writer}</h6>
-                          <h5 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> {item.numberOfShare}</h5>
-                          <h5 className='cal'><i className="fa-solid fa-calendar-days"></i> {item.createdOn.substring(0, 10)}</h5>
+                          <h6 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> {item.numberOfShare}</h6>
+                          <h6 className='cal'><i className="fa-solid fa-calendar-days"></i> {item.createdOn.substring(0, 10)}</h6>
                   </div>
               </div>
           </div>

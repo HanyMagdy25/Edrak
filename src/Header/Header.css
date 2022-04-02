@@ -43,6 +43,8 @@
 .header-headline{
     color: var(--black);
     margin: 8px 0 10px 0;
+    font-family: 'Amariya-bold';
+    font-size: 40px;
 }
 .header-paragragh{
     color: var(--black);

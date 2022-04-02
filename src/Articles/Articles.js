@@ -146,6 +146,10 @@ const Articles = () => {
     useEffect(() => {
         dispatch(fetchAsyncEdrak());
         // dispatch(fetchAsyncEdrakAuthors());
+      
+       
+       
+       
       },[dispatch]);
     // console.log("new edraks",edraks); 
 
@@ -196,6 +200,8 @@ const Articles = () => {
               <input
                 type="radio"
                 name="checkbox"
+                
+
                 onClick={() => setCategory(edraks)}
               />
               جميع المقالات
