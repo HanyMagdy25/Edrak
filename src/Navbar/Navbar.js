@@ -51,7 +51,7 @@ const Navbar = () => {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
 
-          <ul className={ "nav-menu " }>
+          <ul className={click ? "nav-menu active ":"nav-menu" }>
             <li className="nav-item">
               <NavLink
                 to="/home"

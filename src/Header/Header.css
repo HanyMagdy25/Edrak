@@ -1,269 +1,235 @@
-.header{
-    margin-top: 25px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    /* background-color: aquamarine; */
+.header {
+  margin-top: 25px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: aquamarine; */
 }
-.header-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    /* background-color: blueviolet; */
-
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  /* background-color: blueviolet; */
 }
 
 /* =========== Right Side ========== */
-.header-right{
-    width: 65%;
-    /* background-color:violet */
-    z-index: 0;
+.header-right {
+  width: 65%;
+  z-index: 0;
 }
-.img-container{
-    width: 100%;
-    /* background-color: blue; */
+.img-container {
+  width: 100%;
 }
-.img-container .img-header{
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid darkgreen; */
+.img-container .img-header {
+  width: 100%;
+  height: 100%;
 }
 /*==== header content ====*/
-.header-right-content{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-    align-items: flex-start;
+.header-right-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: flex-start;
 }
 
-.header-headline{
-    color: var(--black);
-    margin: 8px 0 10px 0;
-    font-family: 'Amariya-bold';
-    font-size: 40px;
+.header-headline {
+  color: var(--black);
+  margin: 8px 0 10px 0;
+  font-family: "Amariya-bold";
+  font-size: 40px;
 }
-.header-paragragh{
-    color: var(--black);
+.header-paragragh {
+  color: var(--black);
 }
 /* ==== about author of the book */
-.about-author{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-width: 34%;
-margin-top: 10px;
-/* background-color: blueviolet; */
-color: var(--off-white);
+.about-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 34%;
+  margin-top: 4px;
+  color: var(--off-white);
+  font-family: "Amariya-Bold";
+  font-size: 20px;
+  margin-top: 10px;
 }
-.share-icon{
-    width: 30px;
+.about-author i {
+  font-size: 12px;
+  margin: 0 2px;
 }
-
+.share-icon {
+  width: 30px;
+}
 
 /*============ Left Side ================== */
-.header-left{
-    width: 35%;
-    /* background-color: rgb(255, 170, 139); */
-    display: flex;
-    justify-content: flex-end;
+.header-left {
+  width: 35%;
+  /* background-color: rgb(255, 170, 139); */
+  display: flex;
+  justify-content: flex-end;
 }
-.header-left-container{
-    width: 85%;
-    /* background-color: aquamarine; */
-}
-
-.cards{
-    margin: 8px 0;
+.header-left-container {
+  width: 85%;
+  /* background-color: aquamarine; */
 }
 
-.edrak-authors{
-    width: 100%;
-    /* background-color: coral; */
-    /* height: 100px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    /* margin-top: 10px; */
-    /* background-color: aquamarine; */
-
+.cards {
+  margin: 8px 0;
 }
 
-/* .edrak-authors div{
-    width: 100%;
-    background-color: rgb(110, 29, 0);
-} */
-/* 
-.edrak-authors .edrak-authors-top{
-    background-color: crimson;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+.edrak-authors {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
-.edrak-authors .edrak-authors-bottom{
-    background-color: crimson;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-} */
-
 
 /* ======= الأكثر مشاهدة ========= */
-.most-popular{
-        margin: 25px 0;
-        display: flex;
-        /* justify-content: center; */
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        /* background-color: aquamarine; */
+.most-popular {
+  margin: 25px 0;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: aquamarine; */
 }
-.most-popular-container{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    /* background-color: blueviolet; */
-
+.most-popular-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  /* background-color: blueviolet; */
 }
-.most-popular-cards{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.most-popular-cards {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* البودكاست */
-.podcast{
-    margin: 25px 0;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    /* background-color: rgb(0, 192, 64); */
+.podcast {
+  margin: 25px 0;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: rgb(0, 192, 64); */
 }
-.podcast-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    /* background-color: blueviolet; */
+.podcast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  /* background-color: blueviolet; */
 }
-.podcast-cards{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.podcast-cards {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 
 /*========================= تلفزيون ادراك ==============================*/
-.edrak-tv{
-    margin: 25px 0;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    /* background-color: rgb(0, 192, 64); */
+.edrak-tv {
+  margin: 25px 0;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: rgb(0, 192, 64); */
 }
-.edrak-tv-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    /* background-color: blueviolet; */
+.edrak-tv-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  /* background-color: blueviolet; */
 }
-.edrak-tv-container-inner{
-    display: flex;
-    flex-direction: row;
-    margin-top: 25px;
+.edrak-tv-container-inner {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
 }
-.edrak-tv-container-inner .edrak-tv-right{
-    width: 65%;
-    /* background-color:violet */
+.edrak-tv-container-inner .edrak-tv-right {
+  width: 65%;
+  /* background-color:violet */
 }
-.edrak-tv-container-inner .edrak-tv-left{
-    width: 35%;
-    /* background-color:brown; */
-    display: flex;
-    justify-content: flex-end;
+.edrak-tv-container-inner .edrak-tv-left {
+  width: 35%;
+  /* background-color:brown; */
+  display: flex;
+  justify-content: flex-end;
 }
 .edrak-tv-left-container {
-    width: 85%;
-    /* background-color: burlywood; */
+  width: 85%;
+  /* background-color: burlywood; */
 }
-
 
 /* ============ Media Screen ================== */
 
-@media screen and (max-width:900px) {
-    .header-container{
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
-        width: 80%;
-        /* background-color: blueviolet; */
-    
-    }
-    .header-right{
-        width: 100%;
-        /* background-color:violet; */
-        margin-bottom: 20px;
-    }
-    .about-author{
-        width: 100%;
-        margin-top: 10px;
-        
-        }
-    .header-left{
-            width: 100%;
-            /* background-color: coral; */
-            display: flex;
-            justify-content: flex-start;
-    }    
-    .header-left-container{
-        width: 100%;
-        /* background-color: aquamarine; */
-    }
+@media screen and (max-width: 900px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 80%;
+    /* background-color: blueviolet; */
+  }
+  .header-right {
+    width: 100%;
+    /* background-color:violet; */
+    margin-bottom: 20px;
+  }
+  .about-author {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .header-left {
+    width: 100%;
+    /* background-color: coral; */
+    display: flex;
+    justify-content: flex-start;
+  }
+  .header-left-container {
+    width: 100%;
+    /* background-color: aquamarine; */
+  }
 
-    .most-popular-cards{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .edrak-tv-container-inner{
-        display: flex;
-        flex-direction: column;
-        /* margin-top: 25px; */
-    }
-    .edrak-tv-container-inner .edrak-tv-right{
-        width: 100%;
-        /* background-color:violet; */
-        margin-bottom: 20px;
-    }
-    .edrak-tv-container-inner .edrak-tv-left{
-        width: 100%;
-        /* background-color:brown; */
-        display: flex;
-        justify-content: flex-start;
-    }
-    .edrak-tv-left-container {
-        width: 100%;
-        /* background-color: burlywood; */
-    }
+  .most-popular-cards {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .edrak-tv-container-inner {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 25px; */
+  }
+  .edrak-tv-container-inner .edrak-tv-right {
+    width: 100%;
+    /* background-color:violet; */
+    margin-bottom: 20px;
+  }
+  .edrak-tv-container-inner .edrak-tv-left {
+    width: 100%;
+    /* background-color:brown; */
+    display: flex;
+    justify-content: flex-start;
+  }
+  .edrak-tv-left-container {
+    width: 100%;
+    /* background-color: burlywood; */
+  }
 }

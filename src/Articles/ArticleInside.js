@@ -109,14 +109,14 @@ const ArticleInside = () => {
             <div className="global-simi-btn">{articleIn.type}</div>
             <h1 className="header-headline">{articleIn.name}</h1>
             <div className="about-author">
-              <h5>{articleIn.writer}</h5>
+              <h6>{articleIn.writer}</h6>
               <div className="share-icon">
-                <i className="fa-solid fa-share-nodes"></i>
-                {articleIn.numberOfShare}
+                <h6><i className="fa-solid fa-share-nodes"></i>   {articleIn.numberOfShare}</h6>
               </div>
               <div className="cal">
-                <i className="fa-solid fa-calendar-days"></i>
-                {articleIn.createdOn.substring(0, 10)}
+                
+                
+                <h6><i className="fa-solid fa-calendar-days"></i> {articleIn.createdOn.substring(0, 10)}</h6>
               </div>
             </div>
             <div className="social-icons-small">

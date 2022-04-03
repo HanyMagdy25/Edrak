@@ -17,7 +17,7 @@ const Card = ({item}) => {
                   <p>{`${item.about.substring(0,60)}...`}</p>
 
                   <div className='about-author-in-card'>
-                          <h6>{item.writer}</h6>
+                          <h6>{item.writer.substring(0,12)}</h6>
                           <h6 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> {item.numberOfShare}</h6>
                           <h6 className='cal'><i className="fa-solid fa-calendar-days"></i> {item.createdOn.substring(0, 10)}</h6>
                   </div>

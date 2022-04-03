@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeaderSlider = ({ slide }) => {
-  console.log("slide : ", slide);
   return (
     <>
       <Link className="card-link" to={`/article-inside/${slide._id}`}>

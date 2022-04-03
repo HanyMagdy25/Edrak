@@ -51,7 +51,7 @@ const Header = () => {
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
-  console.log("new edraks from header ", edraks);
+  // console.log("new edraks from header ", edraks);
   // console.log("edrak au",edraksAuthors);
 
   if (!edraks.length > 0) {

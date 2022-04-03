@@ -68,7 +68,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='copy-right'>
-                <span>Copyright@<a href='https://depax.tech/' target="_blank" style={{ color: "#fff" }}>Depax</a>-2022-AllRights Reserved</span>
+                <span>Copyright@<a href='https://depax.tech/' target="_blank" style={{ color: "#fff" }}>Depax</a>-2022-All Rights Reserved</span>
             </div>
         </div>
     )

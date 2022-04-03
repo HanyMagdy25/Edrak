@@ -19,9 +19,21 @@
     /* background-color:tomato; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 5%; 
     
 }
+/* @media screen and (max-width:1000px) {
+   .articles{
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 5%; 
+   }
+    
+} */
 .categories{
     width: 25%;
     /* background-color: aquamarine; */
@@ -83,25 +95,57 @@
     /* font-size: 16px; */
 }
 /* ====================== bottom-arrows ============================ */
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #2b2eff;
+    color: #2b2eff;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color: white;
+    background-color: var(--first-color);
+  }
+  
+  .paginationActive a {
+    color: white;
+    background-color: var(--first-color);
+  }
+  
+  .paginationDisabled a {
+    /* color: grey; */
+    /* background-color: grey; */
+    border: 1px solid grey;
+  }
+  .paginationDisabled a:hover {
+    /* color: grey; */
+    /* background-color: grey; */
+    background-color: grey;
+    cursor:default
+  }
+
 .bottom-arrows{
     /* background-color: blueviolet; */
     margin-top: 40px;
-    width: 150px;
+    width: auto;
     display: flex;
-    justify-content: space-between;
-    font-size: 20px;
+    /* justify-content: space-between; */
+    font-size: 18px;
     
     
 }
-.bottom-arrows-right,
-.bottom-arrows-left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: var(--first-color);
-}
+
 
 
 

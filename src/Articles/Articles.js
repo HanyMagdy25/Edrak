@@ -6,9 +6,11 @@ import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
+import ReactPaginate from "react-paginate";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
+
 
 
 
@@ -70,13 +72,25 @@ const Articles = () => {
     setCategory(result);
   };
 
+  
+
   // Next And Prev
   // const [next,setNext] = useState({
   //   start:0,
   //   end:9
   // });
-  const [start,setStart] = useState(0);
-  const [end,setEnd] = useState(9);
+  // const [start,setStart] = useState(0);
+  // const [end,setEnd] = useState(9);
+
+  const [pageNumber, setPageNumber] = useState(0);
+  const usersPerPage = 9;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const pageCount = Math.ceil(category.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   // let dispatch = useDispatch();
   //   const edraks = useSelector(getAllEdrak);
@@ -99,7 +113,7 @@ const Articles = () => {
           )} */}
           {/* try */}
 
-          {category.slice(start, end).map((card, index) => (
+          {category.slice(pagesVisited, pagesVisited + usersPerPage).map((card, index) => (
             <BigCard key={index} data={card} inArt={true} />
           ))}
         </div>
@@ -264,18 +278,21 @@ const Articles = () => {
           </div>
         </div>
       </div>
+      {/* ======== Arrows ======= */}
       <div className="bottom-arrows">
-        <span className="bottom-arrows-right" 
-        
-        onClick={()=>{setStart(start+9);setEnd(end +9)} }>
-          <i class="fa-solid fa-arrow-right"></i>
-          {/* <h3>التالى</h3> */}
-          
-        </span>
-        <span className="bottom-arrows-left"  onClick={()=>{setStart(start-9);setEnd(end -9)} }>
-          <i class="fa-solid fa-arrow-left"></i>
-          {/* <h3>السابق</h3>     */}
-        </span>
+      <ReactPaginate
+        previousLabel={"السابق"}
+        nextLabel={"التالى"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+        pageRangeDisplayed={3}
+        breakLabel="..."
+      />
       </div>
     </div>
   );

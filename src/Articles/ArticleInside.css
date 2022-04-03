@@ -28,14 +28,20 @@
 }
 /* ========= paragragh ========== */
 .paragragh {
-    /* background-color: aqua; */
     margin: 5px 0 20px 0;
 }
 .paragragh h1{
-    /* background-color: aqua; */
     margin: 5px 0 10px 0;
+    font-family: 'Amariya-Bold';
+    font-size: 40px;
 }
 .paragragh p{
-    /* background-color: aqua; */
     font-size: 18px;
+}
+
+/* ============ Media =========*/
+@media screen and (max-width:800px) {
+    .paragragh h1{
+        font-size: 35px;
+    }
 }
