@@ -157,3 +157,33 @@
     }
 
 }
+
+@media screen and (max-width:1115px) {
+    .footer-email{
+        width: 70%;
+        
+    }
+    .footer-email button{
+        padding: 10px 0px;
+        width: 90px;
+        border-radius: 2px;
+    }
+    .footer-email input{
+        padding: 8px 1px;
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    .footer-email{
+        width: 100%;
+        
+    }
+    .footer-email button{
+        
+        width: 90px;
+        border-radius: 2px;
+    }
+    .footer-email input{
+        padding: 10px 0px;
+    }
+  }

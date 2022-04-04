@@ -1,28 +1,27 @@
-.articles-parent{
-    width: 100%;
-    /* background-color: aquamarine; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 25px;
-    align-items: center;
+.articles-parent {
+  width: 100%;
+  /* background-color: aquamarine; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+  align-items: center;
 }
-.articles-parent-container{
-    width: 80%;
-    /* background-color: blueviolet; */
-    display: flex;
-    flex-direction: row;
+.articles-parent-container {
+  width: 80%;
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: row;
 }
 
-.articles{
-    width: 75%;
-    /* background-color:tomato; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 5%; 
-    
+.articles {
+  width: 75%;
+  /* background-color:tomato; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 5%;
 }
 /* @media screen and (max-width:1000px) {
    .articles{
@@ -34,155 +33,144 @@
    }
     
 } */
-.categories{
-    width: 25%;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: flex-end;
-    /* margin-right: 15px; */
+.categories {
+  width: 25%;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: flex-end;
+  /* margin-right: 15px; */
 }
-.categories-container{
-    width: 85%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    /* margin: 0px 25px; */
-    padding: 15px 10px;
-    height: fit-content;
-
+.categories-container {
+  width: 85%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* margin: 0px 25px; */
+  padding: 15px 10px;
+  height: fit-content;
+}
+.categories-container .categories-head-title {
+  font-size: 23px;
+  font-weight: 200;
+  color: var(--black)
+}
+.categories label {
+  margin: 10px 0;
+  display: flex;
 }
 
-.categories label{
-    /* background-color: aquamarine; */
-    margin: 10px 0;
-    display: flex;
-    /* justify-content: center; */
-    /* text-align: center; */
-
+.categories label input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 2px 5px;
+  accent-color: var(--first-color);
 }
 
-.categories label input[type='radio'] {
-    width: 17px;
-    height: 17px;
-    margin: 2px 0 2px 5px;
-    background: rgb(148, 0, 0);
-    accent-color: var(--first-color);
-  }
-
-  /* ====كتاب ادراك ===== */
+/* ====كتاب ادراك ===== */
 /* .edrak-authors-block{
     background-color: blueviolet;
 } */
 
 /* ======== Hashtags==== */
-.hashtags{
-    display: flex;
-    flex-wrap: wrap;
+.hashtags {
+  display: flex;
+  flex-wrap: wrap;
 }
 /* .hashtags span:first-of-type{
     margin-right: 0px;
 } */
-.hashtags span{
-    margin: 10px 0 0 10px;
-    background-color: var(--hashtag);
-    padding: 2px 8px;
-
+.hashtags span {
+  margin: 10px 0 0 10px;
+  background-color: var(--hashtag);
+  padding: 2px 8px;
 }
-.hashtags span a{
-    
-    text-decoration: none;
-    color: var(--black);
-    /* font-size: 16px; */
+.hashtags span a {
+  text-decoration: none;
+  color: var(--black);
+  /* font-size: 16px; */
 }
 /* ====================== bottom-arrows ============================ */
 
 .paginationBttns {
-    width: 80%;
-    height: 40px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .paginationBttns a {
-    padding: 10px;
-    margin: 8px;
-    border-radius: 5px;
-    border: 1px solid #2b2eff;
-    color: #2b2eff;
-    cursor: pointer;
-  }
-  
-  .paginationBttns a:hover {
-    color: white;
-    background-color: var(--first-color);
-  }
-  
-  .paginationActive a {
-    color: white;
-    background-color: var(--first-color);
-  }
-  
-  .paginationDisabled a {
-    /* color: grey; */
-    /* background-color: grey; */
-    border: 1px solid grey;
-  }
-  .paginationDisabled a:hover {
-    /* color: grey; */
-    /* background-color: grey; */
-    background-color: grey;
-    cursor:default
-  }
-
-.bottom-arrows{
-    /* background-color: blueviolet; */
-    margin-top: 40px;
-    width: auto;
-    display: flex;
-    /* justify-content: space-between; */
-    font-size: 18px;
-    
-    
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
 
+.paginationBttns a:hover {
+  color: white;
+  background-color: var(--first-color);
+}
 
+.paginationActive a {
+  color: white;
+  background-color: var(--first-color);
+}
+
+.paginationDisabled a {
+  /* color: grey; */
+  /* background-color: grey; */
+  border: 1px solid grey;
+}
+.paginationDisabled a:hover {
+  /* color: grey; */
+  /* background-color: grey; */
+  background-color: grey;
+  cursor: default;
+}
+
+.bottom-arrows {
+  /* background-color: blueviolet; */
+  margin-top: 40px;
+  width: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  font-size: 18px;
+}
 
 /* =========================== */
 
-@media screen and (max-width:900px) {
-    .articles-parent{
-        display: flex;
-        justify-content: center;
-        
-        align-items: center;
-        
-    }
-    .articles-parent-container{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .articles{
-        width: 90%;
-        /* background-color:tomato; */
-        display: flex;
-        /* flex-wrap: wrap; */
-        justify-content: space-between;
-        
-    }
-    .categories{
-        width: 100%;
-        /* background-color: aquamarine; */
-        display: flex;
-        justify-content: center;
-        margin: 40px 0 20px 0;
-        /* margin-right: 15px; */
-        }
-        /* {
+@media screen and (max-width: 900px) {
+  .articles-parent {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+  }
+  .articles-parent-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .articles {
+    width: 90%;
+    /* background-color:tomato; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+  }
+  .categories {
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px 0;
+    /* margin-right: 15px; */
+  }
+  /* {
             width: 85%;
             background-color: white;
             display: flex;
@@ -191,16 +179,19 @@
             padding-right: 10px;
         
         }     */
-        .categories label{ 
-            display: flex;
-            justify-content: flex-start;
-        }
-        
-        .categories label input[type='radio'] {
-            width: 17px;
-            height: 17px;
-            margin: 2px 0 2px 5px;
-            background: rgb(148, 0, 0);
-            accent-color: var(--first-color);
-          }
+  .categories label {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .categories label input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin: 2px 0 2px 5px;
+  }
+  .categories-container .categories-head-title {
+    font-family: "Amariya-Medium";
+    font-size: 26px;
+    
+  }
 }

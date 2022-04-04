@@ -121,7 +121,7 @@ const Articles = () => {
         {/* ====== Left Side ======= */}
         <div className="categories">
           <div className="categories-container">
-            <h3 style={{ fontSize: "23px", fontWeight: "200" }}>
+            <h3 className="categories-head-title">
               جميع التصنيفات
             </h3>
             <hr />

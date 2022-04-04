@@ -1,63 +1,73 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.authors{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    flex-wrap: wrap;
-    /* height: 100%; */
-    /* background-color: aquamarine; */
-    margin-top: 10px;
-    
+.authors {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  flex-wrap: wrap;
+  /* height: 100%; */
+  /* background-color: aquamarine; */
+  margin-top: 10px;
 
-    /* margin: 5px 5px; */
+  /* margin: 5px 5px; */
 }
-.img-contain{
-    width: 30%;
+.img-contain {
+  width: 30%;
 }
-.name-contain{
-    width: 70%;
+.name-contain {
+  width: 70%;
 }
-.authors img{
-    width:100%;
-    border-radius: 50%;
+.authors img {
+  width: 100%;
+  border-radius: 50%;
 }
-.authors h4{
-    margin: 0px 6px 0 0 ;
+.authors h4 {
+  margin: 0px 6px 0 0;
 }
 
 /*========= this is the style of AuthorsBlock =========*/
 
-.authors-block{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* flex-wrap: wrap; */
-    /* height: 100%; */
-    /* background-color: aquamarine; */
-    margin-top: 15px;
-    
+.authors-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* flex-wrap: wrap; */
+  /* height: 100%; */
+  /* background-color: aquamarine; */
+  margin-top: 15px;
 
-    /* margin: 5px 5px; */
+  /* margin: 5px 5px; */
 }
-.img-contain-block{
-    width: 30%;
+.img-contain-block {
+  width: 30%;
 }
-.name-contain-block{
-    width: 70%;
+.name-contain-block {
+  width: 70%;
 }
-.name-contain-block h3{
-    font-size: 18px;
+.name-contain-block h3 {
+  font-size: 18px;
 }
-.authors-block img{
-    width:90%;
-    border-radius: 50%;
+.authors-block img {
+  width: 90%;
+  border-radius: 50%;
 }
-.authors-block h3{
-    margin: 0px 8px 0 0 ;
+.authors-block h3 {
+  margin: 0px 8px 0 0;
+}
+
+/*============= mobile========= */
+@media screen and (max-width: 500px) {
+  .authors-block img {
+    width: 80%;
+    /* border-radius: 50%; */
+  }
+  .authors-block h3 {
+    margin: 0;
+    font-size: 20px;
+  }
 }
