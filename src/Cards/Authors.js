@@ -8,7 +8,7 @@ const Authors = ({author}) => {
           <img src={author.imgUrl} alt='author' />
         </div>
         <div className='name-contain'>
-          <h4 style={{fontWeight:'400'}}>{author.name}</h4>
+          <h4 >{author.name}</h4>
         </div>
     </div>
   )

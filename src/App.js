@@ -29,7 +29,8 @@ class App extends Component  {
         <Navbar/>
         <Switch>
           {/* <Header/> */}
-          <Route path='/home' exact component={Header}/>
+          <Route path='/' exact component={Header}/>
+          <Route path='/home' component={Header}/>
           <Route path="/articles" component={Articles} />
           <Route path="/article-inside/:_id" component={ArticleInside} />
         </Switch>

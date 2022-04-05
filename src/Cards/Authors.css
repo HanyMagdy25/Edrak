@@ -26,6 +26,7 @@
 }
 .authors h4 {
   margin: 0px 6px 0 0;
+  font-weight: 400;
 }
 
 /*========= this is the style of AuthorsBlock =========*/
@@ -71,3 +72,12 @@
     font-size: 20px;
   }
 }
+
+@media screen and (max-width: 999px) {
+  .authors h4 {
+    margin: 0px 10px 0 0;
+    font-size: 18px;
+  }
+}
+
+

@@ -12,7 +12,7 @@ const HeaderSlider = ({ slide }) => {
           <div className="global-simi-btn">{slide.type}</div>
           <h2 className="header-headline">{slide.name}</h2>
           <p className="header-paragragh">{slide.about}</p>
-          <div style={{ marginBottom: "50px" }} className="about-author">
+          <div  className="about-author">
             <h5>{slide.writer}</h5>
             <div className="share-icon">
               <i className="fa-solid fa-share-nodes"></i> {slide.numberOfShare}
