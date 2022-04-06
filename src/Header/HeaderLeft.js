@@ -12,7 +12,7 @@ const HeaderLeft = ({data,edrakAuthors}) => {
                     <h2>الجديد فى الموقع</h2>
                     <hr/>
                     <div className='cards'>
-                        {data.slice(0,3).map((item,index)=>(
+                        {data.slice(0,2).map((item,index)=>(
                             <Card item={item} key={index} />
                         ))}
                         

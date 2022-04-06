@@ -72,12 +72,16 @@
 /*============ Left Side ================== */
 .header-left {
   width: 35%;
-
+  /* background: antiquewhite; */
   display: flex;
   justify-content: flex-end;
+/* try */
+  height: 100%;
+  top: 90px;
+  position: sticky;
 }
 .header-left-container {
-  width: 85%;
+  width: 88%;
 }
 
 .cards {
