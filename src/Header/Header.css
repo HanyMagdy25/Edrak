@@ -1,18 +1,16 @@
 .header {
   margin-top: 25px;
   display: flex;
-  
+
   align-items: center;
   flex-direction: column;
   width: 100%;
-  
 }
 .header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
-  
 }
 
 /* =========== Right Side ========== */
@@ -32,8 +30,15 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  
+
   align-items: flex-start;
+}
+.tv-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 }
 
 .header-headline {
@@ -52,21 +57,19 @@
   justify-content: space-between;
   align-items: center;
   width: 34%;
-  margin-top: 4px;
   color: var(--off-white);
   font-family: "Amariya-Bold";
-  font-size: 20px;
   margin-top: 10px;
   margin-bottom: 50px;
-    font-size: 16px;
-    font-family: 'Amariya-Bold';
+  font-size: 16px;
 }
 .about-author i {
   font-size: 12px;
   margin: 0 2px;
 }
 .share-icon {
-  width: 30px;
+  /* width: 30px; */
+  width: auto;
 }
 
 /*============ Left Side ================== */
@@ -75,7 +78,7 @@
   /* background: antiquewhite; */
   display: flex;
   justify-content: flex-end;
-/* try */
+  /* try */
   height: 100%;
   top: 90px;
   position: sticky;
@@ -143,7 +146,7 @@
 
 /*========================= تلفزيون ادراك ==============================*/
 .edrak-tv {
-  margin: 25px 0;
+  margin: 8px 0;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -250,5 +253,4 @@
   .most-popular-container {
     width: 90%;
   }
-  
 }

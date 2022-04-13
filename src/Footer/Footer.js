@@ -35,13 +35,13 @@ const Footer = () => {
             <div className='footer-container'>
                 <div className='footer-right'>
                     <div className='footer-social-media'>
-                        <a href='https://www.facebook.com/edrakmu/' style={{ color: "#fff" }} target="_blank">
+                        <a href='https://www.facebook.com/edrakmu/' style={{ color: "#fff" }} target="_blank" rel="noreferrer">
                             <span><i className="fa-brands fa-facebook-f"></i></span>
                         </a>
-                        <a href='https://twitter.com/EdrakMu' style={{ color: "#fff" }} target="_blank">
+                        <a href='https://twitter.com/EdrakMu' style={{ color: "#fff" }} target="_blank" rel="noreferrer">
                             <span><i className="fa-brands fa-twitter"></i></span>
                         </a>
-                        <a href='https://youtube.com/channel/UCGYYfQjb46UlIHP1-a7tLjg' style={{ color: "#fff" }} target="_blank">
+                        <a href='https://youtube.com/channel/UCGYYfQjb46UlIHP1-a7tLjg' style={{ color: "#fff" }} target="_blank" rel="noreferrer">
                             <span><i className="fa-brands fa-youtube"></i></span>
                         </a>
                     </div>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='copy-right'>
-                <span>Copyright@<a href='https://depax.tech/' target="_blank" style={{ color: "#fff" }}>Depax</a>-2022-All Rights Reserved</span>
+                <span>Copyright@<a href='https://depax.tech/' target="_blank" rel="noreferrer" style={{ color: "#fff" }}>Depax</a>-2022-All Rights Reserved</span>
             </div>
         </div>
     )

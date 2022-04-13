@@ -1,11 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import edrakReducer from "./EdrakSlice"
-
-
-
+import edrakReducer from "./EdrakSlice";
 
 const store = configureStore({
-    reducer:{edrak:edrakReducer},
+  reducer: { edrak: edrakReducer },
 });
 
-export default store
+export default store;

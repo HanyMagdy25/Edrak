@@ -116,11 +116,11 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/"
+                to="/tv"
                 className="nav-links"
                 onClick={() => {
                   handleClick();
-                  coming();
+                  
                 }}
               >
                 تلفزيون إدراك

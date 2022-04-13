@@ -1,0 +1,144 @@
+.tv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 30px;
+    background-color: aquamarine; */
+}
+.tv-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tv-container-img {
+  /* display: flex; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.tv-container-img img {
+  /* display: flex; */
+  width: 100%;
+}
+.tv-container-img .paly-vid {
+    /* display: flex; */
+    /* background-color: aqua; */
+    position: absolute;
+    /* transform: translate(-50%,-50%); */
+    top:300px;
+    /* width: 60px; */
+    font-size: 60px;
+    color: var(--white);
+
+
+  }
+
+
+
+.tv-slider {
+  width: 100%;
+  z-index: 0;
+}
+
+.most-popular-tv-container {
+  width: 100%;
+}
+
+/* ================== TvInside Page ==================*/
+.tvinside-inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  /* background-color: aquamarine; */
+}
+.tvinside-content {
+  width: 80%;
+  /* background-color: blueviolet; */
+}
+.tvinside-inside .img-tvinside-container {
+  width: 80%;
+  /* background-color: aqua; */
+}
+
+.img-tvinside-container .img-header {
+  width: 100%;
+}
+
+.both-share-author {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.about-author-tvinside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 34%;
+  color: var(--off-white);
+  font-family: "Amariya-Bold";
+  font-size: 22px;
+}
+.about-author-tvinside i {
+  font-size: 12px;
+  margin: 0 2px;
+}
+.share-icon {
+  /* width: 30px; */
+  width: auto;
+}
+
+.tv-vids-parent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.tv-vids {
+  width: 100%;
+  /* background-color:tomato; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 30px;
+  /* gap: 5%; */
+}
+
+.tv-dots {
+  width: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  font-size: 80px;
+  color: var(--first-color);
+}
+
+@media screen and (max-width: 900px) {
+  .tv-dots {
+    width: 100%;
+  }
+  .tv-container-img .paly-vid {
+    position: absolute;
+    top:150px;
+    font-size: 40px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+    .tv-container-img .paly-vid {
+      position: absolute;
+      top:80px;
+      font-size: 30px;
+    }
+  
+  }

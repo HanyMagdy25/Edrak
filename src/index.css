@@ -114,14 +114,16 @@ body {
 /* ====== حواف تحت كل عنوان =====*/
 .header-left-container h2,
 .most-popular-container h1,
+.most-popular-tv-container h1,
 .podcast-container h1,
 .edrak-tv-container h1,
 .more-blogs h1,
-.categories-container h3 {
+.categories-container h3,
+.tv-vids-parent h1,
+.edrak-tv-layout-container h1{
   color: var(--black);
   margin-bottom: 8px;
   font-weight: 500;
-  /* font-family: 'Amariya-bold'; */
   font-family: 'Amariya-Medium';
   font-size: 34px;
   

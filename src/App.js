@@ -9,6 +9,8 @@ import ArticleInside from "./Articles/ArticleInside";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import TvEdrak from "./Pages/TV-edrak/TvEdrak";
+import TvInside from "./Pages/TV-edrak/TvInside";
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -33,6 +35,8 @@ class App extends Component  {
           <Route path='/home' component={Header}/>
           <Route path="/articles" component={Articles} />
           <Route path="/article-inside/:_id" component={ArticleInside} />
+          <Route path="/tv" component={TvEdrak} />
+          <Route path="/tv-inside/:_id" component={TvInside} />
         </Switch>
         
         <Footer/>
