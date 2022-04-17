@@ -1,7 +1,9 @@
 import React from 'react';
 import MediumCard from "../../Cards/MediumCard"
+import "./TvLayout.css"
 
-const TvLayout = ({title}) => {
+const TvLayout = ({title,items}) => {
+  console.log("tests  : ",items)
   return (
     <>
         <div className="edrak-tv">
@@ -43,8 +45,11 @@ const TvLayout = ({title}) => {
 
             <div className="edrak-tv-left">
               <div className="edrak-tv-left-container">
-                <MediumCard headerImg='https://res.cloudinary.com/dia1kfg4m/image/upload/v1649687417/%D8%A3%D9%85%D8%A7%D8%B1%D8%AA%D9%8A%D8%A7-%D8%B3%D9%86-%D8%AD%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D8%AA%D9%81%D9%83%D9%8A%D8%B1-%D9%85%D8%B7%D9%88%D9%84_vhyx89.png' />
-                <MediumCard headerImg='https://res.cloudinary.com/dia1kfg4m/image/upload/v1649687417/%D8%A3%D9%85%D8%A7%D8%B1%D8%AA%D9%8A%D8%A7-%D8%B3%D9%86-%D8%AD%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D8%AA%D9%81%D9%83%D9%8A%D8%B1-%D9%85%D8%B7%D9%88%D9%84_vhyx89.png' />
+                {/* <MediumCard item={item} /> */}
+                {/* <MediumCard item={item} /> */}
+                {items.slice(0,2).map((item,index)=>(
+                  <MediumCard item={item} type="zero" key={index} />
+                ))}
               </div>
             </div>
           </div>

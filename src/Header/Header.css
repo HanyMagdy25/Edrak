@@ -163,6 +163,8 @@
   display: flex;
   flex-direction: row;
   margin-top: 25px;
+
+  width: 100%;
 }
 .edrak-tv-container-inner .edrak-tv-right {
   width: 65%;

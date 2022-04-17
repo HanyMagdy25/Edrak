@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const BigCard = ({data}) => {
   return (
-    <Link className='card-link' to='/' >
+    <Link className='card-link' to={`/article-inside/${data._id}`}  >
       <div className='big-card'>
         {/* here we use a default Image called 'card1b' */}
         <img src={data.icon} alt='BigCard' /> 

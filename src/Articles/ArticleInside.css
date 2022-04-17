@@ -1,6 +1,6 @@
 .social-icons-small{
     /* background-color: brown; */
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content:flex-end;
     color: var(--first-color);
