@@ -49,6 +49,7 @@
 }
 .header-paragragh {
   color: var(--black);
+  padding: 2px 20px;
 }
 /* ==== about author of the book */
 .about-author {

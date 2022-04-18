@@ -33,12 +33,22 @@
   color: var(--white);
 }
 .tvinside-inside .img-tvinside-container .paly-vid {
-  position: absolute;
+  /* position: absolute;
   top: 590px;
   right: 630px;
   font-size: 60px;
   color: var(--white);
+  cursor: pointer; */
+
+  font-size: 60px;
+  color: var(--white);
   cursor: pointer;
+  transform: translate(-50%, 430%);
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 .tv-slider {
@@ -143,13 +153,11 @@
   }
   .about-author-tvinside {
     width: 100%;
-    
   }
-  
 }
 
 @media screen and (max-width: 600px) {
-  .tv-container-img .paly-vid{
+  .tv-container-img .paly-vid {
     position: absolute;
     top: 80px;
     font-size: 30px;
@@ -162,6 +170,5 @@
   }
   .about-author-tvinside {
     width: 100%;
-    
   }
 }
