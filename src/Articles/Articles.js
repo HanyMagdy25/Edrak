@@ -12,9 +12,6 @@ import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
 import Spinner from "../constants/Spinner";
 
-
-
-
 function coming() {
   let timerInterval;
   Swal.fire({
@@ -73,8 +70,6 @@ const Articles = () => {
     setCategory(result);
   };
 
-  
-
   // Next And Prev
   // const [next,setNext] = useState({
   //   start:0,
@@ -103,11 +98,7 @@ const Articles = () => {
   //   console.log("Header Data",edraks);
   //   console.log("edrak au",edraksAuthors);
 
-  // test
-  // if (!category.length > 0) {
-  //   return <div className="spinner"><Spinner/></div>;
-  // }
-  // اكتب دى في شرط في السطر 122
+
   return (
     <div className="articles-parent">
       <div className="articles-parent-container">
@@ -118,18 +109,25 @@ const Articles = () => {
               <BigCard  data={card} />
           )} */}
           {/* try */}
+          
 
-          {category.slice(pagesVisited, pagesVisited + usersPerPage).map((card, index) => (
-            <BigCard key={index} data={card} inArt={true} />
-          ))}
+          {!category.length > 0 ? (
+            <div className="choose-cat">
+              <h2>من فضلك اختر تصنيف</h2>
+            </div>
+          ) : (
+            category
+              .slice(pagesVisited, pagesVisited + usersPerPage)
+              .map((card, index) => (
+                <BigCard key={index} data={card} inArt={true} />
+              ))
+          )}
         </div>
 
         {/* ====== Left Side ======= */}
         <div className="categories">
           <div className="categories-container">
-            <h3 className="categories-head-title">
-              جميع التصنيفات
-            </h3>
+            <h3 className="categories-head-title">جميع التصنيفات</h3>
             <hr />
             <label className="form-control">
               <input
@@ -286,19 +284,19 @@ const Articles = () => {
       </div>
       {/* ======== Arrows ======= */}
       <div className="bottom-arrows">
-      <ReactPaginate
-        previousLabel={"السابق"}
-        nextLabel={"التالى"}
-        pageCount={pageCount}
-        onPageChange={changePage}
-        containerClassName={"paginationBttns"}
-        previousLinkClassName={"previousBttn"}
-        nextLinkClassName={"nextBttn"}
-        disabledClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
-        pageRangeDisplayed={3}
-        breakLabel="..."
-      />
+        <ReactPaginate
+          previousLabel={"السابق"}
+          nextLabel={"التالى"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+          pageRangeDisplayed={3}
+          breakLabel="..."
+        />
       </div>
     </div>
   );
