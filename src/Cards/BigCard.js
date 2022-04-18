@@ -3,9 +3,9 @@ import './BigCard.css';
 // import card1b from "../assets/card1b.png"
 import { Link } from 'react-router-dom';
 
-const BigCard = ({data}) => {
+const BigCard = ({data,type}) => {
   return (
-    <Link className='card-link' to={`/article-inside/${data._id}`}  >
+    <Link className={'card-link'+type} to={`/article-inside/${data._id}`}  >
       <div className='big-card'>
         {/* here we use a default Image called 'card1b' */}
         <img src={data.icon} alt='BigCard' /> 

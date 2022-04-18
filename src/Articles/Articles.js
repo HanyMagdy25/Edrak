@@ -119,7 +119,7 @@ const Articles = () => {
             category
               .slice(pagesVisited, pagesVisited + usersPerPage)
               .map((card, index) => (
-                <BigCard key={index} data={card} inArt={true} />
+                <BigCard key={index} data={card} inArt={true} type="three" />
               ))
           )}
         </div>
