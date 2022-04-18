@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./TvEdrak.css";
 import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
-import Spinner from "../../constants/Spinner";
 // jquery
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
-import BigCard from "../../Cards/BigCard";
-import ReactPlayer from "react-player";
+import Spinner from "../../constants/Spinner";
+import MediumCard from "../../Cards/MediumCard";
 
-const TvInside = () => {
+const PaperInside = () => {
   const [data, setData] = useState([]);
-  const [clickTube, setClickTube] = useState(false);
   const { _id } = useParams();
   console.log("id:", _id);
 
@@ -27,10 +24,6 @@ const TvInside = () => {
     // alert('URL Copied');
   }
 
-  // to copy the url and pass to facebook icon
-  const url = window.location.href;
-
-  // Copied Alert With JQuery
   function copyAlert() {
     let timerInterval;
     Swal.fire({
@@ -55,21 +48,24 @@ const TvInside = () => {
     }
   }
 
+  // to copy the url and pass to facebook icon
+  const url = window.location.href;
+
   useEffect(() => {
-    fetch(`http://localhost:8000/tv`)
+    fetch("http://localhost:8000/papers")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setData(data);
-        console.log("id", data);
+        console.log("papers", data);
       });
   }, []);
 
-  const tvInsider = data.find((a) => a._id === _id);
-  console.log("tvInsider 22 :", tvInsider);
+  const paperInsider = data.find((a) => a._id === _id);
+  console.log("tvInsider 22 :", paperInsider);
 
-  if (!tvInsider) {
+  if (!paperInsider) {
     return (
       <div className="spinner">
         <Spinner />
@@ -78,24 +74,24 @@ const TvInside = () => {
   }
 
   return (
-    <div className="tvinside-inside">
-      <div className="tvinside-content">
-        <div className="global-simi-btn">{tvInsider.type}</div>
-        <h1 className="header-headline">{tvInsider.name}</h1>
-        <p className="header-paragragh">{tvInsider.about}</p>
+    <div className="paperInside">
+      <div className="paperinside-content">
+        <div className="global-simi-btn">{paperInsider.type}</div>
+        <h1 className="header-headline">{paperInsider.name}</h1>
+        <p className="header-paragragh">{paperInsider.about}</p>
         <div className="both-share-author">
           <div className="about-author-tvinside">
-            <h6>{tvInsider.writer}</h6>
+            <h6>{paperInsider.writer}</h6>
             <div className="share-icon">
               <h6>
                 <i className="fa-solid fa-share-nodes"></i>{" "}
-                {tvInsider.numberOfShare}
+                {paperInsider.numberOfShare}
               </h6>
             </div>
             <div className="cal">
               <h6>
                 <i className="fa-solid fa-calendar-days"></i>{" "}
-                {tvInsider.createdOn.substring(0, 10)}
+                {paperInsider.createdOn.substring(0, 10)}
               </h6>
             </div>
           </div>
@@ -121,31 +117,23 @@ const TvInside = () => {
           </div>
         </div>
       </div>
-      <div className="img-tvinside-container" onClick={()=>setClickTube(true)}>
-        {clickTube ? (
-          <div><ReactPlayer width='100%' height='500px' controls url='https://www.youtube.com/watch?v=UtuaSwmLzcc'/></div>
-        ) : (
-          <>
-            <img src={tvInsider.img} className="img-header" alt="headerImage" />
-            <span className="paly-vid">
-              <i className="fa-solid fa-circle-play"></i>
-            </span>{" "}
-          </>
-        )}
+      <div className="img-paperinside-container">
+        <img src={paperInsider.img} className="img-header" alt="headerImage" />
       </div>
-
-      <div className="tv-vids-parent">
-        <h1>المزيد من تلفاز إدراك</h1>
+      <div className="paper-paragraph-container">
+        <p>{paperInsider.paragraph}</p>
+      </div>
+      <div className="more-papers">
+        <h1>المزيد من ملخصات والأوراق المعرفية</h1>
         <hr />
-        <div className="tv-vids">
-          {data.slice(0, 7).map((card, index) => (
-            <BigCard key={index} data={card} inArt={true} />
-          ))}
-          <div className="tv-dots">....</div>
+        <div className="more-papers-cards">
+              {data.slice(0,6).map((item,index)=>(
+                  <MediumCard item={item} key={index} type="first" />
+              ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default TvInside;
+export default PaperInside;

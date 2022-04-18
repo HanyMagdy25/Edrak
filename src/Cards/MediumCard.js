@@ -1,21 +1,30 @@
-import React from 'react';
-import "./MediumCard.css"
+import React from "react";
+import { Link } from "react-router-dom";
+// import { Link } from 'react-router-dom';
+import "./MediumCard.css";
 
-const MediumCard = ({headerImg}) => {
+const MediumCard = ({ item, type }) => {
   return (
-    <div className='medium-card'>
-        <img src={headerImg} alt='header' />
-        <div className='medium-card-content'>
-          <h2>مراجعة كتاب: فجر كل شيء</h2>
-          <p>كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟</p>
-          <div className='about-author-in-medium-card'>
-                <h6>أمجد عبد الرازق</h6>
-                <h5 className='share-icon-in-card'><i className="fa-solid fa-share-nodes"></i> 15</h5>
-                <h5 className='cal'><i className="fa-solid fa-calendar-days"></i> 22-2-2022</h5>
-          </div>
+    <Link className="link-medium" to={`/paper-inside/${item._id}`}>
+    <div className={"medium-card" + type}>
+      <img src={item.img} alt="header" />
+      <div className="medium-card-content">
+        <h2>{item.name}</h2>
+        <p>{item.about}</p>
+        <div className="about-author-in-medium-card">
+          <h6>{item.writer}</h6>
+          <h5 className="share-icon-in-card">
+            <i className="fa-solid fa-share-nodes"></i> 15
+          </h5>
+          <h5 className="cal">
+            <i className="fa-solid fa-calendar-days"></i> 22-2-2022
+          </h5>
         </div>
+      </div>
     </div>
-  )
-}
+    </Link>
+    
+  );
+};
 
-export default MediumCard
+export default MediumCard;

@@ -120,7 +120,9 @@ body {
 .more-blogs h1,
 .categories-container h3,
 .tv-vids-parent h1,
-.edrak-tv-layout-container h1{
+.edrak-tv-layout-container h1,
+.writers-container h1,
+.more-papers h1{
   color: var(--black);
   margin-bottom: 8px;
   font-weight: 500;

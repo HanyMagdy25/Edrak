@@ -1,0 +1,59 @@
+.papers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.papers-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+.all-papers{
+    display: flex;
+    width: 100%;
+    /* background-color: aquamarine; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*======================== paperInside========================== */
+.paperInside{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paperinside-content{
+    width:80%;
+}
+.img-paperinside-container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.img-paperinside-container img{
+    width: 100%;
+}
+
+.paper-paragraph-container{
+    width: 80%;
+    display: flex;
+    /* background-color: aquamarine; */
+}
+
+.more-papers{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.more-papers-cards{
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}

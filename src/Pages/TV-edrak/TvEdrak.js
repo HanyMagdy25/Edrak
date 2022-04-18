@@ -86,10 +86,10 @@ const TvEdrak = () => {
       </div>
 
       <>
-        <TvLayout title={"لقاءات معرفية مترجمة"}/>
+        <TvLayout title={"لقاءات معرفية مترجمة"} items={data}/>
       </>
       <>
-        <TvLayout title={"لقاءات معرفية"}/>
+        <TvLayout title={"لقاءات معرفية"} items={data}/>
       </>
 
 

@@ -92,30 +92,28 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/ssss"
+                to="/papers"
                 className="nav-links"
                 onClick={() => {
                   handleClick();
-                  coming();
                 }}
               >
                 ملخصات وأوراق
               </NavLink>
             </li>
             <li className="nav-item">
-              <Link
-                to="/"
+              <NavLink
+                to="/writers"
                 className="nav-links"
                 onClick={() => {
                   handleClick();
-                  coming();
                 }}
               >
-                كتاب إدراك
-              </Link>
+                كُتاب إدراك
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/tv"
                 className="nav-links"
                 onClick={() => {
@@ -124,7 +122,7 @@ const Navbar = () => {
                 }}
               >
                 تلفزيون إدراك
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

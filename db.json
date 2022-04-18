@@ -105,5 +105,328 @@
       "numberOfShare":"5",
       "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
     }
+  ],
+  "writers":[
+    {
+      "_id":"1",
+      "writer":"مهند عبدالله",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },{
+      "_id":"2",
+      "writer":"مهند محمد",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author1_pccs6q.jpg"
+    },{
+      "_id":"3",
+      "writer":"مهند عبدالله",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },{
+      "_id":"4",
+      "writer":"مهند عبدالله",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author3_vqcbo8.jpg"
+    },{
+      "_id":"5",
+      "writer":"مهند خميسي",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author1_pccs6q.jpg"
+    },
+    {
+      "_id":"6",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"7",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author3_vqcbo8.jpg"
+    },
+    {
+      "_id":"8",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author1_pccs6q.jpg"
+    },
+    {
+      "_id":"9",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"10",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"11",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"12",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"13",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"14",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"15",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"16",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"17",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"18",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"19",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    },
+    {
+      "_id":"20",
+      "writer":"هانى مجدى",
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+    }
+  ],
+  "papers":[
+    {
+      "_id":"1",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },{
+      "_id":"2",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "مكى عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"3",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"4",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"5",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png"
+    },
+    {
+      "_id":"6",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    }  ,  {
+      "_id":"7",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"8",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"9",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png"
+    },
+    {
+      "_id":"10",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    }
+    ,
+    {
+      "_id":"11",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"12",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png"
+    },
+    {
+      "_id":"13",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    }  ,  {
+      "_id":"14",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"15",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1649763749/%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9_%D8%B9%D9%86%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF-%D9%85%D8%B1%D8%A8%D8%B9_nmjjun.png"
+    },
+    {
+      "_id":"16",
+      "name": "مقاومة إمبريالية المعرفة",
+      "about": "كيف تخدعنا السرديات الجاهزة عن إدراك المساحات الممكنة ؟",
+      "writer": "أمجد عبدالرازق",
+      "history": "9-3-2021",
+      "share": "50",
+      "img": "https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header_o2t2my.png",
+      "paragraph":"لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس نفسه على روايتين مختلفتين لأسطورة مماثلة.",
+      "type":"هوية",
+      "createdOn":"12-12-2022",
+      "numberOfShare":"3",
+      "icon":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650118830/header3_v9blro.png"
+    }
+
   ]
 }

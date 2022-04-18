@@ -10,6 +10,7 @@ import ReactPaginate from "react-paginate";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
+import Spinner from "../constants/Spinner";
 
 
 
@@ -102,6 +103,11 @@ const Articles = () => {
   //   console.log("Header Data",edraks);
   //   console.log("edrak au",edraksAuthors);
 
+  // test
+  // if (!category.length > 0) {
+  //   return <div className="spinner"><Spinner/></div>;
+  // }
+  // اكتب دى في شرط في السطر 122
   return (
     <div className="articles-parent">
       <div className="articles-parent-container">
