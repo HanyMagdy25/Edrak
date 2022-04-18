@@ -105,7 +105,7 @@ const Header = () => {
           <div className="most-popular-cards">
             {/*to Stop map method after certain number with slice method */}
             {edraks.slice(0, 4).map((card, index) => (
-              <BigCard key={index} data={card} />
+              <BigCard key={index} data={card} type="four" />
             ))}
           </div>
         </div>

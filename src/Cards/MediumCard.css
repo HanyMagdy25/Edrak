@@ -24,6 +24,8 @@
     border-radius: 3px;
     font-family: 'Amariya-Bold';
     margin-top: 40px;
+    background: var(--white);
+    padding-bottom: 10px;
 }
 .medium-card img{
     width: 100%;
