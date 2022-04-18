@@ -139,7 +139,7 @@ const TvInside = () => {
         <hr />
         <div className="tv-vids">
           {data.slice(0, 7).map((card, index) => (
-            <BigCard key={index} data={card} inArt={true} />
+            <BigCard key={index} data={card} inArt={true} type="four" />
           ))}
           <div className="tv-dots">....</div>
         </div>
