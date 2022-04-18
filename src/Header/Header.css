@@ -63,6 +63,18 @@
   margin-bottom: 30px;
   font-size: 16px;
 }
+.about-author-article{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  color: var(--off-white);
+  font-family: "Amariya-Bold";
+  /* margin-top: 10px; */
+  /* margin-bottom: 30px; */
+  font-size: 20px;
+}
 .about-author i {
   font-size: 12px;
   margin: 0 2px;
