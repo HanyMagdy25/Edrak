@@ -108,7 +108,7 @@ const ArticleInside = () => {
           <div className="header-right-content">
             <div className="global-simi-btn">{articleIn.type}</div>
             <h1 className="header-headline">{articleIn.name}</h1>
-            <div className="about-author">
+            <div className="about-author-article">
               <h6>{articleIn.writer}</h6>
               <div className="share-icon">
                 <h6><i className="fa-solid fa-share-nodes"></i>   {articleIn.numberOfShare}</h6>
@@ -119,7 +119,7 @@ const ArticleInside = () => {
                 <h6><i className="fa-solid fa-calendar-days"></i> {articleIn.createdOn.substring(0, 10)}</h6>
               </div>
             </div>
-            <div className="social-icons-small">
+            <div className="social-icons-small-articalInside">
               <span onClick={()=>{copy();copyAlert()}}>
                 <i className="fa-solid fa-share-from-square"></i>
               </span>
@@ -157,7 +157,7 @@ const ArticleInside = () => {
             <hr />
             <div className="articles-inside">
               {edraks.slice(0, 3).map((card, index) => (
-                <BigCard key={index} data={card} />
+                <BigCard key={index} data={card} type="three" />
               ))}
             </div>
           </div>
