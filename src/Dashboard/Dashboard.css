@@ -1,0 +1,180 @@
+/* ============== Login ============ */
+.login-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login-page-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 50%; */
+}
+
+/* =================== */
+.dashboard {
+  width: 100%;
+  display: flex;
+  /* background-color: aquamarine; */
+}
+.dashboard-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-right {
+  width: 20%;
+  background-color: var(--first-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+.dashboard-right img {
+  margin-top: 20px;
+}
+
+.dashboard-links {
+  list-style: none;
+  margin-top: 40px;
+}
+.nav-item-dashboard {
+  height: 50px;
+}
+
+.dashboard-left {
+  width: 80%;
+}
+
+/*============= adding================= */
+.add-page form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+.datails-content {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+}
+
+.datails-content label {
+  width: 150px;
+  color: var(--black);
+  font-size: 18px;
+}
+.datails-content input {
+  width: 150px;
+  height: 25px;
+  padding: 6px;
+  border: 1px solid #b1b1b1;
+  margin-top: 6px;
+}
+.datails-content select {
+  width: 80%;
+  height: 25px;
+  /* padding: 6px; */
+  border: 1px solid #b1b1b1;
+  margin-top: 6px;
+}
+.datails-content input[type="file"] {
+  width: 90px;
+  height: 28px;
+  padding: 2px;
+  border: none;
+  margin-top: 6px;
+}
+
+.datails-content input[type="checkbox"] {
+  width: 90px;
+  height: 28px;
+  padding: 2px;
+  border: none;
+  margin-top: 6px;
+}
+
+.check-container {
+  /* background: aquamarine; */
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+.choose-title {
+  margin-top: 50px;
+  font-family: "Amariya-Bold";
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.lab-text-dash {
+  margin-top: 50px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-family: "Amariya-Bold";
+}
+
+textarea {
+  height: 100px;
+  width: 500px;
+  font-size: 16px;
+}
+
+.datails-content-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.datails-content-container {
+  width: 100%;
+  display: flex;
+  /* background-color: aquamarine; */
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 900px) {
+  .add-page form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .datails-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .datails-content input {
+    width: 80%;
+  }
+  .nav-item-dashboard {
+    height: 85px;
+  }
+  .dashboard-right {
+    width: 30%;
+  }
+  .dashboard-right img {
+    width: 80px;
+  }
+  .dashboard-left {
+    width: 70%;
+  }
+  .add-page form {
+    margin-right: 10px;
+  }
+  .datails-content-text {
+    width: 100%;
+  }
+  textarea {
+    width: 85%;
+  }
+
+}

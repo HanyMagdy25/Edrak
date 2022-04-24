@@ -10,7 +10,7 @@ import ReactPaginate from "react-paginate";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
-import Spinner from "../constants/Spinner";
+// import Spinner from "../constants/Spinner";
 
 function coming() {
   let timerInterval;

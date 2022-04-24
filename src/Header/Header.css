@@ -152,12 +152,15 @@
 }
 .podcast-cards {
   margin-top: 10px;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 /*========================= تلفزيون ادراك ==============================*/
+.tv-edrak-in-header{
+  width: 80%;
+}
 .edrak-tv {
   margin: 8px 0;
   display: flex;

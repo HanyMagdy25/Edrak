@@ -6,7 +6,7 @@ export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async (
     const data = await response.json();
       
 
-    // console.log("this from redux",data);
+    console.log("this from redux",data);
     return data;
 
 //   return fetch(`http://68.8.120:8000/edrakJson`)

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import "swiper/swiper-bundle.css";
 import "swiper/modules/pagination/pagination.min.css";
@@ -11,13 +11,14 @@ import "./Header.css";
 import Card from "../Cards/Card";
 import Authors from "../Cards/Authors";
 import BigCard from "../Cards/BigCard";
-// import CardPodcast from "../Cards/CardPodcast";
-// import MediumCard from "../Cards/MediumCard";
+import CardPodcast from "../Cards/CardPodcast";
+import MediumCard from "../Cards/MediumCard";
 import { images } from "../constants";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import HeaderSlider from "./HeaderSlider";
 import Spinner from "../constants/Spinner";
+import TvLayout from "../Pages/Layout/TvLayout";
 
 // ======== Old Data - now our new data from db.json =========
 
@@ -45,8 +46,20 @@ const edrakAuthors = [
 SwiperCore.use([Pagination]);
 
 const Header = () => {
+  const [data, setData] = useState([]);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/tv")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+        console.log("55" , data)
+      });
+  },[]);
   // const edraksAuthors= useSelector(getAllEdrakAuthors)
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
@@ -57,6 +70,8 @@ const Header = () => {
   if (!edraks.length > 0) {
     return <div className="spinner"><Spinner/></div>;
   }
+
+  
 
   return (
     <div className="header">
@@ -115,66 +130,21 @@ const Header = () => {
         <div className="podcast-container">
           <h1>البودكاست</h1>
           <hr />
-          <h2 style={{margin :"20px 0px 30px" , textAlign : "center"}}> يأتي قريباً</h2>
-          <div className=""><Spinner/></div>
+          {/* <h2 style={{margin :"20px 0px 30px" , textAlign : "center"}}> يأتي قريباً</h2>
+          <div className=""><Spinner/></div> */}
           
-          {/* <div className="podcast-cards">
+          <div className="podcast-cards">
             {edraks.slice(0, 3).map((card, index) => (
               <CardPodcast key={index} data={card} />
             ))}
 
-            <CardPodcast headerImg={headerImg}/>
-                    <CardPodcast headerImg={headerImg}/>
-                    <CardPodcast headerImg={headerImg}/>
-          </div> */}
+            
+          </div>
         </div>
       </div>
       {/* تلفزيون إدراك */}
-      <div className="edrak-tv">
-        <div className="edrak-tv-container">
-          <h1>تلفزيون إدراك</h1>
-          <hr />
-          <h2 style={{margin :"20px 0px 30px" , textAlign : "center"}}> يأتي قريباً</h2>
-          <div className=""><Spinner/></div>
-          {/* <div className="edrak-tv-container-inner">
-            <div className="edrak-tv-right">
-              <div className="img-container">
-                <img
-                  src={images.header3}
-                  className="img-header"
-                  alt="headerImage"
-                />
-              </div>
-              <div className="header-right-content">
-                <div className="global-simi-btn-purple">فكر</div>
-                <h2 className="header-headline">مراجعة كتاب : فجر كل شئ</h2>
-                <p className="header-paragragh">
-                  لأساطيرِ البدايةِ في العالم أجمع أثرٌ نفسِي جذري –بغض النظرِ
-                  عن مصداقيتها العلمية–؛ إذ لها القوة الماكرةِ على تبرير الوضع
-                  الراهن وبالتوازي تحصرُ وعيَ المرء بما يمكن أن يصير إليه شكلُ
-                  العالم المستقبل. وكذا حالُ المجتمع الرأسمالي الحديث الذي أسس
-                  نفسه على روايتين مختلفتين لأسطورة مماثلة.
-                </p>
-                <div className="about-author">
-                  <h5>أمجد عبد الرازق</h5>
-                  <div className="share-icon">
-                    <i className="fa-solid fa-share-nodes"></i> 15
-                  </div>
-                  <div className="cal">
-                    <i className="fa-solid fa-calendar-days"></i> 22-2-2022
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="edrak-tv-left">
-              <div className="edrak-tv-left-container">
-                <MediumCard headerImg={images.header3} />
-                <MediumCard headerImg={images.header3} />
-              </div>
-            </div>
-          </div> */}
-        </div>
+      <div className="tv-edrak-in-header">
+      <TvLayout title={"تلفاز ادراك"} items={data}/>
       </div>
     </div>
   );

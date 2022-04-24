@@ -135,6 +135,17 @@ hr {
   border: 0.2px solid var(--black);
   opacity: 0.2;
 }
+.newButton{
+  width: 148px;
+  height: 40px;
+  font-size: 18px;
+  background: var(--first-color);
+  color: var(--white);
+  font-family: 'Amariya-Bold';
+  border: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
 
 @media screen and (max-width: 900px) {
   body {

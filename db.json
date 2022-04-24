@@ -196,12 +196,9 @@
     {
       "_id":"19",
       "writer":"هانى مجدى",
-      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
-    },
-    {
-      "_id":"20",
-      "writer":"هانى مجدى",
-      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg"
+      "img":"https://res.cloudinary.com/dia1kfg4m/image/upload/v1650112635/author2_x9pgpw.jpg",
+      "fbUrl":"facebook",
+      "twUrl":"twitter"
     }
   ],
   "papers":[

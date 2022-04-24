@@ -15,6 +15,8 @@ import Writers from "./Pages/Writers/Writers";
 import Papers from "./Pages/Papers/Papers";
 import PaperInside from "./Pages/Papers/PaperInside";
 import WriterInside from "./Pages/Writers/WriterInside";
+import Dashboard from "./Dashboard/Dashboard";
+import Login from "./Dashboard/Login";
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -45,6 +47,8 @@ class App extends Component  {
           <Route path="/writers-inside/:_id" component={WriterInside} />
           <Route path="/papers" component={Papers} />
           <Route path="/paper-inside/:_id" component={PaperInside} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/login" component={Login} />
         </Switch>
         
         <Footer/>
