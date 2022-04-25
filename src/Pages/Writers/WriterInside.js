@@ -5,7 +5,7 @@ import Spinner from "../../constants/Spinner";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+// import { FacebookShareButton, TwitterShareButton } from "react-share";
 import CardPodcast from "../../Cards/CardPodcast";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
@@ -51,7 +51,7 @@ const WriterInside = () => {
   }
 
   // to copy the url and pass to facebook icon
-  const url = window.location.href;
+  // const url = window.location.href;
 
   useEffect(() => {
     fetch(`${baseUrl}/users`,

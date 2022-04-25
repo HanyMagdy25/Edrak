@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddArticle = () => {
   const [name, setName] = useState("");
   const [writer, setWriter] = useState("");
-  // const [facebook, setFacebook] = useState("");
-  // const [twitter, setTwitter] = useState("");
-  // const [photo, setPhoto] = useState();
+
   const [icon, setIcon] = useState();
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
-  const [type, setType] = useState("");
+  // const [type, setType] = useState("");
 
 
   const [paragraphs, setParagraphs] = useState([]);
@@ -30,7 +29,10 @@ const AddArticle = () => {
   const [data, setData] = useState([]);
   const [writersNames, setWritersNames] = useState([]);
 
-  console.log('cat',cat)
+  console.log('33 cat',cat)
+  // console.log('34 typr',type)
+
+  const history = useHistory();
 
   // const addCat =()=>{
   //   setCat([...cat],value)
@@ -69,12 +71,12 @@ const AddArticle = () => {
 
   
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setType(cat[0])
-    console.log('75 : ',cat[0])
-    const blog = { name, writer ,about,type };
-    
+    const blog = { name, writer ,about,type: cat[0] };
+      
+  // console.log('type 75: ',type)
 
 
     setIsPending(true);
@@ -106,6 +108,7 @@ const AddArticle = () => {
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
+        history.push("/dashboard");
         
       });
   };
@@ -270,47 +273,47 @@ const AddArticle = () => {
 
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 5</label>
-          <textarea onChange={(e)=>setParag4([e.target.value,parag5[1]])}/>
+          <textarea onChange={(e)=>setParag5([e.target.value,parag5[1]])}/>
           </div>
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 5</label>
-          <textarea onChange={(e)=>setParag4([parag5[0],e.target.value])}/>
+          <textarea onChange={(e)=>setParag5([parag5[0],e.target.value])}/>
           </div>
 
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 6</label>
-          <textarea onChange={(e)=>setParag4([e.target.value,parag6[1]])}/>
+          <textarea onChange={(e)=>setParag6([e.target.value,parag6[1]])}/>
           </div>
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 6</label>
-          <textarea onChange={(e)=>setParag4([parag6[0],e.target.value])}/>
+          <textarea onChange={(e)=>setParag6([parag6[0],e.target.value])}/>
           </div>
 
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 7</label>
-          <textarea onChange={(e)=>setParag4([e.target.value,parag7[1]])}/>
+          <textarea onChange={(e)=>setParag7([e.target.value,parag7[1]])}/>
           </div>
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 7</label>
-          <textarea onChange={(e)=>setParag4([parag7[0],e.target.value])}/>
+          <textarea onChange={(e)=>setParag7([parag7[0],e.target.value])}/>
           </div>
 
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 8</label>
-          <textarea onChange={(e)=>setParag4([e.target.value,parag8[1]])}/>
+          <textarea onChange={(e)=>setParag8([e.target.value,parag8[1]])}/>
           </div>
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 8</label>
-          <textarea onChange={(e)=>setParag4([parag8[0],e.target.value])}/>
+          <textarea onChange={(e)=>setParag8([parag8[0],e.target.value])}/>
           </div>
 
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 9</label>
-          <textarea onChange={(e)=>setParag4([e.target.value,parag9[1]])}/>
+          <textarea onChange={(e)=>setParag9([e.target.value,parag9[1]])}/>
           </div>
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 9</label>
-          <textarea onChange={(e)=>setParag4([parag9[0],e.target.value])}/>
+          <textarea onChange={(e)=>setParag9([parag9[0],e.target.value])}/>
           </div>
           
         </div>

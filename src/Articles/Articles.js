@@ -12,6 +12,8 @@ import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
 // import Spinner from "../constants/Spinner";
 
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
+
 function coming() {
   let timerInterval;
   Swal.fire({
@@ -52,9 +54,24 @@ const edrakAuthors = [
 ];
 
 const Articles = () => {
+
+  const [edrakAuthors, setEdrakAuthors] = useState([]);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
   // const edraksAuthors= useSelector(getAllEdrakAuthors)
+  useEffect(() => {
+    fetch(`${baseUrl}/users?role=Author`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setEdrakAuthors(data.msg);
+        console.log("77 edrakAuthors", data);
+      });
+  }, []);
+
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
     // dispatch(fetchAsyncEdrakAuthors());
@@ -195,7 +212,7 @@ const Articles = () => {
             </h3>
             <hr />
             <div className="edrak-authors-block">
-              {edrakAuthors.map((author, index) => (
+              {edrakAuthors.slice(0,3).map((author, index) => (
                 <AuthorsBlock author={author} key={index} />
               ))}
             </div>

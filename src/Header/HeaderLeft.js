@@ -5,7 +5,7 @@ import Card from '../Cards/Card';
 import Authors from '../Cards/Authors';
 
 const HeaderLeft = ({data,edrakAuthors}) => {
-    console.log(data)
+    console.log("8 edrakAuthors",edrakAuthors)
   return (
     <>
         <div className='header-left-container'>

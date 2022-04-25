@@ -5,7 +5,7 @@ const Authors = ({author}) => {
   return (
     <div className='authors'>
         <div className='img-contain'>
-          <img src={author.imgUrl} alt='author' />
+          <img src={author.thumbnail} alt='author' />
         </div>
         <div className='name-contain'>
           <h4 >{author.name}</h4>
