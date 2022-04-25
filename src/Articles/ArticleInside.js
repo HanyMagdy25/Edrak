@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ArticleInside.css";
-import { images } from "../constants";
+// import { images } from "../constants";
 import BigCard from "../Cards/BigCard";
 import HeaderLeft from "../Header/HeaderLeft";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
@@ -14,26 +14,32 @@ import {isMobile} from 'react-device-detect';
 import Swal from "sweetalert2";
 import Spinner from "../constants/Spinner";
 
+// const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 
-const edrakAuthors = [
-  {
-    name: "أ. عبدالرحمن النحياني",
-    imgUrl: images.author1,
-  },
-  {
-    name: "د. هبة رءوف عزت",
-    imgUrl: images.author2,
-  },
-  {
-    name: "أ. نادية المطيري",
-    imgUrl: images.author3,
-  },
-  {
-    name: "أ. رحمة رضا",
-    imgUrl: images.author4,
-  },
-]
+
+
+
+// const edrakAuthors = [
+//   {
+//     name: "أ. عبدالرحمن النحياني",
+//     imgUrl: images.author1,
+//   },
+//   {
+//     name: "د. هبة رءوف عزت",
+//     imgUrl: images.author2,
+//   },
+//   {
+//     name: "أ. نادية المطيري",
+//     imgUrl: images.author3,
+//   },
+//   {
+//     name: "أ. رحمة رضا",
+//     imgUrl: images.author4,
+//   },
+// ]
+
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 
 // الداتا هتكون هنا مش على الريدكس مؤقتا
@@ -52,11 +58,26 @@ function copy() {
 
 const ArticleInside = () => {
 
+  const [edrakAuthors, setEdrakAuthors] = useState([]);
+
   const { _id } = useParams();
   console.log("id:", _id)
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
   // const edraksAuthors= useSelector(getAllEdrakAuthors)
+  useEffect(() => {
+    fetch(`${baseUrl}/users?role=Author`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setEdrakAuthors(data.msg);
+        console.log("77 edrakAuthors", data);
+      });
+  }, []);
+
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
     // dispatch(fetchAsyncEdrakAuthors(_id));
@@ -99,6 +120,23 @@ const ArticleInside = () => {
         $(".navbar-toggler").trigger("click")
     }
 }
+
+const handleShare =() =>{
+  fetch(`${baseUrl}/article_share/${articleIn.id}`,{
+    credentials:"include"
+  })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        
+        console.log("share counter :" , data)
+      });
+}
+
+
+
+
   
 
   return (
@@ -130,7 +168,7 @@ const ArticleInside = () => {
                   <i className="fa-brands fa-twitter"></i>
                 </TwitterShareButton>
               </span>
-              <span>
+              <span onClick={handleShare}>
                 <FacebookShareButton
                   url={url}
                 >

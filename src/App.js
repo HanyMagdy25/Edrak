@@ -39,10 +39,9 @@ class App extends Component  {
     return (
       <Router>
         <ScrollToTop/>
-        {pathname !== "/dashboard" && <Navbar/>}
+        {pathname !== "/dashboard" && pathname!=="/dashboard/addarticle" && pathname !== "/dashboard/addwriter" && <Navbar/>}
         {/* <Navbar/> */}
         <Switch>
-          {/* <Header/> */}
           <Route path='/' exact component={Header}/>
           <Route path='/home' component={Header}/>
           <Route path="/articles" component={Articles} />
@@ -54,17 +53,12 @@ class App extends Component  {
           <Route path="/papers" component={Papers} />
           <Route path="/paper-inside/:_id" component={PaperInside} />
           <Route path="/dashboard" component={Dashboard} />
-          {/* <Route path="/dashboard" component={()=> <Dashboard token={token} /> } /> */}
-
-          
+           
           <Route path="/login" component={Login} />
         </Switch>
 
-        {pathname !== "/dashboard" && <Footer/>}
 
-        {/* <Footer/> */}
-        
-        
+        {pathname !== "/dashboard" && pathname!=="/dashboard/addarticle" && pathname !== "/dashboard/addwriter" && <Footer/>}
       
       </Router>
       

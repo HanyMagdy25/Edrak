@@ -22,26 +22,26 @@ import TvLayout from "../Pages/Layout/TvLayout";
 
 // ======== Old Data - now our new data from db.json =========
 
-const edrakAuthors = [
-  {
-    name: "أ. عبدالرحمن النحياني",
-    imgUrl: images.author1,
-  },
-  {
-    name: "د. هبة رءوف عزت",
-    imgUrl: images.author2,
-  },
-  {
-    name: "أ. نّادية المطيري",
-    imgUrl: images.author3,
-  },
-  {
-    name: "أ. رحمة رضا",
-    imgUrl: images.author4,
-  },
-];
+// const edrakAuthors = [
+//   {
+//     name: "أ. عبدالرحمن النحياني",
+//     imgUrl: images.author1,
+//   },
+//   {
+//     name: "د. هبة رءوف عزت",
+//     imgUrl: images.author2,
+//   },
+//   {
+//     name: "أ. نّادية المطيري",
+//     imgUrl: images.author3,
+//   },
+//   {
+//     name: "أ. رحمة رضا",
+//     imgUrl: images.author4,
+//   },
+// ];
 
-
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 SwiperCore.use([Pagination]);
 
@@ -49,6 +49,21 @@ const Header = () => {
   const [data, setData] = useState([]);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
+
+  const [edrakAuthors, setEdrakAuthors] = useState([]);
+
+  useEffect(() => {
+    fetch(`${baseUrl}/users?role=Author`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setEdrakAuthors(data.msg);
+        console.log("edrakAuthors", data);
+      });
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:8000/tv")
@@ -104,7 +119,7 @@ const Header = () => {
             <h2 style={{ marginTop: "20px" }}>كُتاب إدراك</h2>
             <hr />
             <div className="edrak-authors">
-              {edrakAuthors.map((author, index) => (
+              {edrakAuthors.slice(0,4).map((author, index) => (
                 <Authors author={author} key={index} />
               ))}
             </div>
