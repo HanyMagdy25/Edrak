@@ -1,20 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./Writers.css";
 import WritersLayout from "./WritersLayout";
+import Spinner from "./../../constants/Spinner";
+
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 const Writers = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/writers")
+    fetch(`${baseUrl}/users?role=Author`, {
+      credentials: "include",
+    })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
+        setData(data.msg);
         console.log("55", data);
       });
   }, []);
+
+  // loading page
+  if (!data.length > 0) {
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     <div className="writers">
@@ -23,7 +37,7 @@ const Writers = () => {
         <hr />
         <div className="writer-cards">
           {data.slice(0, 8).map((item, index) => (
-            <WritersLayout item={item} key={index} type='first' />
+            <WritersLayout item={item} key={index} type="first" />
           ))}
         </div>
 
@@ -31,7 +45,7 @@ const Writers = () => {
         <hr />
         <div className="writer-cards">
           {data.slice(0, 10).map((item, index) => (
-            <WritersLayout item={item} key={index} type='second' />
+            <WritersLayout item={item} key={index} type="second" />
           ))}
         </div>
 
@@ -39,11 +53,9 @@ const Writers = () => {
         <hr />
         <div className="writer-cards">
           {data.slice(0, 18).map((item, index) => (
-            <WritersLayout item={item} key={index} type='third' />
+            <WritersLayout item={item} key={index} type="third" />
           ))}
         </div>
-
-
       </div>
     </div>
   );

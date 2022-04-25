@@ -28,13 +28,19 @@ function ScrollToTop() {
     return null;
 }
 
+const token = localStorage.getItem("token");
+    console.log("from app :",token)
+
+    const pathname = window.location.pathname;
+
 
 class App extends Component  {
   render(){
     return (
       <Router>
         <ScrollToTop/>
-        <Navbar/>
+        {pathname !== "/dashboard" && <Navbar/>}
+        {/* <Navbar/> */}
         <Switch>
           {/* <Header/> */}
           <Route path='/' exact component={Header}/>
@@ -48,10 +54,17 @@ class App extends Component  {
           <Route path="/papers" component={Papers} />
           <Route path="/paper-inside/:_id" component={PaperInside} />
           <Route path="/dashboard" component={Dashboard} />
+          {/* <Route path="/dashboard" component={()=> <Dashboard token={token} /> } /> */}
+
+          
           <Route path="/login" component={Login} />
         </Switch>
+
+        {pathname !== "/dashboard" && <Footer/>}
+
+        {/* <Footer/> */}
         
-        <Footer/>
+        
       
       </Router>
       

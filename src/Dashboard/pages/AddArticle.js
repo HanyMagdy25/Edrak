@@ -10,12 +10,19 @@ const AddArticle = () => {
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
+  const [type, setType] = useState("");
+
 
   const [paragraphs, setParagraphs] = useState([]);
   const [parag1, setParag1] = useState([]);
   const [parag2, setParag2] = useState([]);
   const [parag3, setParag3] = useState([]);
   const [parag4, setParag4] =useState([]);
+  const [parag5, setParag5] = useState([]);
+  const [parag6, setParag6] = useState([]);
+  const [parag7, setParag7] = useState([]);
+  const [parag8, setParag8] =useState([]);
+  const [parag9, setParag9] = useState([]);
   
   const [isPending, setIsPending] = useState(false);
 
@@ -23,7 +30,7 @@ const AddArticle = () => {
   const [data, setData] = useState([]);
   const [writersNames, setWritersNames] = useState([]);
 
-  // console.log('24',parag)
+  console.log('cat',cat)
 
   // const addCat =()=>{
   //   setCat([...cat],value)
@@ -32,18 +39,21 @@ const AddArticle = () => {
 
   // شيل الكومنت دا يوم السبت من 20 ل 31
 
-  // useEffect(() => {
-  //   fetch("http://192.168.8.108:8080/users")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       setData(data);
-  //       setWritersNames( data.msg.map(e=>{return {id: e._id, name: e.name}}))
+  useEffect(() => {
+    fetch("https://depax-blog-backend.herokuapp.com/users",{
+      credentials:"include"
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+        console.log('47',data)
+        setWritersNames( data.msg.map(e=>{return {id: e._id, name: e.name}}))
 
-  //     });
+      });
 
-  // }, []);
+  }, []);
 
   // const writersNames = data.msg.map(e=>e.name)
   // if(data.length>0){
@@ -57,9 +67,15 @@ const AddArticle = () => {
   // }
   // console.log("cat", cat);
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer ,cat,about };
+    setType(cat[0])
+    console.log('75 : ',cat[0])
+    const blog = { name, writer ,about,type };
+    
+
 
     setIsPending(true);
 
@@ -71,19 +87,26 @@ const AddArticle = () => {
     formData.append("paragraphs",parag2)
     formData.append("paragraphs",parag3)
     formData.append("paragraphs",parag4)
-    // console.log('84',parag1)
+    formData.append("paragraphs",parag5)
+    formData.append("paragraphs",parag6)
+    formData.append("paragraphs",parag7)
+    formData.append("paragraphs",parag8)
+    formData.append("paragraphs",parag9)
+    cat.forEach(e=>formData.append('cat', e))
+    console.log('84',formData.getAll('cat'))
 
     formData.append("photos", icon);
     formData.append("photos", img);
-    fetch("http://192.168.8.108:8080/article", {
+    fetch("https://depax-blog-backend.herokuapp.com/article", {
       method: "POST",
       body: formData,
+      credentials:"include"
     })
       .then((data) => data.json())
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        //   navigate("/country");
+        
       });
   };
 
@@ -243,6 +266,51 @@ const AddArticle = () => {
           <div className="datails-content-text">
             <label className="lab-text-dash">موضوع 4</label>
           <textarea onChange={(e)=>setParag4([parag4[0],e.target.value])}/>
+          </div>
+
+          <div className="datails-content-text">
+            <label className="lab-text-dash">عنوان 5</label>
+          <textarea onChange={(e)=>setParag4([e.target.value,parag5[1]])}/>
+          </div>
+          <div className="datails-content-text">
+            <label className="lab-text-dash">موضوع 5</label>
+          <textarea onChange={(e)=>setParag4([parag5[0],e.target.value])}/>
+          </div>
+
+          <div className="datails-content-text">
+            <label className="lab-text-dash">عنوان 6</label>
+          <textarea onChange={(e)=>setParag4([e.target.value,parag6[1]])}/>
+          </div>
+          <div className="datails-content-text">
+            <label className="lab-text-dash">موضوع 6</label>
+          <textarea onChange={(e)=>setParag4([parag6[0],e.target.value])}/>
+          </div>
+
+          <div className="datails-content-text">
+            <label className="lab-text-dash">عنوان 7</label>
+          <textarea onChange={(e)=>setParag4([e.target.value,parag7[1]])}/>
+          </div>
+          <div className="datails-content-text">
+            <label className="lab-text-dash">موضوع 7</label>
+          <textarea onChange={(e)=>setParag4([parag7[0],e.target.value])}/>
+          </div>
+
+          <div className="datails-content-text">
+            <label className="lab-text-dash">عنوان 8</label>
+          <textarea onChange={(e)=>setParag4([e.target.value,parag8[1]])}/>
+          </div>
+          <div className="datails-content-text">
+            <label className="lab-text-dash">موضوع 8</label>
+          <textarea onChange={(e)=>setParag4([parag8[0],e.target.value])}/>
+          </div>
+
+          <div className="datails-content-text">
+            <label className="lab-text-dash">عنوان 9</label>
+          <textarea onChange={(e)=>setParag4([e.target.value,parag9[1]])}/>
+          </div>
+          <div className="datails-content-text">
+            <label className="lab-text-dash">موضوع 9</label>
+          <textarea onChange={(e)=>setParag4([parag9[0],e.target.value])}/>
           </div>
           
         </div>

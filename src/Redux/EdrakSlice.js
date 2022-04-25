@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 // import dataJson from "./Edrak.json"
+// oldServer= "https://edrakback.herokuapp.com/allP"
 export const fetchAsyncEdrak = createAsyncThunk("edrak/fetchAsyncEdrak", async () => {
-  const response = await fetch(`https://edrakback.herokuapp.com/allP`);
+  const response = await fetch(`https://depax-blog-backend.herokuapp.com/articles`);
     const data = await response.json();
       
 
     console.log("this from redux",data);
-    return data;
+    return data.msg;
 
 //   return fetch(`http://68.8.120:8000/edrakJson`)
 //         .then(res => {
