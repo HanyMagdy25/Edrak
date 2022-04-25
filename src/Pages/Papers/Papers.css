@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 
 }
 .papers-container{
@@ -24,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 .paperinside-content{
     width:70%;

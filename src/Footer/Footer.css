@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: column;
     color: var(--light-white);
-    margin-top: 25px;
+    /* margin-top: 25px; */
 
 }
 .footer-container{

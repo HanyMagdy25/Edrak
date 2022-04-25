@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import CardPodcast from "../../Cards/CardPodcast";
 
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
+
 const WriterInside = () => {
   const [data, setData] = useState([]);
   const { _id } = useParams();
@@ -52,18 +54,21 @@ const WriterInside = () => {
   const url = window.location.href;
 
   useEffect(() => {
-    fetch("http://localhost:8000/writers")
+    fetch(`${baseUrl}/users`,
+    {
+      credentials: 'include'
+    })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
+        setData(data.msg);
         console.log("writers", data);
       });
   }, []);
 
   const writerInsider = data.find((a) => a._id === _id);
-  console.log("tvInsider 22 :", writerInsider);
+  console.log("writerInsider :", writerInsider);
 
   if (!writerInsider) {
     return (
@@ -76,8 +81,8 @@ const WriterInside = () => {
     <div className="writerInside">
       <div className="writerInside-container">
         <div className="writerInside-content">
-          <img src={writerInsider.img} alt="test" />
-          <h2>{writerInsider.writer}</h2>
+          <img src={writerInsider.thumbnail} alt="test" />
+          <h2>{writerInsider.name}</h2>
           <div className="social-icons-small-writer">
             <span
               onClick={() => {
@@ -88,14 +93,15 @@ const WriterInside = () => {
               <i className="fa-solid fa-share-from-square"></i>
             </span>
             <span>
-              <TwitterShareButton url={url}>
+              <a href={writerInsider.twitter} target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-twitter"></i>
-              </TwitterShareButton>
+              </a>
+              
             </span>
             <span>
-              <FacebookShareButton url={url}>
+              <a href={writerInsider.facebook} target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-facebook-f"></i>
-              </FacebookShareButton>
+              </a>
             </span>
           </div>
         </div>

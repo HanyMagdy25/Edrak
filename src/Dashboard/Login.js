@@ -14,34 +14,42 @@ const Login = () => {
   },[])
 
   const handleLogin = async () => {
-      let item = {email,password};
+      // let item = {email,password};
       let result = await fetch("https://depax-blog-backend.herokuapp.com/login",{
           method:"POST",
           headers: {
             'Content-Type': 'application/json'
           },
+          
           body:JSON.stringify({
-              email: email,
-              password: password
-          })
+            email: email,
+            password: password
+          }),
+          credentials: 'include'
       });
       result = await result.json();
-      console.log(result)
-      localStorage.setItem("token",JSON.stringify(result.msg.token))
-    //   history.push("/dashboard")
+      console.log('29',result)
+      if(result.code === 200){
+        localStorage.setItem("token",JSON.stringify(result.msg.token))
+          history.push("/dashboard")
+      }else{
+          alert(result.status)
+      }
+      
+    
   }
 
   
   return (
     <div className="login-page">
       <div className="login-page-container">
-        <h2>login</h2>
+        <h2 className="login-title">تسجيل الدخول</h2>
         <div className="login-form">
-          <input type="text" placeholder="email" onChange={(e)=> setEmail(e.target.value)}/>
+          <input type="text" placeholder="البريد الالكترونى" onChange={(e)=> setEmail(e.target.value)}/>
           <br />
-          <input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} />
+          <input type="password" placeholder="كلمة السر" onChange={(e)=> setPassword(e.target.value)} />
           <br />
-          <button onClick={handleLogin}>Login</button>
+          <button className="newButton" onClick={handleLogin}>تسجيل</button>
         </div>
       </div>
     </div>

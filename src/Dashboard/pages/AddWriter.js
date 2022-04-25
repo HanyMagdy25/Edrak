@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+// import {Redirect} from "react-router-dom"
 
 
-const AddWriter = () => {
+const AddWriter = ({token}) => {
   const [name, setName] = useState("");
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
   const [photo, setPhoto] = useState();
   const [isPending, setIsPending] = useState(false);
 
-  const token = localStorage.getItem("token");
-    console.log("from writer:",token)
+  // const token = localStorage.getItem("token");
+  //   console.log("from writer:",token)
+
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     
@@ -24,19 +28,25 @@ const AddWriter = () => {
     for (const [key, value] of Object.entries(blog)) {
       formData.append(key, value);
     }
+    formData.append('role', 'Author')
 
     formData.append("photo", photo);
-    fetch("http://192.168.8.108:8080/user", {
+    fetch("https://depax-blog-backend.herokuapp.com/user", {
       method: "POST",
       body: formData,
+      credentials: 'include'
     })
       .then((data) => data.json())
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        //   navigate("/country");
+        history.push("/dashboard");
       });
   };
+
+  // if (!token){
+  //   return <Redirect to="/login" />
+  // }
 
   return (
     

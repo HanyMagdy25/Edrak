@@ -21,7 +21,7 @@ const Dashboard = () => {
         </li>
 
         <li className="nav-item-dashboard">
-          <NavLink to="/articles" className={"nav-links "}>
+          <NavLink to="/dashboard/addvideo" className={"nav-links "}>
             اضافة فيديو
           </NavLink>
         </li>
