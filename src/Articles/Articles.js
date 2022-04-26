@@ -36,10 +36,7 @@ function coming() {
   }
 }
 
-
-
 const Articles = () => {
-
   const [edrakAuthors, setEdrakAuthors] = useState([]);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
@@ -90,17 +87,6 @@ const Articles = () => {
     setPageNumber(selected);
   };
 
-  // let dispatch = useDispatch();
-  //   const edraks = useSelector(getAllEdrak);
-  //   const edraksAuthors= useSelector(getAllEdrakAuthors)
-  //   useEffect(() => {
-  //       dispatch(fetchAsyncEdrak());
-  //       dispatch(fetchAsyncEdrakAuthors());
-  //     },[dispatch]);
-  //   console.log("Header Data",edraks);
-  //   console.log("edrak au",edraksAuthors);
-
-
   return (
     <div className="articles-parent">
       <div className="articles-parent-container">
@@ -111,7 +97,6 @@ const Articles = () => {
               <BigCard  data={card} />
           )} */}
           {/* try */}
-          
 
           {!category.length > 0 ? (
             <div className="choose-cat">
@@ -197,7 +182,7 @@ const Articles = () => {
             </h3>
             <hr />
             <div className="edrak-authors-block">
-              {edrakAuthors.slice(0,3).map((author, index) => (
+              {edrakAuthors.slice(0, 3).map((author, index) => (
                 <AuthorsBlock author={author} key={index} />
               ))}
             </div>

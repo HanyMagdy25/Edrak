@@ -45,7 +45,7 @@ const TvLayout = ({title,items}) => {
 
             <div className="edrak-tv-left">
               <div className="edrak-tv-left-container">
-                {items.slice(0,2).map((item,index)=>(
+                {items?.slice(0,2).map((item,index)=>(
                   <MediumCard item={item} type="zero" key={index} />
                 ))}
               </div>
