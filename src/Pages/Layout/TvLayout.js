@@ -3,7 +3,7 @@ import MediumCard from "../../Cards/MediumCard"
 import "./TvLayout.css"
 
 const TvLayout = ({title,items}) => {
-  console.log("tests  : ",items)
+  console.log("6 tests  : ",items)
   return (
     <>
         <div className="edrak-tv">
@@ -45,9 +45,7 @@ const TvLayout = ({title,items}) => {
 
             <div className="edrak-tv-left">
               <div className="edrak-tv-left-container">
-                {/* <MediumCard item={item} /> */}
-                {/* <MediumCard item={item} /> */}
-                {items.slice(0,2).map((item,index)=>(
+                {items?.slice(0,2).map((item,index)=>(
                   <MediumCard item={item} type="zero" key={index} />
                 ))}
               </div>

@@ -50,8 +50,8 @@ class App extends Component  {
           <Route path="/tv-inside/:_id" component={TvInside} />
           <Route path="/writers" component={Writers} />
           <Route path="/writers-inside/:_id" component={WriterInside} />
-          <Route path="/papers" component={Papers} />
-          <Route path="/paper-inside/:_id" component={PaperInside} />
+          {/* <Route path="/papers" component={Papers} /> */}
+          {/* <Route path="/paper-inside/:_id" component={PaperInside} /> */}
           <Route path="/dashboard" component={Dashboard} />
            
           <Route path="/login" component={Login} />

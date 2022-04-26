@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 import BigCard from "../../Cards/BigCard";
 import ReactPlayer from "react-player";
 
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
+
 const TvInside = () => {
   const [data, setData] = useState([]);
   const [clickTube, setClickTube] = useState(false);
@@ -56,18 +58,32 @@ const TvInside = () => {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8000/tv`)
+    fetch(`${baseUrl}/videos`, {
+      credentials: "include",
+    })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
+        setData(data.msg);
         console.log("id", data);
       });
   }, []);
 
   const tvInsider = data.find((a) => a._id === _id);
   console.log("tvInsider 22 :", tvInsider);
+
+  const handleShare = () => {
+    fetch(`${baseUrl}/video_share/${tvInsider._id}`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log("share counter :", data);
+      });
+  };
 
   if (!tvInsider) {
     return (
@@ -108,12 +124,12 @@ const TvInside = () => {
             >
               <i className="fa-solid fa-share-from-square"></i>
             </span>
-            <span>
+            <span onClick={handleShare}>
               <TwitterShareButton url={url}>
                 <i className="fa-brands fa-twitter"></i>
               </TwitterShareButton>
             </span>
-            <span>
+            <span onClick={handleShare}>
               <FacebookShareButton url={url}>
                 <i className="fa-brands fa-facebook-f"></i>
               </FacebookShareButton>
@@ -121,9 +137,19 @@ const TvInside = () => {
           </div>
         </div>
       </div>
-      <div className="img-tvinside-container" onClick={()=>setClickTube(true)}>
+      <div
+        className="img-tvinside-container"
+        onClick={() => setClickTube(true)}
+      >
         {clickTube ? (
-          <div><ReactPlayer width='100%' height='500px' controls url='https://www.youtube.com/watch?v=UtuaSwmLzcc'/></div>
+          <div>
+            <ReactPlayer
+              width="100%"
+              height="500px"
+              controls
+              url={tvInsider.youtube_url}
+            />
+          </div>
         ) : (
           <>
             <img src={tvInsider.img} className="img-header" alt="headerImage" />

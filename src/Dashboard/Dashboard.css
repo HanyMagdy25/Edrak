@@ -86,6 +86,7 @@
   display: flex;
   flex-direction: column;
   width: 24%;
+  color: var(--black);
 }
 
 .datails-content label {
@@ -152,6 +153,24 @@ textarea {
   display: flex;
   flex-direction: column;
   width: 50%;
+  color: var(--black);
+}
+.datails-content-youtube{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--black);
+  /* background-color: aquamarine; */
+}
+.datails-content-youtube input{
+
+  width: 300px;
+  /* height: 30px; */
+  /* background-color: gray; */
+
+  height: 25px;
+  padding: 6px;
+  border: 1px solid #b1b1b1;
 }
 
 .datails-content-container {

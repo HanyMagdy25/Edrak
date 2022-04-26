@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link,NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-// import logoImage from "../assets/logo.png"
-// import {images} from "../constants";
 import looo from "../assets/looo.svg";
-// import { copy } from "gh-pages/lib/util";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
@@ -12,8 +9,6 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
-
-  // const [isActive, setIsActive] = useState("home");
 
   function coming() {
     let timerInterval;
@@ -51,16 +46,13 @@ const Navbar = () => {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
 
-          <ul className={click ? "nav-menu active ":"nav-menu" }>
+          <ul className={click ? "nav-menu active " : "nav-menu"}>
             <li className="nav-item">
               <NavLink
                 to="/home"
-                className={
-                   "nav-links "
-                }
+                className={"nav-links "}
                 onClick={() => {
                   handleClick();
-                 
                 }}
               >
                 الرئيسية
@@ -81,12 +73,13 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/articles" className={
-                  "nav-links " 
-                } onClick={() => {
+              <NavLink
+                to="/articles"
+                className={"nav-links "}
+                onClick={() => {
                   handleClick();
-                 
-                }}>
+                }}
+              >
                 مقالات
               </NavLink>
             </li>
@@ -118,7 +111,6 @@ const Navbar = () => {
                 className="nav-links"
                 onClick={() => {
                   handleClick();
-                  
                 }}
               >
                 تلفزيون إدراك
