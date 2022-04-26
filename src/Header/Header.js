@@ -55,6 +55,8 @@ const Header = () => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
 
+  console.log("58 edraks :" ,edraks)
+
   if (!edraks.length > 0) {
     return (
       <div className="spinner">
@@ -122,8 +124,8 @@ const Header = () => {
           <hr />
 
           <div className="podcast-cards">
-            {edraks.slice(0, 3).map((card, index) => (
-              <CardPodcast key={index} data={card} />
+            {edraks.slice(0, 3).map((item, index) => (
+              <CardPodcast key={index} item={item} />
             ))}
           </div>
         </div>

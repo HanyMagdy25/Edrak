@@ -110,10 +110,12 @@ const WriterInside = () => {
           <hr />
           <div className="writerInside-articles-all">
 
+
               {
+                writerInsider.articles >0 ?
                 writerInsider.articles.map((item,index)=>(
                   <CardPodcast item={item} key={index}/>
-                ))
+                )) : (<div>لا يوجد مقالات</div>)
               }
             {/* <CardPodcast data={writerInsider.articles}/>
             <CardPodcast />
