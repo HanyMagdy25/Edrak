@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BigCard from "../Cards/BigCard";
 import "./Articles.css";
-// import card1b from "../assets/card1b.png";
-import { images } from "../constants";
 import AuthorsBlock from "../Cards/AuthorsBlock";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
@@ -38,20 +36,7 @@ function coming() {
   }
 }
 
-const edrakAuthors = [
-  {
-    name: "أ. عبدالرحمن النحياني",
-    imgUrl: images.author1,
-  },
-  {
-    name: "د. هبة رءوف عزت",
-    imgUrl: images.author2,
-  },
-  {
-    name: "أ. نادية المطيري",
-    imgUrl: images.author3,
-  },
-];
+
 
 const Articles = () => {
 

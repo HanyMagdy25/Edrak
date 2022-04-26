@@ -12,8 +12,8 @@ import Card from "../Cards/Card";
 import Authors from "../Cards/Authors";
 import BigCard from "../Cards/BigCard";
 import CardPodcast from "../Cards/CardPodcast";
-import MediumCard from "../Cards/MediumCard";
-import { images } from "../constants";
+// import MediumCard from "../Cards/MediumCard";
+// import { images } from "../constants";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import HeaderSlider from "./HeaderSlider";
@@ -98,7 +98,7 @@ const Header = () => {
               clickable: true,
             }}
           >
-            {edraks.slice(0, 5).map((slide, index) => (
+            {edraks.slice(0,5).map((slide, index) => (
               <SwiperSlide key={index}>
                 <HeaderSlider slide={slide} />
               </SwiperSlide>

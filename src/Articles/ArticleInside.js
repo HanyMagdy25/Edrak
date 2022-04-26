@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./ArticleInside.css";
-// import { images } from "../constants";
 import BigCard from "../Cards/BigCard";
 import HeaderLeft from "../Header/HeaderLeft";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
@@ -9,62 +8,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import { useParams } from "react-router-dom";
 // jquery
-import $ from 'jquery';
-import {isMobile} from 'react-device-detect';
+import $ from "jquery";
+import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
 import Spinner from "../constants/Spinner";
 
-// const baseUrl = "https://depax-blog-backend.herokuapp.com";
-
-
-
-
-
-// const edrakAuthors = [
-//   {
-//     name: "أ. عبدالرحمن النحياني",
-//     imgUrl: images.author1,
-//   },
-//   {
-//     name: "د. هبة رءوف عزت",
-//     imgUrl: images.author2,
-//   },
-//   {
-//     name: "أ. نادية المطيري",
-//     imgUrl: images.author3,
-//   },
-//   {
-//     name: "أ. رحمة رضا",
-//     imgUrl: images.author4,
-//   },
-// ]
-
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
-
-
-// الداتا هتكون هنا مش على الريدكس مؤقتا
-
 
 // To Copy The URL
 function copy() {
-  const el = document.createElement('input');
+  const el = document.createElement("input");
   el.value = window.location.href;
   document.body.appendChild(el);
   el.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
   document.body.removeChild(el);
   // alert('URL Copied');
 }
 
 const ArticleInside = () => {
-
   const [edrakAuthors, setEdrakAuthors] = useState([]);
 
   const { _id } = useParams();
-  console.log("id:", _id)
+  console.log("id:", _id);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
-  // const edraksAuthors= useSelector(getAllEdrakAuthors)
   useEffect(() => {
     fetch(`${baseUrl}/users?role=Author`, {
       credentials: "include",
@@ -80,64 +48,59 @@ const ArticleInside = () => {
 
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
-    // dispatch(fetchAsyncEdrakAuthors(_id));
   }, [dispatch]);
   console.log("new edraks", edraks);
 
   const articleIn = edraks.find((a) => a._id === _id);
-  console.log("article in :", articleIn)
+  console.log("article in :", articleIn);
 
   if (!articleIn) {
-    return <div className="spinner"><Spinner/></div>;
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
   }
 
   // to copy the url and pass to facebook icon
-  const url = window.location.href
+  const url = window.location.href;
 
   // Copied Alert With JQuery
   function copyAlert() {
-    let timerInterval
+    let timerInterval;
     Swal.fire({
-        title: 'تم نسخ الرابط',
-        timer: 5000,
-        // timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading()
-
-        },
-        willClose: () => {
-            clearInterval(timerInterval)
-        }
+      title: "تم نسخ الرابط",
+      timer: 5000,
+      // timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
     }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-        }
-    })
-
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+    });
 
     if (isMobile) {
-        $(".navbar-toggler").trigger("click")
+      $(".navbar-toggler").trigger("click");
     }
-}
+  }
 
-const handleShare =() =>{
-  fetch(`${baseUrl}/article_share/${articleIn.id}`,{
-    credentials:"include"
-  })
+  const handleShare = () => {
+    fetch(`${baseUrl}/article_share/${articleIn.id}`, {
+      credentials: "include",
+    })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        
-        console.log("share counter :" , data)
+        console.log("share counter :", data);
       });
-}
-
-
-
-
-  
+  };
 
   return (
     <div className="header">
@@ -149,29 +112,34 @@ const handleShare =() =>{
             <div className="about-author-article">
               <h6>{articleIn.writer}</h6>
               <div className="share-icon">
-                <h6><i className="fa-solid fa-share-nodes"></i>   {articleIn.numberOfShare}</h6>
+                <h6>
+                  <i className="fa-solid fa-share-nodes"></i>{" "}
+                  {articleIn.numberOfShare}
+                </h6>
               </div>
               <div className="cal">
-                
-                
-                <h6><i className="fa-solid fa-calendar-days"></i> {articleIn.createdOn.substring(0, 10)}</h6>
+                <h6>
+                  <i className="fa-solid fa-calendar-days"></i>{" "}
+                  {articleIn.createdOn.substring(0, 10)}
+                </h6>
               </div>
             </div>
             <div className="social-icons-small-articalInside">
-              <span onClick={()=>{copy();copyAlert()}}>
+              <span
+                onClick={() => {
+                  copy();
+                  copyAlert();
+                }}
+              >
                 <i className="fa-solid fa-share-from-square"></i>
               </span>
-              <span>
-                <TwitterShareButton
-                  url={url}
-                >
+              <span onClick={handleShare}>
+                <TwitterShareButton url={url}>
                   <i className="fa-brands fa-twitter"></i>
                 </TwitterShareButton>
               </span>
               <span onClick={handleShare}>
-                <FacebookShareButton
-                  url={url}
-                >
+                <FacebookShareButton url={url}>
                   <i className="fa-brands fa-facebook-f"></i>
                 </FacebookShareButton>
               </span>
@@ -186,8 +154,6 @@ const handleShare =() =>{
               <Paragraph paragraph={paragraph} key={index} />
             ))}
           </div>
-
-
 
           {/* المزيد من المدونات */}
           <div className="more-blogs">
