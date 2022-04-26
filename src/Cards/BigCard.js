@@ -2,9 +2,9 @@ import React from "react";
 import "./BigCard.css";
 import { Link } from "react-router-dom";
 
-const BigCard = ({ data, type }) => {
+const BigCard = ({ data, type ,path}) => {
   return (
-    <Link className={"card-link" + type} to={`/article-inside/${data._id}`}>
+    <Link className={"card-link" + type} to={`/${path}/${data._id}`}>
       <div className="big-card">
         <img src={data.icon} alt="BigCard" />
         <div className="big-card-content">

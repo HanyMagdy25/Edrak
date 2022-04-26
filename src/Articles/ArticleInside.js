@@ -161,7 +161,7 @@ const ArticleInside = () => {
             <hr />
             <div className="articles-inside">
               {edraks.slice(0, 3).map((card, index) => (
-                <BigCard key={index} data={card} type="three" />
+                <BigCard key={index} data={card} type="three" path="article-inside" />
               ))}
             </div>
           </div>

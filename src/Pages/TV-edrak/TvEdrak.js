@@ -52,7 +52,7 @@ const TvEdrak = () => {
             <div className="most-popular-cards">
               {/*to Stop map method after certain number with slice method */}
               {data.slice(0, 4).map((card, index) => (
-                <BigCard key={index} data={card} type="four" />
+                <BigCard key={index} data={card} type="four" path="tv-inside"/>
               ))}
             </div>
           </div>
