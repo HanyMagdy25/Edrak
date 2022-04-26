@@ -109,9 +109,15 @@ const WriterInside = () => {
         <div className="writerInside-articles">
           <hr />
           <div className="writerInside-articles-all">
+
+              {
+                writerInsider.articles.map((item,index)=>(
+                  <CardPodcast item={item} key={index}/>
+                ))
+              }
+            {/* <CardPodcast data={writerInsider.articles}/>
             <CardPodcast />
-            <CardPodcast />
-            <CardPodcast />
+            <CardPodcast /> */}
           </div>
         </div>
       </div>
