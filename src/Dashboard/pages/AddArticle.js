@@ -76,6 +76,7 @@ const AddArticle = () => {
       method: "POST",
       body: formData,
       credentials: "include",
+      
     })
       .then((data) => data.json())
       .then((res) => {
