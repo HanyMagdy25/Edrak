@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MediumCard.css";
 
-const MediumCard = ({ item, type }) => {
+const MediumCard = ({ item, type,path }) => {
   return (
-    <Link className="link-medium" to={`/paper-inside/${item._id}`}>
+    <Link className="link-medium" to={`/${path}/${item._id}`}>
       <div className={"medium-card" + type}>
         <img src={item.img} alt="header" />
         <div className="medium-card-content">

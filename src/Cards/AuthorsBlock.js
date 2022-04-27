@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Authors.css"
 
 const AuthorsBlock = ({author}) => {
   return (
-    <div className='authors-block'>
+    <Link className='authorblock-link' to={`/writers-inside/${author._id}`}>
+      <div className='authors-block'>
       <div className='img-contain-block'>
         <img src={author.thumbnail} alt='author' />
       </div>
@@ -13,6 +15,8 @@ const AuthorsBlock = ({author}) => {
        
         
     </div>
+    </Link>
+    
   )
 }
 

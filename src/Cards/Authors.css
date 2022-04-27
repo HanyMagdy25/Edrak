@@ -1,12 +1,26 @@
 * {
   box-sizing: border-box;
 }
-.authors {
+.author-link{
+  text-decoration: none;
+  list-style: none;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: 50%;
+  flex-wrap: wrap;
+  /* height: 100%; */
+  /* background-color: aquamarine; */
+  margin-top: 10px;
+}
+.authors {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
   flex-wrap: wrap;
   /* height: 100%; */
   /* background-color: aquamarine; */
@@ -27,9 +41,14 @@
 .authors h4 {
   margin: 0px 10px 0 0;
   font-weight: 400;
+  color: var(--black);
 }
 
 /*========= this is the style of AuthorsBlock =========*/
+.authorblock-link{
+  text-decoration: none;
+  list-style: none;
+}
 
 .authors-block {
   display: flex;
