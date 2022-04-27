@@ -16,6 +16,8 @@ const AddVideo = () => {
   // const [data, setData] = useState([]);
   const [isPending, setIsPending] = useState(false);
   const [writersNames, setWritersNames] = useState([]);
+  const [seriesNames, setSeriesNames] = useState([]);
+  const [series, setSeries] = useState("");
   const [about, setAbout] = useState("");
 
   const history = useHistory();
@@ -38,9 +40,27 @@ const AddVideo = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`${baseUrl}/serieses`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // setData(data);
+        console.log("serieses: ", data);
+        setSeriesNames(
+          data.msg.map((e) => {
+            return { id: e._id, series: e.name };
+          })
+        );
+      });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer, youtube_url, about, type: cat[0] };
+    const blog = { name, writer, youtube_url,series ,about, type: cat[0] };
 
     // console.log('type 75: ',type)
 
@@ -184,6 +204,30 @@ const AddVideo = () => {
             onChange={(e) => setYoutube_url(e.target.value)}
           />
         </div>
+
+        <div className="datails-content">
+          <label>السلسلة التابع لها</label>
+          <select
+            onChange={(e) => {
+              setSeries(e.target.value);
+            }}
+          >
+            {seriesNames.map((n, index) => (
+              <option
+                value={n.id}
+                onClick={(e) => {
+                  console.log("onClick", e.target.value);
+                }}
+                key={index}
+              >
+                {n.series} 
+              </option>
+            ))}
+          </select>
+        </div>
+        
+
+
         {!isPending && <button className="newButton">حفظ </button>}
         {isPending && <button className="newButton">جارى الحفظ</button>}
       </form>

@@ -13,6 +13,7 @@ const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 const TvEdrak = () => {
   const [data, setData] = useState([]);
+  const [seriesNames, setSeriesNames] = useState([]);
 
   useEffect(() => {
     fetch(`${baseUrl}/videos`, {
@@ -26,6 +27,29 @@ const TvEdrak = () => {
         console.log("39 videos", data);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`${baseUrl}/serieses`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // setData(data);
+        console.log("40 serieses from tv: ", data);
+        setSeriesNames(
+          data.msg.map((e) => {
+            return { id: e._id, series: e.name , videos: e.videos };
+          })
+        );
+        console.log("seriesNames from tv: ", seriesNames);
+      });
+  }, []);
+
+  
+
+
 
   return (
     <div className="tv">
@@ -58,11 +82,12 @@ const TvEdrak = () => {
           </div>
         </div>
 
+        
         <>
-          <TvLayout title={"لقاءات معرفية مترجمة"} items={data} />
-        </>
-        <>
-          <TvLayout title={"لقاءات معرفية"} items={data} />
+        {seriesNames.map((items,index)=>(
+          <TvLayout items={items} key={index} />
+        ))}
+          
         </>
       </div>
     </div>

@@ -9,6 +9,7 @@ import AddWriter from "./pages/AddWriter";
 // import { NavLink } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import AddVideo from "./pages/AddVideo";
+import AddSeries from "./pages/AddSeries";
 
 
 
@@ -31,6 +32,7 @@ const Dashboard = () => {
                 <Route path="/dashboard/addwriter" component={AddWriter} />
                 <Route path="/dashboard/addarticle" component={AddArticle} />
                 <Route path="/dashboard/addvideo" component={AddVideo} />
+                <Route path="/dashboard/addseries" component={AddSeries} />
               </Switch>
             </div>
           </Router>

@@ -43,6 +43,11 @@ const Dashboard = () => {
             تنسيق التلفاز
           </NavLink>
         </li>
+        <li className="nav-item-dashboard">
+          <NavLink to="/dashboard/addseries" className="nav-links">
+             اضافة سلسلة
+          </NavLink>
+        </li>
       </ul>
     </>
   );

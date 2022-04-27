@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 // import {Redirect} from "react-router-dom"
 
 
-const AddWriter = ({token}) => {
+const AddWriter = () => {
   const [name, setName] = useState("");
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
