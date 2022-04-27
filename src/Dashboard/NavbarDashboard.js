@@ -2,11 +2,14 @@ import React from "react";
 import "./Dashboard.css";
 import logo from "../assets/logo11.png";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <>
-      <img src={logo} alt="test" />
+      <Link to="/home">
+        <img src={logo} alt="test" />
+      </Link>
       <ul className="dashboard-links">
         <li className="nav-item-dashboard">
           <NavLink to="/dashboard/addwriter" className={"nav-links "}>

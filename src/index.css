@@ -9,8 +9,7 @@
     url("../src/assets/fonts/Amariya-Bold.woff2") format("woff2"),
     url("../src/assets/fonts/Amariya-Bold.woff") format("woff"),
     url("../src/assets/fonts/Amariya-Bold.ttf") format("truetype"),
-    url("../src/assets/fonts/Amariya-Bold.svg#svgFontName")
-      format("svg");
+    url("../src/assets/fonts/Amariya-Bold.svg#svgFontName") format("svg");
   font-display: swap;
   font-style: normal;
 }
@@ -22,8 +21,7 @@
     url("../src/assets/fonts/Amariya-Medium.woff2") format("woff2"),
     url("../src/assets/fonts/Amariya-Medium.woff") format("woff"),
     url("../src/assets/fonts/Amariya-Medium.ttf") format("truetype"),
-    url("../src/assets/fonts/Amariya-Medium.svg#svgFontName")
-      format("svg");
+    url("../src/assets/fonts/Amariya-Medium.svg#svgFontName") format("svg");
   font-display: swap;
   font-style: normal;
 }
@@ -35,8 +33,7 @@
     url("../src/assets/fonts/Amariya-Regular.woff2") format("woff2"),
     url("../src/assets/fonts/Amariya-Regular.woff") format("woff"),
     url("../src/assets/fonts/Amariya-Regular.ttf") format("truetype"),
-    url("../src/assets/fonts/Amariya-Regular.svg#svgFontName")
-      format("svg");
+    url("../src/assets/fonts/Amariya-Regular.svg#svgFontName") format("svg");
   font-display: swap;
   font-style: normal;
 }
@@ -61,7 +58,7 @@ body {
   margin: 0;
   background: var(--light-white);
   /* background: cadetblue; */
-  font-family: 'Amariya-Regular';
+  font-family: "Amariya-Regular";
   direction: rtl;
   overflow-x: hidden;
   /* overflow: hidden; Hide scrollbars */
@@ -122,31 +119,34 @@ body {
 .tv-vids-parent h1,
 .edrak-tv-layout-container h1,
 .writers-container h1,
-.more-papers h1{
+.more-papers h1 {
   color: var(--black);
   margin-bottom: 8px;
   font-weight: 500;
-  font-family: 'Amariya-Medium';
+  font-family: "Amariya-Medium";
   font-size: 34px;
-  
 }
 
 hr {
   border: 0.2px solid var(--black);
   opacity: 0.2;
 }
-.newButton{
+.newButton {
   width: 148px;
   height: 40px;
   font-size: 18px;
   background: var(--first-color);
   color: var(--white);
-  font-family: 'Amariya-Bold';
+  font-family: "Amariya-Bold";
   border: none;
   cursor: pointer;
   margin-top: 50px;
 }
-
+.no-articles {
+  font-family: "Amariya-Bold";
+  font-size: 26px;
+  color: var(--black);
+}
 @media screen and (max-width: 900px) {
   body {
     overflow-x: hidden;

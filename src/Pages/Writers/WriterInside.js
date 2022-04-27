@@ -54,9 +54,8 @@ const WriterInside = () => {
   // const url = window.location.href;
 
   useEffect(() => {
-    fetch(`${baseUrl}/users`,
-    {
-      credentials: 'include'
+    fetch(`${baseUrl}/users`, {
+      credentials: "include",
     })
       .then((res) => {
         return res.json();
@@ -93,13 +92,20 @@ const WriterInside = () => {
               <i className="fa-solid fa-share-from-square"></i>
             </span>
             <span>
-              <a href={writerInsider.twitter} target="_blank" rel="noopener noreferrer">
+              <a
+                href={writerInsider.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fa-brands fa-twitter"></i>
               </a>
-              
             </span>
             <span>
-              <a href={writerInsider.facebook} target="_blank" rel="noopener noreferrer">
+              <a
+                href={writerInsider.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
             </span>
@@ -109,17 +115,15 @@ const WriterInside = () => {
         <div className="writerInside-articles">
           <hr />
           <div className="writerInside-articles-all">
-
-
-              {
-                writerInsider.articles >0 ?
-                writerInsider.articles.map((item,index)=>(
-                  <CardPodcast item={item} key={index}/>
-                )) : (<div>لا يوجد مقالات</div>)
-              }
-            {/* <CardPodcast data={writerInsider.articles}/>
-            <CardPodcast />
-            <CardPodcast /> */}
+            {writerInsider.articles.length > 0 ? (
+              writerInsider.articles.map((item, index) => (
+                <CardPodcast item={item} key={index} />
+              ))
+            ) : (
+              <div>
+                <h2 className="no-articles">لا يوجد مقالات</h2>
+              </div>
+            )}
           </div>
         </div>
       </div>
