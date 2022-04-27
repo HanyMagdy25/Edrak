@@ -25,6 +25,7 @@ const Header = () => {
   const edraks = useSelector(getAllEdrak);
 
   const [edrakAuthors, setEdrakAuthors] = useState([]);
+  const [seriesNames, setSeriesNames] = useState([]);
 
   useEffect(() => {
     fetch(`${baseUrl}/users?role=Author`, {
@@ -55,7 +56,26 @@ const Header = () => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
 
-  console.log("58 edraks :" ,edraks)
+  console.log("58 edraks :", edraks);
+
+  useEffect(() => {
+    fetch(`${baseUrl}/serieses`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // setData(data);
+        console.log("40 serieses from tv: ", data);
+        setSeriesNames(
+          data.msg.map((e) => {
+            return { id: e._id, series: e.name, videos: e.videos };
+          })
+        );
+        console.log("seriesNames from tv: ", seriesNames);
+      });
+  }, []);
 
   if (!edraks.length > 0) {
     return (
@@ -112,7 +132,12 @@ const Header = () => {
           <div className="most-popular-cards">
             {/*to Stop map method after certain number with slice method */}
             {edraks.slice(0, 4).map((card, index) => (
-              <BigCard key={index} data={card} type="four" path="article-inside" />
+              <BigCard
+                key={index}
+                data={card}
+                type="four"
+                path="article-inside"
+              />
             ))}
           </div>
         </div>
@@ -132,7 +157,12 @@ const Header = () => {
       </div>
       {/* تلفزيون إدراك */}
       <div className="tv-edrak-in-header">
-        <TvLayout title={"تلفاز ادراك"} items={data} />
+        <>
+          {seriesNames.slice(0,1).map((items, index) => (
+            <TvLayout items={items} key={index} />
+          ))}
+        </>
+        {/* <TvLayout title={"تلفاز ادراك"} items={seriesNames} /> */}
       </div>
     </div>
   );

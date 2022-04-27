@@ -1,3 +1,8 @@
 .edrak-tv-layout-container{
     width: 100%;
 }
+.tvlayout-link{
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+}

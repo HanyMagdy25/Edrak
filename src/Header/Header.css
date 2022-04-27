@@ -184,7 +184,8 @@
   width: 100%;
 }
 .edrak-tv-container-inner .edrak-tv-right {
-  width: 65%;
+  /* width: 65%; */
+  width: 100%;
   background-color: var(--white);
 }
 .edrak-tv-container-inner .edrak-tv-left {
