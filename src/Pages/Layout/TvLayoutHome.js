@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MediumCard from "../../Cards/MediumCard"
-import "./TvLayout.css"
+import "./TvLayoutHome.css"
 
-const TvLayout = ({items}) => {
-  console.log("6 from TVlayout : ",items)
+const TvLayoutHome = ({items,title}) => {
   return (
     <>
         <div className="edrak-tv">
         <div className="edrak-tv-layout-container">
-          <h1>{items.series}</h1>
+          <h1>{title}</h1>
           <hr />
           
           <div className="edrak-tv-container-inner">
 
             {
-              items.videos.slice(0,1).map((item,index)=>(
+              items.slice(1,2).map((item,index)=>(
                 <Link className='tvlayout-link' to={`/tv-inside/${item._id}`}>
                 
-            <div className="edrak-tv-right" key={index}>
+            <div className="edrak-tv-right-in-home" key={index}>
               <div className="img-container">
                 <img
                   src={item.img}
@@ -26,10 +25,10 @@ const TvLayout = ({items}) => {
                   alt="TvImage"
                 />
               </div>
-              <div className="tv-content">
-                
+              <div className="tv-content-in-home">
+              <div className="global-simi-btn">{item.type}</div>
                 <h2 className="header-headline">{item.name}</h2>
-                <p className="header-paragragh">
+                <p className="header-paragragh-in-home">
                   {item.about}
                 </p>
                 <div className="about-author">
@@ -50,7 +49,7 @@ const TvLayout = ({items}) => {
 
             <div className="edrak-tv-left">
               <div className="edrak-tv-left-container">
-                {items.videos?.slice(0,3).map((item,index)=>(
+                {items?.slice(1,3).map((item,index)=>(
                   <MediumCard item={item} type="zero" key={index} path="tv-inside" />
                 ))}
               </div>
@@ -62,4 +61,4 @@ const TvLayout = ({items}) => {
   )
 }
 
-export default TvLayout
+export default TvLayoutHome

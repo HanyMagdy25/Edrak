@@ -47,7 +47,7 @@
     margin-bottom: 6px;
     font-family: 'Amariya-Medium';
     font-weight: 500;
-    font-size: 25px;
+    font-size: 30px;
 
 }
 
@@ -55,6 +55,7 @@
     color: var(--black);
     margin-bottom: 10px;
     padding: 0 5px;
+    font-size: 20px;
     
 }
 

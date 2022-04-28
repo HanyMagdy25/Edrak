@@ -76,9 +76,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 30px;
-  font-size: 18px;
+  width: 120px;
+  height: 42px;
+  font-size: 30px;
   color: var(--white);
 }
 .global-simi-btn {
@@ -96,9 +96,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px;
+  /* width: 70px;
   height: 27px;
-  font-size: 17px;
+  font-size: 17px; */
+  width: 74px;
+  height: 25px;
+  font-size: 19px;
   color: var(--white);
 }
 .global-simi-btn-small-blue {
@@ -124,7 +127,8 @@ body {
   margin-bottom: 8px;
   font-weight: 500;
   font-family: "Amariya-Medium";
-  font-size: 34px;
+  /* font-size: 34px; */
+  font-size: 45px;
 }
 
 hr {
