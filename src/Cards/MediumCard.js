@@ -8,8 +8,8 @@ const MediumCard = ({ item, type,path }) => {
       <div className={"medium-card" + type}>
         <img src={item.img} alt="header" />
         <div className="medium-card-content">
-          <h2>{item.name}</h2>
-          <p>{item.about}</p>
+          <h2>{item.name?.substring(0, 15)}...</h2>
+          <p>{item.about?.substring(0, 50)}...</p>
           <div className="about-author-in-medium-card">
             <h6>{item.writer}</h6>
             <h5 className="share-icon-in-card">

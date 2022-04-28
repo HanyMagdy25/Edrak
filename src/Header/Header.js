@@ -14,6 +14,7 @@ import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import HeaderSlider from "./HeaderSlider";
 import Spinner from "../constants/Spinner";
 import TvLayout from "../Pages/Layout/TvLayout";
+import TvLayoutHome from "../Pages/Layout/TvLayoutHome";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
@@ -49,7 +50,7 @@ const Header = () => {
       })
       .then((data) => {
         setData(data.msg);
-        console.log("55", data);
+        console.log("data from home with vids: ", data);
       });
   }, []);
   useEffect(() => {
@@ -157,12 +158,12 @@ const Header = () => {
       </div>
       {/* تلفزيون إدراك */}
       <div className="tv-edrak-in-header">
-        <>
+        {/* <>
           {seriesNames.slice(0,1).map((items, index) => (
             <TvLayout items={items} key={index} />
           ))}
-        </>
-        {/* <TvLayout title={"تلفاز ادراك"} items={seriesNames} /> */}
+        </> */}
+        <TvLayoutHome title={"تلفزيون إدراك"} items={data} />
       </div>
     </div>
   );

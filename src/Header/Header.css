@@ -46,11 +46,13 @@
   color: var(--black);
   margin: 8px 0 10px 0;
   font-family: "Amariya-bold";
-  font-size: 40px;
+  font-size: 44px;
 }
 .header-paragragh {
   color: var(--black);
   padding: 2px 20px;
+  font-size: 25px;
+
 }
 /* ==== about author of the book */
 .about-author {
@@ -63,7 +65,7 @@
   font-family: "Amariya-Bold";
   margin-top: 10px;
   margin-bottom: 30px;
-  font-size: 16px;
+  font-size: 22px;
 }
 .about-author-article{
   display: flex;
@@ -78,7 +80,7 @@
   font-size: 20px;
 }
 .about-author i {
-  font-size: 12px;
+  font-size: 15px;
   margin: 0 2px;
 }
 .share-icon {
@@ -187,6 +189,7 @@
   /* width: 65%; */
   width: 100%;
   background-color: var(--white);
+  height: 100%;
 }
 .edrak-tv-container-inner .edrak-tv-left {
   width: 35%;

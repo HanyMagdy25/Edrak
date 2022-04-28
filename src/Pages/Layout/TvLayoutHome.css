@@ -1,0 +1,25 @@
+.edrak-tv-layout-container{
+    width: 100%;
+}
+.tvlayout-link{
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+}
+.tv-content-in-home{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.header-paragragh-in-home{
+    color: var(--black);
+    /* padding: 2px 20px; */
+    font-size: 25px;
+}
+
+.edrak-tv-right-in-home{
+    width: 100%;
+    background-color: var(--white);
+    height: 100%;
+}
