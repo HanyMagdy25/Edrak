@@ -14,7 +14,7 @@ const TvLayoutHome = ({items,title}) => {
           <div className="edrak-tv-container-inner">
 
             {
-              items.slice(1,2).map((item,index)=>(
+              items.slice(0,1).map((item,index)=>(
                 <Link className='tvlayout-link' to={`/tv-inside/${item._id}`}>
                 
             <div className="edrak-tv-right-in-home" key={index}>

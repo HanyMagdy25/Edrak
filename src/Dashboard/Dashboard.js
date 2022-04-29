@@ -29,6 +29,7 @@ const Dashboard = () => {
             </div>
             <div className="dashboard-left">
               <Switch>
+              <Route path='/dashboard/' exact component={AddWriter}/>
                 <Route path="/dashboard/addwriter" component={AddWriter} />
                 <Route path="/dashboard/addarticle" component={AddArticle} />
                 <Route path="/dashboard/addvideo" component={AddVideo} />
