@@ -33,7 +33,7 @@ const AllVideos = () => {
   return (
     <div className="add-page">
       <table>
-        <caption>جميع المقالات</caption>
+        <caption>جميع الفيديوهات</caption>
         <thead>
           <tr>
             <th>العنوان</th>
