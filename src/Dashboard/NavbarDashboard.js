@@ -48,6 +48,16 @@ const Dashboard = () => {
              اضافة سلسلة
           </NavLink>
         </li>
+        <li className="nav-item-dashboard">
+          <NavLink to="/dashboard/allarticles" className="nav-links">
+            كل المقالات
+          </NavLink>
+        </li>
+        <li className="nav-item-dashboard">
+          <NavLink to="/dashboard/allvideos" className="nav-links">
+            كل الفيديوهات
+          </NavLink>
+        </li>
       </ul>
     </>
   );

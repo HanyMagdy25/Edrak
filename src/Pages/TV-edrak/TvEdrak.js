@@ -43,7 +43,7 @@ const TvEdrak = () => {
             return { id: e._id, series: e.name , videos: e.videos };
           })
         );
-        console.log("seriesNames from tv: ", seriesNames);
+        // console.log("seriesNames from tv: ", seriesNames);
       });
   }, []);
 

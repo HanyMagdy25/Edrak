@@ -179,8 +179,11 @@
 
   @media screen and (max-width:500px) {
     .footer-email{
-        width: 90%;
+        width: 50%;
         
+    }
+    .footer-left{
+        width: 80%;
     }
     .footer-email button{
         

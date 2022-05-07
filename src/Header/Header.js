@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import HeaderSlider from "./HeaderSlider";
 import Spinner from "../constants/Spinner";
-import TvLayout from "../Pages/Layout/TvLayout";
+// import TvLayout from "../Pages/Layout/TvLayout";
 import TvLayoutHome from "../Pages/Layout/TvLayoutHome";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
@@ -26,7 +26,7 @@ const Header = () => {
   const edraks = useSelector(getAllEdrak);
 
   const [edrakAuthors, setEdrakAuthors] = useState([]);
-  const [seriesNames, setSeriesNames] = useState([]);
+  // const [seriesNames, setSeriesNames] = useState([]);
 
   useEffect(() => {
     fetch(`${baseUrl}/users?role=Author`, {
@@ -59,24 +59,24 @@ const Header = () => {
 
   console.log("58 edraks :", edraks);
 
-  useEffect(() => {
-    fetch(`${baseUrl}/serieses`, {
-      credentials: "include",
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        // setData(data);
-        console.log("40 serieses from tv: ", data);
-        setSeriesNames(
-          data.msg.map((e) => {
-            return { id: e._id, series: e.name, videos: e.videos };
-          })
-        );
-        console.log("seriesNames from tv: ", seriesNames);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${baseUrl}/serieses`, {
+  //     credentials: "include",
+  //   })
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       // setData(data);
+  //       console.log("40 serieses from tv: ", data);
+  //       setSeriesNames(
+  //         data.msg.map((e) => {
+  //           return { id: e._id, series: e.name, videos: e.videos };
+  //         })
+  //       );
+  //       // console.log("seriesNames from tv: ", seriesNames);
+  //     });
+  // }, []);
 
   if (!edraks.length > 0) {
     return (

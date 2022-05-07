@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
-import { BrowserRouter as Router , Route , Switch  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Articles from "./Articles/Articles";
@@ -19,31 +19,37 @@ import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Dashboard/Login";
 
 function ScrollToTop() {
-    const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-    return null;
+  return null;
 }
 
 const token = localStorage.getItem("token");
-    console.log("from app :",token)
+console.log("from app :", token);
 
-    const pathname = window.location.pathname;
+const pathname = window.location.pathname;
 
-
-class App extends Component  {
-  render(){
+class App extends Component {
+  render() {
     return (
       <Router>
-        <ScrollToTop/>
-        {pathname !== "/dashboard" && pathname!=="/dashboard/addarticle" && pathname !== "/dashboard/addwriter" && <Navbar/>}
+        <ScrollToTop />
+        {pathname !== "/dashboard" &&
+          pathname !== "/dashboard/" &&
+          pathname !== "/dashboard/addarticle" &&
+          pathname !== "/dashboard/addwriter" &&
+          pathname !== "/dashboard/addvideo" &&
+          pathname !== "/dashboard/addseries" &&
+          pathname !== "/dashboard/allvideos" &&
+          pathname !== "/dashboard/allarticles" && <Navbar />}
         {/* <Navbar/> */}
         <Switch>
-          <Route path='/' exact component={Header}/>
-          <Route path='/home' component={Header}/>
+          <Route path="/" exact component={Header} />
+          <Route path="/home" component={Header} />
           <Route path="/articles" component={Articles} />
           <Route path="/article-inside/:_id" component={ArticleInside} />
           <Route path="/tv" component={TvEdrak} />
@@ -53,19 +59,21 @@ class App extends Component  {
           {/* <Route path="/papers" component={Papers} /> */}
           {/* <Route path="/paper-inside/:_id" component={PaperInside} /> */}
           <Route path="/dashboard" component={Dashboard} />
-           
+
           <Route path="/login" component={Login} />
         </Switch>
 
-
-        {pathname !== "/dashboard" && pathname!=="/dashboard/addarticle" && pathname !== "/dashboard/addwriter" && <Footer/>}
-      
+        {pathname !== "/dashboard" &&
+          pathname !== "/dashboard/" &&
+          pathname !== "/dashboard/addarticle" &&
+          pathname !== "/dashboard/addwriter" &&
+          pathname !== "/dashboard/addseries" &&
+          pathname !== "/dashboard/addvideo" &&
+          pathname !== "/dashboard/allvideos" &&
+          pathname !== "/dashboard/allarticles" && <Footer />}
       </Router>
-      
     );
   }
 }
 
-
 export default App;
-
