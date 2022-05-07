@@ -10,6 +10,8 @@ import AddWriter from "./pages/AddWriter";
 import { Redirect } from "react-router-dom";
 import AddVideo from "./pages/AddVideo";
 import AddSeries from "./pages/AddSeries";
+import AllArticles from "./pages/AllArticles";
+import AllVideos from "./pages/AllVideos";
 
 
 
@@ -34,6 +36,8 @@ const Dashboard = () => {
                 <Route path="/dashboard/addarticle" component={AddArticle} />
                 <Route path="/dashboard/addvideo" component={AddVideo} />
                 <Route path="/dashboard/addseries" component={AddSeries} />
+                <Route path="/dashboard/allarticles" component={AllArticles} />
+                <Route path="/dashboard/allvideos" component={AllVideos} />
               </Switch>
             </div>
           </Router>

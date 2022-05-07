@@ -180,6 +180,37 @@ textarea {
   flex-wrap: wrap;
 }
 
+/* ============== Table =============== */
+table{
+  width: 100%;
+  margin-top: 10px;
+
+}
+table caption{
+  color:var(--first-color);
+  font-size: 2rem;
+
+}
+table th{
+  font-weight: 100;
+  color: var(--first-color);
+  font-size: 1.7rem;
+}
+table td{
+  font-size: 1.2rem;
+}
+
+table td , table th{
+  border: 1px solid var(--first-color);
+  padding: 8px;
+  text-align: center;
+}
+table td span i {
+  color: var(--delete);
+  cursor: pointer;
+}
+
+
 @media screen and (max-width: 900px) {
   .add-page form {
     width: 100%;
@@ -217,3 +248,5 @@ textarea {
   }
 
 }
+
+
