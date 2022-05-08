@@ -61,7 +61,7 @@ body {
   /* background: cadetblue; */
   font-family: "Amariya-Regular";
   direction: rtl;
-  overflow-x: hidden;
+  overflow-x: hidden ;
   /* overflow: hidden; Hide scrollbars */
 }
 
@@ -152,8 +152,8 @@ hr {
   font-size: 26px;
   color: var(--black);
 }
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 1100px) {
   body {
     overflow-x: hidden;
   }
-}
+} */

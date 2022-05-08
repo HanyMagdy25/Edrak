@@ -75,10 +75,18 @@ align-items: center;
 width: 90%;
 height: 150px;
 }
-.writersLayout-container img {
+/* .writersLayout-container img {
   border-radius: 50%;
   width: 40%;
-}
+  height: 95%;
+} */
+
+ .writersLayout-container img {
+  border-radius: 50%;
+height: 120px;
+width: 120px;
+} 
+
 .writersLayout-container h3 {
   font-family: "Amariya-Bold";
   color: var(--black);
@@ -143,4 +151,19 @@ height: 150px;
 
 .writerInside-articles-all{
   margin-top: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+  .writers-linkfirst{
+    width: 50%;
+  }
+  .writers-linksecond {
+    width: 33%;
+}
+
+.writers-linkthird {
+  width: 33%;
+
+}
+
 }
