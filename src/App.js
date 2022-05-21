@@ -70,7 +70,8 @@ class App extends Component {
           pathname !== "/dashboard/addseries" &&
           pathname !== "/dashboard/addvideo" &&
           pathname !== "/dashboard/allvideos" &&
-          pathname !== "/dashboard/allarticles" && <Footer />}
+          pathname !== "/dashboard/allarticles" && 
+          <Footer />}
       </Router>
     );
   }

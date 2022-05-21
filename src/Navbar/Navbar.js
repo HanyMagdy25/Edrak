@@ -60,7 +60,7 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <NavLink
+              {/* <NavLink
                 to="/ggg"
                 className="nav-links"
                 onClick={() => {
@@ -69,7 +69,16 @@ const Navbar = () => {
                 }}
               >
                 بودكاست
-              </NavLink>
+              </NavLink> */}
+              <div
+                className="nav-links"
+                onClick={() => {
+                  handleClick();
+                  coming();
+                }}
+              >
+                بودكاست
+              </div>
             </li>
 
             <li className="nav-item">
@@ -84,7 +93,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
+              {/* <NavLink
                 to="/papers"
                 className="nav-links"
                 onClick={() => {
@@ -92,7 +101,17 @@ const Navbar = () => {
                 }}
               >
                 ملخصات وأوراق
-              </NavLink>
+              </NavLink> */}
+
+              <div
+                className="nav-links"
+                onClick={() => {
+                  handleClick();
+                  coming();
+                }}
+              >
+                ملخصات وأوراق
+              </div>
             </li>
             <li className="nav-item">
               <NavLink

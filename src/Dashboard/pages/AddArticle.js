@@ -76,13 +76,18 @@ const AddArticle = () => {
       method: "POST",
       body: formData,
       credentials: "include",
-      
+
     })
       .then((data) => data.json())
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        history.push("/dashboard");
+        if (res.status === "success") {
+          history.push("/dashboard");
+        } else {
+          alert(res.msg)
+        }
+
       });
   };
 
@@ -124,15 +129,18 @@ const AddArticle = () => {
             }}
           >
             {writersNames.map((n, index) => (
-              <option
-                value={n.id}
-                onClick={(e) => {
-                  console.log("onClick", e.target.value);
-                }}
-                key={index}
-              >
-                {n.name}
-              </option>
+              <>
+                <option value="">اختر كاتب  </option>
+                <option
+                  value={n.id}
+                  onClick={(e) => {
+                    console.log("onClick", e.target.value);
+                  }}
+                  key={index}
+                >
+                  {n.name}
+                </option>
+              </>
             ))}
           </select>
         </div>
