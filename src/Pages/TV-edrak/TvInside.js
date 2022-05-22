@@ -96,7 +96,7 @@ const TvInside = () => {
   return (
     <div className="tvinside-inside">
       <div className="tvinside-content">
-        <div className="global-simi-btn">{tvInsider.type}</div>
+        <div className="global-simi-btn">{tvInsider.type ==="undefined" ? "فكر": tvInsider.type }</div>
         <h1 className="header-headline">{tvInsider.name}</h1>
         <p className="header-paragragh">{tvInsider.about}</p>
         <div className="both-share-author">
