@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
@@ -10,15 +11,8 @@ const ArticleEdit = () => {
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
-  const [parag1, setParag1] = useState([]);
-  const [parag2, setParag2] = useState([]);
-  const [parag3, setParag3] = useState([]);
-  const [parag4, setParag4] = useState([]);
-  const [parag5, setParag5] = useState([]);
-  const [parag6, setParag6] = useState([]);
-  const [parag7, setParag7] = useState([]);
-  const [parag8, setParag8] = useState([]);
-  const [parag9, setParag9] = useState([]);
+  const [body, setBody] = useState("");
+  const [bodyVal, setBodyVal] = useState("");
 
   const [isPending, setIsPending] = useState(false);
 
@@ -54,12 +48,17 @@ const ArticleEdit = () => {
       console.log("res b", res);
       setName(res.msg.name);
       setAbout(res.msg.about);
-      //   setTwitter(res.msg.twitter);
-      //   setDescription(res.msg.description);
-      //   setPhoto(res.msg.thumbnail)
+      setBodyVal(res.msg.body);
+      setIcon(res.msg.icon);
+      setImg(res.msg.img);
     };
     editWriterId();
   }, []);
+
+  const handleChangeEditor = (value) => {
+    console.log(value);
+    setBody(value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,21 +72,13 @@ const ArticleEdit = () => {
     for (const [key, value] of Object.entries(blog)) {
       formData.append(key, value);
     }
-    formData.append("paragraphs", parag1);
-    formData.append("paragraphs", parag2);
-    formData.append("paragraphs", parag3);
-    formData.append("paragraphs", parag4);
-    formData.append("paragraphs", parag5);
-    formData.append("paragraphs", parag6);
-    formData.append("paragraphs", parag7);
-    formData.append("paragraphs", parag8);
-    formData.append("paragraphs", parag9);
     cat.forEach((e) => formData.append("cat", e));
     console.log("84", formData.getAll("cat"));
 
     formData.append("photos", icon);
     formData.append("photos", img);
-    fetch("https://depax-blog-backend.herokuapp.com/article", {
+    formData.append("body", editorRef.current.getContent());
+    fetch(`${baseUrl}/article/${id}`, {
       method: "PUT",
       body: formData,
       credentials: "include",
@@ -97,11 +88,18 @@ const ArticleEdit = () => {
         console.log("res now ", res);
         setIsPending(false);
         if (res.status === "success") {
-          history.push("/dashboard");
+          history.push("/dashboard/allarticles");
         } else {
           alert(res.msg);
         }
       });
+  };
+
+  const editorRef = useRef(null);
+  const log = () => {
+    if (editorRef.current) {
+      console.log(editorRef.current.getContent());
+    }
   };
   return (
     <div className="add-page">
@@ -123,6 +121,7 @@ const ArticleEdit = () => {
               setImg(e.target.files[0]);
             }}
           />
+          <img src={img} alt="test" />
         </div>
         <div className="datails-content">
           <label>الصورة المربعة</label>
@@ -132,6 +131,7 @@ const ArticleEdit = () => {
               setIcon(e.target.files[0]);
             }}
           />
+          <img src={icon} alt="test" />
         </div>
         <div className="datails-content">
           <label>اسم الكاتب</label>
@@ -140,7 +140,7 @@ const ArticleEdit = () => {
               setWriter(e.target.value);
             }}
           >
-            <   >
+            <>
               <option value="">اختر كاتب</option>
               {writersNames.map((n, index) => (
                 <React.Fragment key={index}>
@@ -158,134 +158,92 @@ const ArticleEdit = () => {
             </>
           </select>
         </div>
-
+        <div className="datails-content">
+          <h3 className="choose-title">نوع المقال (يجب التحديد مجددا)</h3>
+          <div className="check-container">
+            <label>فكر</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="فكر"
+            />
+          </div>
+          <div className="check-container">
+            <label>هوية</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="هوية"
+            />
+          </div>
+          <div className="check-container">
+            <label>اقتصاد</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="اقتصاد"
+            />
+          </div>
+          <div className="check-container">
+            <label>اجتماع</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="اجتماع"
+            />
+          </div>
+          <div className="check-container">
+            <label>تزكية</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="تزكية"
+            />
+          </div>
+          <div className="check-container">
+            <label>ترجمات</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCat(cat.concat(e.target.value))}
+              value="ترجمات"
+            />
+          </div>
+        </div>
         <div className="datails-content-text">
           <label className="lab-text-dash">نبذة عن المقال</label>
           <textarea value={about} onChange={(e) => setAbout(e.target.value)} />
         </div>
 
-        <div className="datails-content-container">
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 1</label>
-            <textarea
-              onChange={(e) => setParag1([e.target.value, parag1[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 1</label>
-            <textarea
-              onChange={(e) => setParag1([parag1[0], e.target.value])}
-            />
-          </div>
+        <div className="editor-container">
+          <Editor
+            apiKey="htz0nznb6uk7q94cexoedjrudzji4w89jbd8f38lqopfmn6g"
+            onInit={(evt, editor) => (editorRef.current = editor)}
+            initialValue={bodyVal}
+            init={{
+              height: 500,
+              menubar: false,
+              plugins:
+                "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons",
 
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 2</label>
-            <textarea
-              onChange={(e) => setParag2([e.target.value, parag2[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 2</label>
-            <textarea
-              onChange={(e) => setParag2([parag2[0], e.target.value])}
-            />
-          </div>
+              menubar: "file edit view insert format tools table help",
+              toolbar:
+                "undo redo | bold italic underline strikethrough | " +
+                "fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | " +
+                "numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print |" +
+                "insertfile image media template link anchor codesample | ltr rtl",
 
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 3</label>
-            <textarea
-              onChange={(e) => setParag3([e.target.value, parag3[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 3</label>
-            <textarea
-              onChange={(e) => setParag3([parag3[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 4</label>
-            <textarea
-              onChange={(e) => setParag4([e.target.value, parag4[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 4</label>
-            <textarea
-              onChange={(e) => setParag4([parag4[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 5</label>
-            <textarea
-              onChange={(e) => setParag5([e.target.value, parag5[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 5</label>
-            <textarea
-              onChange={(e) => setParag5([parag5[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 6</label>
-            <textarea
-              onChange={(e) => setParag6([e.target.value, parag6[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 6</label>
-            <textarea
-              onChange={(e) => setParag6([parag6[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 7</label>
-            <textarea
-              onChange={(e) => setParag7([e.target.value, parag7[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 7</label>
-            <textarea
-              onChange={(e) => setParag7([parag7[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 8</label>
-            <textarea
-              onChange={(e) => setParag8([e.target.value, parag8[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 8</label>
-            <textarea
-              onChange={(e) => setParag8([parag8[0], e.target.value])}
-            />
-          </div>
-
-          <div className="datails-content-text">
-            <label className="lab-text-dash">عنوان 9</label>
-            <textarea
-              onChange={(e) => setParag9([e.target.value, parag9[1]])}
-            />
-          </div>
-          <div className="datails-content-text">
-            <label className="lab-text-dash">موضوع 9</label>
-            <textarea
-              onChange={(e) => setParag9([parag9[0], e.target.value])}
-            />
-          </div>
+              content_style:
+                'body { font-family: "Amariya-Regular"; font-size:14px }',
+            }}
+          />
         </div>
 
         {!isPending && <button className="newButton">تحديث</button>}
         {isPending && <button className="newButton">جارى التحديث</button>}
       </form>
+      <button type="click" onClick={log}>
+        Log editor content
+      </button>
     </div>
   );
 };

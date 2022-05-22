@@ -87,6 +87,9 @@
   width: 24%;
   color: var(--black);
 }
+.datails-content img{
+  width: 90%;
+}
 table tbody td .edit-dash i{
   color: var(--edit-color);
 }
@@ -101,7 +104,7 @@ table tbody td .edit-dash i{
 
 
 .datails-content label {
-  width: 150px;
+  width: 100%;
   color: var(--black);
   font-size: 18px;
 }
@@ -114,8 +117,8 @@ table tbody td .edit-dash i{
   border-radius: 10px;
 }
 .datails-content select {
-  width: 80%;
-  height: 30px;
+  width: 90%;
+  height: 35px;
   padding: 0 4px;
   border: 1px solid #b1b1b1;
   margin-top: 6px;
@@ -178,13 +181,11 @@ textarea {
   /* background-color: aquamarine; */
 }
 .datails-content-youtube input {
-  width: 300px;
-  /* height: 30px; */
-  /* background-color: gray; */
-
-  height: 25px;
+  width: 350px;
+  height: 35px;
   padding: 6px;
   border: 1px solid #b1b1b1;
+  border-radius: 10px;
 }
 
 .datails-content-container {

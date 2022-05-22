@@ -37,7 +37,7 @@ const AddWriter = () => {
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        history.push("/dashboard");
+        history.push("/dashboard/allwriters");
       });
   };
 

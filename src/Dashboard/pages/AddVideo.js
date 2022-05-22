@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
@@ -126,17 +127,22 @@ const AddVideo = () => {
               setWriter(e.target.value);
             }}
           >
-            {writersNames.map((n, index) => (
-              <option
-                value={n.id}
-                onClick={(e) => {
-                  console.log("onClick", e.target.value);
-                }}
-                key={index}
-              >
-                {n.name}
-              </option>
-            ))}
+            <   >
+              <option value="">اختر كاتب</option>
+              {writersNames.map((n, index) => (
+                <React.Fragment key={index}>
+                  <option
+                    value={n.id}
+                    onClick={(e) => {
+                      console.log("onClick", e.target.value);
+                    }}
+                    // key={index}
+                  >
+                    {n.name}
+                  </option>
+                </React.Fragment>
+              ))}
+            </>
           </select>
         </div>
         <div className="datails-content">
@@ -224,6 +230,11 @@ const AddVideo = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div>
+          <Link to="/dashboard/addseries">
+          <button className="newButton">اضافة سلسلة</button>
+          </Link>
         </div>
         
 

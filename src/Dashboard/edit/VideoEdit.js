@@ -1,37 +1,38 @@
-import React, { useEffect, useState ,useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { Editor } from '@tinymce/tinymce-react';
 
-const AddArticle = () => {
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
+
+const VideoEdit = () => {
   const [name, setName] = useState("");
   const [writer, setWriter] = useState("");
+
+  // const [facebook, setFacebook] = useState("");
+  const [youtube_url, setYoutube_url] = useState("");
   const [icon, setIcon] = useState();
-  const [body, setBody] = useState("");
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
+  //   const [photo, setPhoto] = useState();
+  // const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(false);
+  const [writersNames, setWritersNames] = useState([]);
+  const [seriesNames, setSeriesNames] = useState([]);
+  const [series, setSeries] = useState("");
   const [about, setAbout] = useState("");
 
-
-  const [isPending, setIsPending] = useState(false);
-
-  // to fetch writers names
-  const [data, setData] = useState([]);
-  const [writersNames, setWritersNames] = useState([]);
-
-  // console.log('33 cat',cat)
-
   const history = useHistory();
+  const { id } = useParams();
 
   useEffect(() => {
-
-    fetch("https://depax-blog-backend.herokuapp.com/users", {
+    fetch(`${baseUrl}/users`, {
       credentials: "include",
     })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
+        // setData(data);
         console.log("47", data);
         setWritersNames(
           data.msg.map((e) => {
@@ -41,13 +42,42 @@ const AddArticle = () => {
       });
   }, []);
 
-  const handleChangeEditor = (value) => {
-    console.log(value);
-    setBody(value)
-  }
+  useEffect(() => {
+    const editWriterId = async () => {
+      const reqData = await fetch(`${baseUrl}/video/${id}`);
+      const res = await reqData.json();
+      console.log("res b", res);
+      setName(res.msg.name);
+      setAbout(res.msg.about);
+      setWriter(res.msg.writer);
+      setIcon(res.msg.icon);
+      setImg(res.msg.img);
+      setYoutube_url(res.msg.youtube_url)
+    };
+    editWriterId();
+  }, []);
+
+  useEffect(() => {
+    fetch(`${baseUrl}/serieses`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // setData(data);
+        console.log("serieses: ", data);
+        setSeriesNames(
+          data.msg.map((e) => {
+            return { id: e._id, series: e.name };
+          })
+        );
+      });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer, about, type: cat[0] };
+    const blog = { name, writer, youtube_url, series, about, type: cat[0] };
 
     // console.log('type 75: ',type)
 
@@ -57,45 +87,38 @@ const AddArticle = () => {
     for (const [key, value] of Object.entries(blog)) {
       formData.append(key, value);
     }
+
     cat.forEach((e) => formData.append("cat", e));
     console.log("84", formData.getAll("cat"));
 
     formData.append("photos", icon);
     formData.append("photos", img);
-    formData.append("body" , editorRef.current.getContent())
-    fetch("https://depax-blog-backend.herokuapp.com/article", {
-      method: "POST",
+    fetch(`${baseUrl}/video/${id}`, {
+      method: "PUT",
       body: formData,
       credentials: "include",
-
     })
       .then((data) => data.json())
       .then((res) => {
-        console.log("res now ", res);
+        console.log("res now from addVideo :", res);
         setIsPending(false);
         if (res.status === "success") {
-          // window.location.reload()
-          history.push("/dashboard/allarticles")
-        } else {
-          alert(res.msg)
-        }
-
+            // window.location.reload()
+            history.push("/dashboard/allvideos")
+          } else {
+            alert(res.msg)
+          }
       });
   };
-  const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
-    }
-  };
+
   return (
     <div className="add-page">
       <form onSubmit={handleSubmit}>
         <div className="datails-content">
-          <label>اسم المقالة</label>
+          <label>اسم الفيديو</label>
           <input
             type="text"
-            placeholder="اسم المقالة"
+            placeholder="اسم الكاتب"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -108,6 +131,7 @@ const AddArticle = () => {
               setImg(e.target.files[0]);
             }}
           />
+          <img src={img} alt="up"/>
         </div>
         <div className="datails-content">
           <label>الصورة المربعة</label>
@@ -117,16 +141,17 @@ const AddArticle = () => {
               setIcon(e.target.files[0]);
             }}
           />
+          <img src={icon} alt="up"/>
         </div>
         <div className="datails-content">
-          <label>اسم الكاتب</label>
+          <label>تم اختيار ( {writer} ) سابقا</label>
           <select
             onChange={(e) => {
               setWriter(e.target.value);
             }}
           >
-            <   >
-              <option value="">اختر كاتب</option>
+            <>
+              <option value="">اختر مجددا من فضلك</option>
               {writersNames.map((n, index) => (
                 <React.Fragment key={index}>
                   <option
@@ -144,7 +169,7 @@ const AddArticle = () => {
           </select>
         </div>
         <div className="datails-content">
-          <h3 className="choose-title">نوع المقال</h3>
+          <h3 className="choose-title">نوع الفيديو</h3>
           <div className="check-container">
             <label>فكر</label>
             <input
@@ -195,40 +220,50 @@ const AddArticle = () => {
           </div>
         </div>
         <div className="datails-content-text">
-          <label className="lab-text-dash">نبذة عن المقال</label>
-          <textarea onChange={(e) => setAbout(e.target.value)} />
+          <label className="lab-text-dash">نبذة عن الفيديو</label>
+          <textarea value={about} onChange={(e) => setAbout(e.target.value)} />
         </div>
 
-        <div className="editor-container">
-          <Editor
-          apiKey='htz0nznb6uk7q94cexoedjrudzji4w89jbd8f38lqopfmn6g'
-          onInit={(evt, editor) => editorRef.current = editor}
-          initialValue="<p>This is the initial content of the editor.</p>"
-          init={{
-            height: 500,
-            menubar: false,
-            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
-
-            menubar: 'file edit view insert format tools table help',
-            toolbar: 'undo redo | bold italic underline strikethrough | ' +
-            'fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | '+ 
-            'numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print |' +
-            'insertfile image media template link anchor codesample | ltr rtl',
-
-            content_style: 'body { font-family: "Amariya-Regular"; font-size:14px }'
-          }}
-        />
+        <div className="datails-content-youtube">
+          <label className="lab-text-dash">لينك الفيديو يوتيوب</label>
+          <input
+            type="text"
+            placeholder="لينك الفيديو"
+            value={youtube_url}
+            onChange={(e) => setYoutube_url(e.target.value)}
+          />
         </div>
-        
 
+        <div className="datails-content">
+          <label>السلسلة التابع لها</label>
+          <select
+            onChange={(e) => {
+              setSeries(e.target.value);
+            }}
+          >
+              <>
+              <option value="">اختر سلسلة</option>
+              {seriesNames.map((n, index) => (
+              <option
+                value={n.id}
+                onClick={(e) => {
+                  console.log("onClick", e.target.value);
+                }}
+                key={index}
+              >
+                {n.series}
+              </option>
+            ))}
+              </>
+            
+          </select>
+        </div>
 
-        {!isPending && <button className="newButton">حفظ </button>}
-        {isPending && <button className="newButton">جارى الحفظ</button>}
+        {!isPending && <button className="newButton">تحديث </button>}
+        {isPending && <button className="newButton">جارى التحديث</button>}
       </form>
-      <button type="click" onClick={log}>Log editor content</button>
-
     </div>
   );
 };
 
-export default AddArticle;
+export default VideoEdit;

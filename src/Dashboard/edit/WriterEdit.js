@@ -51,16 +51,12 @@ const WriterEdit = () => {
       method: "PUT",
       body: formData,
       credentials: "include",
-      // headers: {
-      //   "Content-Type": "formdata",
-      //   "Accept": "application/json",
-      // },
     })
       .then((data) => data.json())
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        history.push("/dashboard");
+        history.push("/dashboard/allwriters");
       });
   };
 

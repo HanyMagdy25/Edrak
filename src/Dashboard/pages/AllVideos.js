@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
@@ -16,7 +17,7 @@ const AllVideos = () => {
       })
       .then((data) => {
         setData(data.msg);
-        console.log("39 videos", data);
+        // console.log("39 videos", data);
       });
   }, []);
 
@@ -40,6 +41,7 @@ const AllVideos = () => {
             <th>الكاتب</th>
             <th>التاريخ</th>
             <th>مسح</th>
+            <th>تعديل</th>
           </tr>
         </thead>
         <tbody>
@@ -52,6 +54,13 @@ const AllVideos = () => {
                 <span onClick={() => handleDelete(item._id)}>
                   <i className="fa-solid fa-trash"></i>
                 </span>
+              </td>
+              <td>
+                <Link to={`/dashboard/videoedit/${item._id}`}>
+                  <span className="edit-dash">
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </span>
+                </Link>
               </td>
             </tr>
           ))}
