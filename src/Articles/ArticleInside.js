@@ -12,6 +12,8 @@ import $ from "jquery";
 import { isMobile } from "react-device-detect";
 import Swal from "sweetalert2";
 import Spinner from "../constants/Spinner";
+const ReactDOMServer = require('react-dom/server');
+const HtmlToReactParser = require('html-to-react').Parser;
 
 const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
@@ -61,7 +63,13 @@ const ArticleInside = () => {
       </div>
     );
   }
-
+  const stringToHTML = function (str) {
+    const htmlToReactParser = new HtmlToReactParser();
+    const reactElement = htmlToReactParser.parse(str);
+    const reactHtml = ReactDOMServer.renderToStaticMarkup(reactElement);
+    console.log(reactHtml);
+    return reactHtml
+  };
   // to copy the url and pass to facebook icon
   const url = window.location.href;
 
@@ -150,9 +158,11 @@ const ArticleInside = () => {
           </div>
           {/* هنا المقالات بتغير الداتا من فوق */}
           <div className="big-paragraph">
-            {articleIn.paragraphs.map((paragraph, index) => (
+            <div dangerouslySetInnerHTML={{ __html: articleIn.body }} />
+
+            {/* {articleIn.paragraphs.map((paragraph, index) => (
               <Paragraph paragraph={paragraph} key={index} />
-            ))}
+            ))} */}
           </div>
 
           {/* المزيد من المدونات */}
