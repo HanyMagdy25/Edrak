@@ -115,7 +115,7 @@ const ArticleInside = () => {
       <div className="header-container">
         <div className="header-right">
           <div className="header-right-content">
-            <div className="global-simi-btn">{articleIn.type}</div>
+            <div className="global-simi-btn">{articleIn.type ==="undefined" ? "فكر": articleIn.type }</div>
             <h1 className="header-headline">{articleIn.name}</h1>
             <div className="about-author-article">
               <h6>{articleIn.writer}</h6>

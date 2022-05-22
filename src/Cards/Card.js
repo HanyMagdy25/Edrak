@@ -12,7 +12,7 @@ const Card = ({item}) => {
           </div>
           <div className='card-container-content'>
               <div className='card-container-content-container'>
-                  <div className='global-simi-btn-small-blue'>{item.type}</div>
+                  <div className='global-simi-btn-small-blue'>{item.type ==="undefined" ? "فكر": item.type }</div>
                   <h3>{`${item.name.substring(0,25)} ...`}</h3>
                   <p>{`${item.about.substring(0,40)}...`}</p>
 
