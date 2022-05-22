@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef } from "react";
 import { useHistory } from "react-router-dom";
+import { Editor } from '@tinymce/tinymce-react';
 
 const AddArticle = () => {
   const [name, setName] = useState("");
   const [writer, setWriter] = useState("");
   const [icon, setIcon] = useState();
+  const [body, setBody] = useState("");
+
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
@@ -29,6 +32,7 @@ const AddArticle = () => {
   const history = useHistory();
 
   useEffect(() => {
+
     fetch("https://depax-blog-backend.herokuapp.com/users", {
       credentials: "include",
     })
@@ -46,6 +50,10 @@ const AddArticle = () => {
       });
   }, []);
 
+  const handleChangeEditor = (value) => {
+    console.log(value);
+    setBody(value)
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { name, writer, about, type: cat[0] };
@@ -72,6 +80,7 @@ const AddArticle = () => {
 
     formData.append("photos", icon);
     formData.append("photos", img);
+    formData.append("body" , editorRef.current.getContent())
     fetch("https://depax-blog-backend.herokuapp.com/article", {
       method: "POST",
       body: formData,
@@ -83,14 +92,19 @@ const AddArticle = () => {
         console.log("res now ", res);
         setIsPending(false);
         if (res.status === "success") {
-          history.push("/dashboard");
+          window.location.reload()
         } else {
           alert(res.msg)
         }
 
       });
   };
-
+  const editorRef = useRef(null);
+  const log = () => {
+    if (editorRef.current) {
+      console.log(editorRef.current.getContent());
+    }
+  };
   return (
     <div className="add-page">
       <form onSubmit={handleSubmit}>
@@ -199,8 +213,8 @@ const AddArticle = () => {
           <label className="lab-text-dash">نبذة عن المقال</label>
           <textarea onChange={(e) => setAbout(e.target.value)} />
         </div>
-
-        <div className="datails-content-container">
+        <div id="editor" onClick={(e) => test(e)}>test</div>
+        {/* <div className="datails-content-container">
           <div className="datails-content-text">
             <label className="lab-text-dash">عنوان 1</label>
             <textarea
@@ -317,11 +331,32 @@ const AddArticle = () => {
               onChange={(e) => setParag9([parag9[0], e.target.value])}
             />
           </div>
-        </div>
+        </div> */}
+        <Editor
+          apiKey='htz0nznb6uk7q94cexoedjrudzji4w89jbd8f38lqopfmn6g'
+          onInit={(evt, editor) => editorRef.current = editor}
+          initialValue="<p>This is the initial content of the editor.</p>"
+          init={{
+            height: 500,
+            menubar: false,
+            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | bold italic underline strikethrough | ' +
+            'fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | '+ 
+            'numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print |' +
+            'insertfile image media template link anchor codesample | ltr rtl',
+
+            content_style: 'body { font-family: "Amariya-Regular"; font-size:14px }'
+          }}
+        />
+
 
         {!isPending && <button className="newButton">حفظ </button>}
         {isPending && <button className="newButton">جارى الحفظ</button>}
       </form>
+      <button type="click" onClick={log}>Log editor content</button>
+
     </div>
   );
 };
