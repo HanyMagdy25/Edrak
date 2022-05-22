@@ -70,10 +70,16 @@ class App extends Component {
           pathname !== "/dashboard/addwriter" &&
           pathname !== "/dashboard/addseries" &&
           pathname !== "/dashboard/addvideo" &&
+<<<<<<< HEAD
           pathname !== "/dashboard/allvideos" && 
           pathname !== "/dashboard/allwriters" &&
           // pathname !== "dashboard/writeredit/:id" &&
           pathname !== "/dashboard/allarticles" && <Footer />}
+=======
+          pathname !== "/dashboard/allvideos" &&
+          pathname !== "/dashboard/allarticles" && 
+          <Footer />}
+>>>>>>> 448e8bf3b95938cc2546628ffd4fb3832ee6cbb2
       </Router>
     );
   }

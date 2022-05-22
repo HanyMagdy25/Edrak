@@ -7,16 +7,16 @@ import ReactPaginate from "react-paginate";
 const Papers = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/papers")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setData(data);
-        console.log("papers", data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/papers")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setData(data);
+  //       console.log("papers", data);
+  //     });
+  // }, []);
 
   // arrows
   const [pageNumber, setPageNumber] = useState(0);
@@ -37,7 +37,7 @@ const Papers = () => {
             <MediumCard item={item} key={index}  type="first" />
           ))}
         </div>
-        <div className="bottom-arrows">
+        {/* <div className="bottom-arrows">
         <ReactPaginate
         previousLabel={"السابق"}
         nextLabel={"التالى"}
@@ -51,7 +51,7 @@ const Papers = () => {
         pageRangeDisplayed={3}
         breakLabel="..."
       />
-        </div>
+        </div> */}
       </div>
     </div>
   );

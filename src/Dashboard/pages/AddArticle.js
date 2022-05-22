@@ -76,13 +76,18 @@ const AddArticle = () => {
       method: "POST",
       body: formData,
       credentials: "include",
-      
+
     })
       .then((data) => data.json())
       .then((res) => {
         console.log("res now ", res);
         setIsPending(false);
-        history.push("/dashboard");
+        if (res.status === "success") {
+          history.push("/dashboard");
+        } else {
+          alert(res.msg)
+        }
+
       });
   };
 
@@ -124,6 +129,7 @@ const AddArticle = () => {
             }}
           >
             {writersNames.map((n, index) => (
+<<<<<<< HEAD
               <React.Fragment key={index}>
               <option value="">اختر كاتب</option>
               <option
@@ -137,6 +143,20 @@ const AddArticle = () => {
               </option>
               </React.Fragment>
               
+=======
+              <>
+                <option value="">اختر كاتب  </option>
+                <option
+                  value={n.id}
+                  onClick={(e) => {
+                    console.log("onClick", e.target.value);
+                  }}
+                  key={index}
+                >
+                  {n.name}
+                </option>
+              </>
+>>>>>>> 448e8bf3b95938cc2546628ffd4fb3832ee6cbb2
             ))}
           </select>
         </div>
