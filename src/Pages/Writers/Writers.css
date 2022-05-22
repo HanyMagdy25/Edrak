@@ -119,6 +119,7 @@ width: 120px;
 .writerInside-content img{
   border-radius: 50%;
   width: 100px;
+  height: 100px;
 }
 .writerInside-content h2{
   color: var(--black);
@@ -141,6 +142,13 @@ width: 120px;
 .social-icons-small-writer span a:focus{
   color: var(--first-color);
   
+}
+
+.writer-description{
+  width: 100%;
+  margin-top: 10px;
+  font-size: 20px;
+  color: var(--black);
 }
 
 .writerInside-articles{

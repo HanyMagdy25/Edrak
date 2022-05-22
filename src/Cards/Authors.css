@@ -29,18 +29,22 @@
   /* margin: 5px 5px; */
 }
 .img-contain {
-  width: 30%;
+  width: 40%;
 }
 .name-contain {
-  width: 70%;
+  width: 60%;
 }
 .authors img {
-  width: 105%;
   border-radius: 50%;
+<<<<<<< HEAD
+  width: 77px;
+  height: 77px;
+=======
   height: 80px;
+>>>>>>> 448e8bf3b95938cc2546628ffd4fb3832ee6cbb2
 }
 .authors h4 {
-  margin: 0px 10px 0 0;
+  margin: 0px 15px 0 0;
   font-weight: 400;
   color: var(--black);
 }
@@ -97,6 +101,25 @@
   .authors h4 {
     margin: 0px 10px 0 0;
     font-size: 18px;
+  }
+}
+
+@media screen and (min-width:1370px) {
+  .img-contain {
+    width: 40%;
+  }
+  .name-contain {
+    width: 60%;
+  }
+  .authors img {
+    border-radius: 50%;
+    width: 77px;
+    height: 77px;
+  }
+  .authors h4 {
+    margin: 0px 14px 0 0;
+    font-weight: 400;
+    color: var(--black);
   }
 }
 

@@ -58,6 +58,11 @@ const Dashboard = () => {
             كل الفيديوهات
           </NavLink>
         </li>
+        <li className="nav-item-dashboard">
+          <NavLink to="/dashboard/allwriters" className="nav-links">
+            كل الكُتاب 
+          </NavLink>
+        </li>
       </ul>
     </>
   );

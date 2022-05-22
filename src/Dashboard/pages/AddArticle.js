@@ -143,6 +143,21 @@ const AddArticle = () => {
             }}
           >
             {writersNames.map((n, index) => (
+<<<<<<< HEAD
+              <React.Fragment key={index}>
+              <option value="">اختر كاتب</option>
+              <option
+                value={n.id}
+                onClick={(e) => {
+                  console.log("onClick", e.target.value);
+                }}
+                // key={index}
+              >
+                {n.name}
+              </option>
+              </React.Fragment>
+              
+=======
               <>
                 <option value="">اختر كاتب  </option>
                 <option
@@ -155,6 +170,7 @@ const AddArticle = () => {
                   {n.name}
                 </option>
               </>
+>>>>>>> 448e8bf3b95938cc2546628ffd4fb3832ee6cbb2
             ))}
           </select>
         </div>

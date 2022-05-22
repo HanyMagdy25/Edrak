@@ -112,6 +112,10 @@ const WriterInside = () => {
           </div>
         </div>
 
+        <div className="writer-description">
+              <p>{writerInsider?.description}</p>
+        </div>
+
         <div className="writerInside-articles">
           <hr />
           <div className="writerInside-articles-all">
