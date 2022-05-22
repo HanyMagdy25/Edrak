@@ -15,9 +15,9 @@ const TvLayoutHome = ({items,title}) => {
 
             {
               items.slice(0,1).map((item,index)=>(
-                <Link className='tvlayout-link' to={`/tv-inside/${item._id}`}>
+                <Link className='tvlayout-link' to={`/tv-inside/${item._id}`} key={index}>
                 
-            <div className="edrak-tv-right-in-home" key={index}>
+            <div className="edrak-tv-right-in-home" >
               <div className="img-container">
                 <img
                   src={item.img}

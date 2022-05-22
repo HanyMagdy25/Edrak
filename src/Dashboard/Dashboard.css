@@ -1,36 +1,36 @@
 /* ============== Login ============ */
-.login-page{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    
+.login-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
 }
-.login-page-container{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    /* background-color: aquamarine; */
+.login-page-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  /* background-color: aquamarine; */
 }
-.login-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* width: 50%; */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 50%; */
 }
-.login-title{
+.login-title {
   color: var(--first-color);
   font-size: 40px;
-  font-family: 'Amariya-Bold';
+  font-family: "Amariya-Bold";
   margin: 20px 0px;
 }
-.login-form input{
-  width: 210px;
-    height: 30px;
-    padding: 5px;
-    border: 1px solid #b1b1b1;
+.login-form input {
+  width: 230px;
+  height: 35px;
+  padding: 5px;
+  border: 1px solid #b1b1b1;
+  border-radius: 10px;
 }
 
 /* =================== */
@@ -71,7 +71,6 @@
   width: 80%;
   margin-bottom: 30px;
   margin-right: 20%;
-
 }
 
 /*============= adding================= */
@@ -88,6 +87,18 @@
   width: 24%;
   color: var(--black);
 }
+table tbody td .edit-dash i{
+  color: var(--edit-color);
+}
+.img-update{
+  width: 48%;
+  margin-top: 40px;
+}
+.img-update img{
+  width: 50%;
+  border-radius: 10px;
+}
+
 
 .datails-content label {
   width: 150px;
@@ -95,18 +106,20 @@
   font-size: 18px;
 }
 .datails-content input {
-  width: 150px;
-  height: 25px;
+  width: 90%;
+  height: 35px;
   padding: 6px;
   border: 1px solid #b1b1b1;
   margin-top: 6px;
+  border-radius: 10px;
 }
 .datails-content select {
   width: 80%;
-  height: 25px;
-  /* padding: 6px; */
+  height: 30px;
+  padding: 0 4px;
   border: 1px solid #b1b1b1;
   margin-top: 6px;
+  border-radius: 15px;
 }
 .datails-content input[type="file"] {
   width: auto;
@@ -141,29 +154,30 @@
   margin-bottom: 8px;
   font-size: 20px;
   font-family: "Amariya-Bold";
+  color: var(--black);
 }
 
 textarea {
-  height: 100px;
-  width: 500px;
+  height: 120px;
+  width: 95%;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 .datails-content-text {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 48%;
   color: var(--black);
 }
-.datails-content-youtube{
+.datails-content-youtube {
   display: flex;
   flex-direction: column;
   width: 100%;
   color: var(--black);
   /* background-color: aquamarine; */
 }
-.datails-content-youtube input{
-
+.datails-content-youtube input {
   width: 300px;
   /* height: 30px; */
   /* background-color: gray; */
@@ -181,26 +195,25 @@ textarea {
 }
 
 /* ============== Table =============== */
-table{
+table {
   width: 100%;
   margin-top: 10px;
-
 }
-table caption{
-  color:var(--first-color);
+table caption {
+  color: var(--first-color);
   font-size: 2rem;
-
 }
-table th{
+table th {
   font-weight: 100;
   color: var(--first-color);
   font-size: 1.7rem;
 }
-table td{
+table td {
   font-size: 1.2rem;
 }
 
-table td , table th{
+table td,
+table th {
   border: 1px solid var(--first-color);
   padding: 8px;
   text-align: center;
@@ -209,7 +222,6 @@ table td span i {
   color: var(--delete);
   cursor: pointer;
 }
-
 
 @media screen and (max-width: 900px) {
   .add-page form {
@@ -246,7 +258,4 @@ table td span i {
   textarea {
     width: 85%;
   }
-
 }
-
-

@@ -45,6 +45,7 @@ class App extends Component {
           pathname !== "/dashboard/addvideo" &&
           pathname !== "/dashboard/addseries" &&
           pathname !== "/dashboard/allvideos" &&
+          pathname !== "/dashboard/allwriters" &&
           pathname !== "/dashboard/allarticles" && <Navbar />}
         {/* <Navbar/> */}
         <Switch>
@@ -69,7 +70,9 @@ class App extends Component {
           pathname !== "/dashboard/addwriter" &&
           pathname !== "/dashboard/addseries" &&
           pathname !== "/dashboard/addvideo" &&
-          pathname !== "/dashboard/allvideos" &&
+          pathname !== "/dashboard/allvideos" && 
+          pathname !== "/dashboard/allwriters" &&
+          // pathname !== "dashboard/writeredit/:id" &&
           pathname !== "/dashboard/allarticles" && <Footer />}
       </Router>
     );
