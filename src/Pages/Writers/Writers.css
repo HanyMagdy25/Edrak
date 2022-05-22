@@ -101,7 +101,7 @@ width: 120px;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  min-height: 70vh;
+  min-height: calc(100vh - 90px);
 }
 .writerInside-container{
   width: 80%;

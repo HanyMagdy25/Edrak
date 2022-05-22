@@ -14,7 +14,7 @@ const Card = ({item}) => {
               <div className='card-container-content-container'>
                   <div className='global-simi-btn-small-blue'>{item.type}</div>
                   <h3>{`${item.name.substring(0,25)} ...`}</h3>
-                  <p>{`${item.about.substring(0,60)}...`}</p>
+                  <p>{`${item.about.substring(0,40)}...`}</p>
 
                   <div className='about-author-in-card'>
                           <h6>{item.writer.substring(0,12)}</h6>

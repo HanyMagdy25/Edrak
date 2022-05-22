@@ -5,12 +5,12 @@ const baseUrl = "https://depax-blog-backend.herokuapp.com";
 
 const WriterEdit = () => {
   const [isPending, setIsPending] = useState(false);
-  const [writerEdit, setWriterEdit] = useState({
-    name: "",
-    facebook: "",
-    twitter: "",
-    description: "",
-  });
+  // const [writerEdit, setWriterEdit] = useState({
+  //   name: "",
+  //   facebook: "",
+  //   twitter: "",
+  //   description: "",
+  // });
   const [name, setName] = useState("");
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
@@ -36,24 +36,25 @@ const WriterEdit = () => {
     };
     editWriterId();
   }, []);
-  // console.log("555", writerEdit?.msg);
 
-  //   const handleEdit = (e) => {
-  //     setWriterEdit({ ...writerEdit, [e.target.name]: e.target.value });
-  //   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { name, twitter, facebook, description };
     setIsPending(true);
+    let formData = new FormData();
+    for (const [key, value] of Object.entries(blog)) {
+      formData.append(key, value);
+    }
+    formData.append("photo", photo);
     fetch(`${baseUrl}/user/${id}`, {
       method: "PUT",
-      body: JSON.stringify(blog),
+      body: formData,
       credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+      // headers: {
+      //   "Content-Type": "formdata",
+      //   "Accept": "application/json",
+      // },
     })
       .then((data) => data.json())
       .then((res) => {
@@ -80,9 +81,9 @@ const WriterEdit = () => {
           <input
             type="file"
             placeholder="صورة الكاتب"
-            // onChange={(e) => {
-            //   setPhoto(e.target.files[0]);
-            // }}
+            onChange={(e) => {
+              setPhoto(e.target.files[0]);
+            }}
           />
         </div>
         <div className="datails-content">

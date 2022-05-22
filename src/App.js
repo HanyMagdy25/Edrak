@@ -12,8 +12,8 @@ import { useLocation } from "react-router-dom";
 import TvEdrak from "./Pages/TV-edrak/TvEdrak";
 import TvInside from "./Pages/TV-edrak/TvInside";
 import Writers from "./Pages/Writers/Writers";
-import Papers from "./Pages/Papers/Papers";
-import PaperInside from "./Pages/Papers/PaperInside";
+// import Papers from "./Pages/Papers/Papers";
+// import PaperInside from "./Pages/Papers/PaperInside";
 import WriterInside from "./Pages/Writers/WriterInside";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Dashboard/Login";
@@ -70,16 +70,10 @@ class App extends Component {
           pathname !== "/dashboard/addwriter" &&
           pathname !== "/dashboard/addseries" &&
           pathname !== "/dashboard/addvideo" &&
-<<<<<<< HEAD
           pathname !== "/dashboard/allvideos" && 
           pathname !== "/dashboard/allwriters" &&
           // pathname !== "dashboard/writeredit/:id" &&
           pathname !== "/dashboard/allarticles" && <Footer />}
-=======
-          pathname !== "/dashboard/allvideos" &&
-          pathname !== "/dashboard/allarticles" && 
-          <Footer />}
->>>>>>> 448e8bf3b95938cc2546628ffd4fb3832ee6cbb2
       </Router>
     );
   }

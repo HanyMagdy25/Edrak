@@ -14,6 +14,7 @@ import AllArticles from "./pages/AllArticles";
 import AllVideos from "./pages/AllVideos";
 import AllWriters from "./pages/AllWriters";
 import WriterEdit from "./edit/WriterEdit";
+import ArticleEdit from "./edit/ArticleEdit";
 
 
 
@@ -42,6 +43,7 @@ const Dashboard = () => {
                 <Route path="/dashboard/allvideos" component={AllVideos} />
                 <Route path="/dashboard/allwriters" component={AllWriters} />
                 <Route path="/dashboard/writeredit/:id" component={WriterEdit} />
+                <Route path="/dashboard/articleedit/:id" component={ArticleEdit} />
               </Switch>
             </div>
           </Router>

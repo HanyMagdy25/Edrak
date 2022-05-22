@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
-const AddArticle = () => {
+const baseUrl = "https://depax-blog-backend.herokuapp.com";
+
+const ArticleEdit = () => {
   const [name, setName] = useState("");
   const [writer, setWriter] = useState("");
   const [icon, setIcon] = useState();
@@ -24,12 +26,11 @@ const AddArticle = () => {
   const [data, setData] = useState([]);
   const [writersNames, setWritersNames] = useState([]);
 
-  // console.log('33 cat',cat)
-
+  const { id } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    fetch("https://depax-blog-backend.herokuapp.com/users", {
+    fetch(`${baseUrl}/users`, {
       credentials: "include",
     })
       .then((res) => {
@@ -44,6 +45,20 @@ const AddArticle = () => {
           })
         );
       });
+  }, []);
+
+  useEffect(() => {
+    const editWriterId = async () => {
+      const reqData = await fetch(`${baseUrl}/article/${id}`);
+      const res = await reqData.json();
+      console.log("res b", res);
+      setName(res.msg.name);
+      setAbout(res.msg.about);
+      //   setTwitter(res.msg.twitter);
+      //   setDescription(res.msg.description);
+      //   setPhoto(res.msg.thumbnail)
+    };
+    editWriterId();
   }, []);
 
   const handleSubmit = (e) => {
@@ -73,10 +88,9 @@ const AddArticle = () => {
     formData.append("photos", icon);
     formData.append("photos", img);
     fetch("https://depax-blog-backend.herokuapp.com/article", {
-      method: "POST",
+      method: "PUT",
       body: formData,
       credentials: "include",
-
     })
       .then((data) => data.json())
       .then((res) => {
@@ -85,12 +99,10 @@ const AddArticle = () => {
         if (res.status === "success") {
           history.push("/dashboard");
         } else {
-          alert(res.msg)
+          alert(res.msg);
         }
-
       });
   };
-
   return (
     <div className="add-page">
       <form onSubmit={handleSubmit}>
@@ -146,60 +158,10 @@ const AddArticle = () => {
             </>
           </select>
         </div>
-        <div className="datails-content">
-          <h3 className="choose-title">نوع المقال</h3>
-          <div className="check-container">
-            <label>فكر</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="فكر"
-            />
-          </div>
-          <div className="check-container">
-            <label>هوية</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="هوية"
-            />
-          </div>
-          <div className="check-container">
-            <label>اقتصاد</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="اقتصاد"
-            />
-          </div>
-          <div className="check-container">
-            <label>اجتماع</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="اجتماع"
-            />
-          </div>
-          <div className="check-container">
-            <label>تزكية</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="تزكية"
-            />
-          </div>
-          <div className="check-container">
-            <label>ترجمات</label>
-            <input
-              type="checkbox"
-              onChange={(e) => setCat(cat.concat(e.target.value))}
-              value="ترجمات"
-            />
-          </div>
-        </div>
+
         <div className="datails-content-text">
           <label className="lab-text-dash">نبذة عن المقال</label>
-          <textarea onChange={(e) => setAbout(e.target.value)} />
+          <textarea value={about} onChange={(e) => setAbout(e.target.value)} />
         </div>
 
         <div className="datails-content-container">
@@ -321,11 +283,11 @@ const AddArticle = () => {
           </div>
         </div>
 
-        {!isPending && <button className="newButton">حفظ </button>}
-        {isPending && <button className="newButton">جارى الحفظ</button>}
+        {!isPending && <button className="newButton">تحديث</button>}
+        {isPending && <button className="newButton">جارى التحديث</button>}
       </form>
     </div>
   );
 };
 
-export default AddArticle;
+export default ArticleEdit;

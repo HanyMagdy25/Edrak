@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { fetchAsyncEdrak, getAllEdrak } from "../../Redux/EdrakSlice";
 
@@ -33,6 +34,7 @@ const AllArticles = () => {
             <th>الكاتب</th>
             <th>التاريخ</th>
             <th>مسح</th>
+            <th>تعديل</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +47,13 @@ const AllArticles = () => {
                 <span onClick={() => handleDelete(item.id)}>
                   <i className="fa-solid fa-trash"></i>
                 </span>
+              </td>
+              <td>
+                <Link to={`/dashboard/articleedit/${item.id}`}>
+                  <span className="edit-dash">
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </span>
+                </Link>
               </td>
             </tr>
           ))}
