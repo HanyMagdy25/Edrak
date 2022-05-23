@@ -25,9 +25,13 @@ const AllWriters = () => {
     fetch(`${baseUrl}/user/${id}`, {
       method: "DELETE",
       credentials: "include",
-    }).then(() => {
-      console.log("video deleted successfully");
-      history.push("/dashboard");
+    }).then((data) => data.json())
+    .then((res) => {
+      if (res.status === "success") {
+        window.location.reload()
+      } else {
+        alert(res.msg)
+      }
     });
   };
 

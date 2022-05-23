@@ -35,7 +35,7 @@ const AddArticle = () => {
       })
       .then((data) => {
         setData(data);
-        console.log("47", data);
+        // console.log("47", data);
         setWritersNames(
           data.msg.map((e) => {
             return { id: e._id, name: e.name };
@@ -59,7 +59,7 @@ const AddArticle = () => {
       formData.append(key, value);
     }
     cat.forEach((e) => formData.append("cat", e));
-    console.log("84", formData.getAll("cat"));
+    // console.log("84", formData.getAll("cat"));
 
     formData.append("photos", icon);
     formData.append("photos", img);
@@ -71,7 +71,7 @@ const AddArticle = () => {
     })
       .then((data) => data.json())
       .then((res) => {
-        console.log("res now ", res);
+        // console.log("res now ", res);
         setIsPending(false);
         if (res.status === "success") {
           // window.location.reload()

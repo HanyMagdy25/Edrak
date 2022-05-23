@@ -25,9 +25,13 @@ const AllVideos = () => {
     fetch(`https://depax-blog-backend.herokuapp.com/video/${id}`, {
       method: "DELETE",
       credentials: "include",
-    }).then(() => {
-      console.log("video deleted successfully");
-      history.push("/dashboard");
+    }).then((data) => data.json())
+    .then((res) => {
+      if (res.status === "success") {
+        window.location.reload()
+      } else {
+        alert(res.msg)
+      }
     });
   };
 
@@ -39,6 +43,7 @@ const AllVideos = () => {
           <tr>
             <th>العنوان</th>
             <th>الكاتب</th>
+            <th>النوع</th>
             <th>التاريخ</th>
             <th>مسح</th>
             <th>تعديل</th>
@@ -49,6 +54,7 @@ const AllVideos = () => {
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.writer}</td>
+              <td>{item.type==="undefined" ? "غير محدد" : item.type}</td>
               <td>{item.createdOn}</td>
               <td>
                 <span onClick={() => handleDelete(item._id)}>

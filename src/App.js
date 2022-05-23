@@ -28,8 +28,8 @@ function ScrollToTop() {
   return null;
 }
 
-const token = localStorage.getItem("token");
-console.log("from app :", token);
+// const token = localStorage.getItem("token");
+// console.log("from app :", token);
 
 const pathname = window.location.pathname;
 

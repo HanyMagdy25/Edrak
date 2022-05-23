@@ -12,16 +12,21 @@ const AllArticles = () => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
 
-  console.log("edraks all articles page :", edraks);
+  // console.log("edraks all articles page :", edraks);
 
   const handleDelete = (id) => {
     fetch(`https://depax-blog-backend.herokuapp.com/article/${id}`, {
       method: "DELETE",
       credentials: "include",
-    }).then(() => {
-      console.log("article deleted successfully");
-      history.push("/dashboard");
-    });
+    })
+      .then((data) => data.json())
+      .then((res) => {
+        if (res.status === "success") {
+          window.location.reload();
+        } else {
+          alert(res.msg);
+        }
+      });
   };
 
   return (
