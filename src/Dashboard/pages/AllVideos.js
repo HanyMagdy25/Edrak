@@ -55,7 +55,7 @@ const AllVideos = () => {
               <td>{item.name}</td>
               <td>{item.writer}</td>
               <td>{item.type==="undefined" ? "غير محدد" : item.type}</td>
-              <td>{item.createdOn}</td>
+              <td>{item?.createdOn?.substring(0,10)}</td>
               <td>
                 <span onClick={() => handleDelete(item._id)}>
                   <i className="fa-solid fa-trash"></i>

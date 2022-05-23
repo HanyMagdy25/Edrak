@@ -8,7 +8,7 @@ const WritersLayout = ({ item, type }) => {
       <div className={"writersLayout" + type}>
         <div className="writersLayout-container">
           <div className="writersLayout-container-img" >
-            <img src={item.thumbnail} alt="test" />
+            <img src={item.thumbnail} alt="test" loading="lazy" />
           </div>
 
           <h3>{item.name}</h3>

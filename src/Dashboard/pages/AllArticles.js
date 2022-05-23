@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { fetchAsyncEdrak, getAllEdrak } from "../../Redux/EdrakSlice";
 
 const AllArticles = () => {
   let dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
   const edraks = useSelector(getAllEdrak);
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
 
-  // console.log("edraks all articles page :", edraks);
+  console.log("edraks all articles page :", edraks);
 
   const handleDelete = (id) => {
     fetch(`https://depax-blog-backend.herokuapp.com/article/${id}`, {
@@ -38,6 +38,7 @@ const AllArticles = () => {
             <th>العنوان</th>
             <th>الكاتب</th>
             <th>المشاركات</th>
+            <th>النوع</th>
             <th>التاريخ</th>
             <th>مسح</th>
             <th>تعديل</th>
@@ -49,7 +50,8 @@ const AllArticles = () => {
               <td>{item.name}</td>
               <td>{item.writer}</td>
               <td>{item.numberOfShare}</td>
-              <td>{item.createdOn}</td>
+              <td>{item.type==="undefined" ? "غير محدد" : item.type}</td>
+              <td>{item?.createdOn?.substring(0,10)}</td>
               <td>
                 <span onClick={() => handleDelete(item.id)}>
                   <i className="fa-solid fa-trash"></i>
