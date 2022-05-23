@@ -60,7 +60,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 34%;
+  width: 40%;
   color: var(--off-white);
   font-family: "Amariya-Bold";
   margin-top: 10px;
@@ -72,11 +72,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 35%;
+  width: 50%;
   color: var(--off-white);
   font-family: "Amariya-Bold";
   /* margin-top: 10px; */
   /* margin-bottom: 30px; */
+  font-size: 20px;
+}
+.about-author-article h5{
   font-size: 20px;
 }
 .about-author i {

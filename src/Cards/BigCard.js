@@ -9,7 +9,7 @@ const BigCard = ({ data, type ,path}) => {
         <img src={data.icon} alt="BigCard" />
         <div className="big-card-content">
           <h3>{`${data.name?.substring(0, 22)} ...`}</h3>
-          <p>{`${data.about?.substring(0, 60)} ...`}</p>
+          <p>{`${data.about?.substring(0, 50)} ...`}</p>
           <div className="about-author-in-bigcard">
             <h5>{data.writer}</h5>
             <h5 className="share-icon-in-card">

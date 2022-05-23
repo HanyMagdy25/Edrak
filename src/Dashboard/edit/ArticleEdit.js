@@ -13,6 +13,7 @@ const ArticleEdit = () => {
   const [about, setAbout] = useState("");
   const [trans, setTrans] = useState("");
   const [editor, setEditor] = useState("");
+  const [editor_2, setEditor_2] = useState("");
   const [body, setBody] = useState("");
   const [bodyVal, setBodyVal] = useState("");
 
@@ -55,6 +56,7 @@ const ArticleEdit = () => {
       setImg(res.msg.img);
       setTrans(res.msg.trans);
       setEditor(res.msg.editor);
+      setEditor_2(res.msg.editor_2);
       setWriter(res.msg.writer);
     };
     editWriterId();
@@ -67,7 +69,7 @@ const ArticleEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer,trans,editor, about, type: cat[0] };
+    const blog = { name, writer, trans, editor,editor_2, about, type: cat[0] };
 
     // console.log('type 75: ',type)
 
@@ -226,12 +228,21 @@ const ArticleEdit = () => {
           />
         </div>
         <div className="datails-content">
-        <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <label>اضافة مترجم/مدقق(اختيارى)</label>
           <input
             type="text"
             placeholder="اضافة محرر (اختيارى)"
             value={editor}
             onChange={(e) => setEditor(e.target.value)}
+          />
+        </div>
+        <div className="datails-content">
+          <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة محرر (اختيارى)"
+            value={editor_2}
+            onChange={(e) => setEditor_2(e.target.value)}
           />
         </div>
 
