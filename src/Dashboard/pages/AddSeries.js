@@ -20,7 +20,7 @@ const AddSeries = () => {
       })
       .then((data) => {
         setData(data.msg);
-        console.log("39 videos", data);
+        console.log("serieses", data.msg);
       });
   }, []);
 
@@ -107,7 +107,7 @@ const AddSeries = () => {
                 </span>
               </td>
               <td>
-                <Link to={`/dashboard/videoedit/${item._id}`}>
+                <Link to={`/dashboard/seriesedit/${item._id}`}>
                   <span className="edit-dash">
                     <i className="fa-solid fa-pen-to-square"></i>
                   </span>

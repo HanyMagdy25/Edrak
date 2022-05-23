@@ -11,6 +11,8 @@ const ArticleEdit = () => {
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
+  const [trans, setTrans] = useState("");
+  const [editor, setEditor] = useState("");
   const [body, setBody] = useState("");
   const [bodyVal, setBodyVal] = useState("");
 
@@ -51,6 +53,9 @@ const ArticleEdit = () => {
       setBodyVal(res.msg.body);
       setIcon(res.msg.icon);
       setImg(res.msg.img);
+      setTrans(res.msg.trans);
+      setEditor(res.msg.editor);
+      setWriter(res.msg.writer);
     };
     editWriterId();
   }, []);
@@ -62,7 +67,7 @@ const ArticleEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer, about, type: cat[0] };
+    const blog = { name, writer,trans,editor, about, type: cat[0] };
 
     // console.log('type 75: ',type)
 
@@ -134,14 +139,15 @@ const ArticleEdit = () => {
           <img src={icon} alt="test" />
         </div>
         <div className="datails-content">
-          <label>اسم الكاتب</label>
+          {/* <label>اسم الكاتب</label> */}
+          <label>تم اختيار ( {writer} ) سابقا</label>
           <select
             onChange={(e) => {
               setWriter(e.target.value);
             }}
           >
             <>
-              <option value="">اختر كاتب</option>
+              <option value="">اختر مجددا من فضلك</option>
               {writersNames.map((n, index) => (
                 <React.Fragment key={index}>
                   <option
@@ -209,6 +215,26 @@ const ArticleEdit = () => {
             />
           </div>
         </div>
+
+        <div className="datails-content">
+          <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة مترجم(اختيارى)"
+            value={trans}
+            onChange={(e) => setTrans(e.target.value)}
+          />
+        </div>
+        <div className="datails-content">
+        <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة محرر (اختيارى)"
+            value={editor}
+            onChange={(e) => setEditor(e.target.value)}
+          />
+        </div>
+
         <div className="datails-content-text">
           <label className="lab-text-dash">نبذة عن المقال</label>
           <textarea value={about} onChange={(e) => setAbout(e.target.value)} />

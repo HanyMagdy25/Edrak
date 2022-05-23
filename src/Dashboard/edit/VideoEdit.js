@@ -118,7 +118,7 @@ const VideoEdit = () => {
           <label>اسم الفيديو</label>
           <input
             type="text"
-            placeholder="اسم الكاتب"
+            placeholder="اسم الفيديو"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />

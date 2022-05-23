@@ -26,7 +26,7 @@ const TvLayoutHome = ({items,title}) => {
                 />
               </div>
               <div className="tv-content-in-home">
-              <div className="global-simi-btn">{item.type}</div>
+              <div className="global-simi-btn">{item.type ==="undefined" ? "فكر": item.type }</div>
                 <h2 className="header-headline">{item.name}</h2>
                 <p className="header-paragragh-in-home">
                   {item.about}

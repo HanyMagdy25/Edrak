@@ -20,6 +20,8 @@ const AddVideo = () => {
   const [seriesNames, setSeriesNames] = useState([]);
   const [series, setSeries] = useState("");
   const [about, setAbout] = useState("");
+  const [showPicIcon, setShowPicIcon] = useState(null);
+  const [showPicImg, setShowPicImg] = useState(null);
 
   const history = useHistory();
 
@@ -90,6 +92,14 @@ const AddVideo = () => {
       });
   };
 
+    // this function to show images that we selected on the screan
+    const onImageChangeImg = (e) => {
+      setShowPicImg(URL?.createObjectURL(e.target.files[0]));
+    };
+    const onImageChangeIcon = (e) => {
+      setShowPicIcon(URL?.createObjectURL(e.target.files[0]));
+    };
+
   return (
     <div className="add-page">
       <form onSubmit={handleSubmit}>
@@ -97,7 +107,7 @@ const AddVideo = () => {
           <label>اسم الفيديو</label>
           <input
             type="text"
-            placeholder="اسم الكاتب"
+            placeholder="اسم الفيديو"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -108,8 +118,10 @@ const AddVideo = () => {
             type="file"
             onChange={(e) => {
               setImg(e.target.files[0]);
+              onImageChangeImg(e);
             }}
           />
+          <img src={showPicImg} alt="rectangular" />
         </div>
         <div className="datails-content">
           <label>الصورة المربعة</label>
@@ -117,8 +129,10 @@ const AddVideo = () => {
             type="file"
             onChange={(e) => {
               setIcon(e.target.files[0]);
+              onImageChangeIcon(e);
             }}
           />
+          <img src={showPicIcon} alt="square" />
         </div>
         <div className="datails-content">
           <label>اسم الكاتب</label>

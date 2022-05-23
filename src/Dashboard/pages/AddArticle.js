@@ -1,16 +1,20 @@
-import React, { useEffect, useState ,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { Editor } from '@tinymce/tinymce-react';
+import { Editor } from "@tinymce/tinymce-react";
 
 const AddArticle = () => {
   const [name, setName] = useState("");
   const [writer, setWriter] = useState("");
+  const [trans, setTrans] = useState("");
+  const [editor, setEditor] = useState("");
+  const [editor_2, setEditor_2] = useState("");
   const [icon, setIcon] = useState();
   const [body, setBody] = useState("");
   const [img, setImg] = useState();
   const [cat, setCat] = useState([]);
   const [about, setAbout] = useState("");
-
+  const [showPicIcon, setShowPicIcon] = useState(null);
+  const [showPicImg, setShowPicImg] = useState(null);
 
   const [isPending, setIsPending] = useState(false);
 
@@ -23,7 +27,6 @@ const AddArticle = () => {
   const history = useHistory();
 
   useEffect(() => {
-
     fetch("https://depax-blog-backend.herokuapp.com/users", {
       credentials: "include",
     })
@@ -43,14 +46,12 @@ const AddArticle = () => {
 
   const handleChangeEditor = (value) => {
     console.log(value);
-    setBody(value)
-  }
+    setBody(value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { name, writer, about, type: cat[0] };
-
+    const blog = { name, writer,trans,editor,editor_2,about, type: cat[0] };
     // console.log('type 75: ',type)
-
     setIsPending(true);
 
     let formData = new FormData();
@@ -62,12 +63,11 @@ const AddArticle = () => {
 
     formData.append("photos", icon);
     formData.append("photos", img);
-    formData.append("body" , editorRef.current.getContent())
+    formData.append("body", editorRef.current.getContent());
     fetch("https://depax-blog-backend.herokuapp.com/article", {
       method: "POST",
       body: formData,
       credentials: "include",
-
     })
       .then((data) => data.json())
       .then((res) => {
@@ -75,11 +75,10 @@ const AddArticle = () => {
         setIsPending(false);
         if (res.status === "success") {
           // window.location.reload()
-          history.push("/dashboard/allarticles")
+          history.push("/dashboard/allarticles");
         } else {
-          alert(res.msg)
+          alert(res.msg);
         }
-
       });
   };
   const editorRef = useRef(null);
@@ -87,6 +86,13 @@ const AddArticle = () => {
     if (editorRef.current) {
       console.log(editorRef.current.getContent());
     }
+  };
+  // this function to show images that we selected on the screan
+  const onImageChangeImg = (e) => {
+    setShowPicImg(URL?.createObjectURL(e.target.files[0]));
+  };
+  const onImageChangeIcon = (e) => {
+    setShowPicIcon(URL?.createObjectURL(e.target.files[0]));
   };
   return (
     <div className="add-page">
@@ -106,8 +112,11 @@ const AddArticle = () => {
             type="file"
             onChange={(e) => {
               setImg(e.target.files[0]);
+              onImageChangeImg(e);
             }}
           />
+          {showPicImg ? <img src={showPicImg} alt="rectangular"/> : ""}
+          {/* <img src={showPicImg} alt="rectangular" /> */}
         </div>
         <div className="datails-content">
           <label>الصورة المربعة</label>
@@ -115,8 +124,11 @@ const AddArticle = () => {
             type="file"
             onChange={(e) => {
               setIcon(e.target.files[0]);
+              onImageChangeIcon(e);
             }}
           />
+          {showPicIcon ? <img src={showPicIcon} alt="square"/> : ""}
+          {/* <img src={showPicIcon} alt="square" /> */}
         </div>
         <div className="datails-content">
           <label>اسم الكاتب</label>
@@ -125,7 +137,7 @@ const AddArticle = () => {
               setWriter(e.target.value);
             }}
           >
-            <   >
+            <>
               <option value="">اختر كاتب</option>
               {writersNames.map((n, index) => (
                 <React.Fragment key={index}>
@@ -194,6 +206,33 @@ const AddArticle = () => {
             />
           </div>
         </div>
+        <div className="datails-content">
+          <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة مترجم(اختيارى)"
+            value={trans}
+            onChange={(e) => setTrans(e.target.value)}
+          />
+        </div>
+        <div className="datails-content">
+        <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة محرر (اختيارى)"
+            value={editor}
+            onChange={(e) => setEditor(e.target.value)}
+          />
+        </div>
+        <div className="datails-content">
+        <label>اضافة مترجم/مدقق(اختيارى)</label>
+          <input
+            type="text"
+            placeholder="اضافة محرر (اختيارى)"
+            value={editor_2}
+            onChange={(e) => setEditor_2(e.target.value)}
+          />
+        </div>
         <div className="datails-content-text">
           <label className="lab-text-dash">نبذة عن المقال</label>
           <textarea onChange={(e) => setAbout(e.target.value)} />
@@ -201,32 +240,34 @@ const AddArticle = () => {
 
         <div className="editor-container">
           <Editor
-          apiKey='htz0nznb6uk7q94cexoedjrudzji4w89jbd8f38lqopfmn6g'
-          onInit={(evt, editor) => editorRef.current = editor}
-          initialValue="<p>This is the initial content of the editor.</p>"
-          init={{
-            height: 500,
-            menubar: false,
-            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+            apiKey="htz0nznb6uk7q94cexoedjrudzji4w89jbd8f38lqopfmn6g"
+            onInit={(evt, editor) => (editorRef.current = editor)}
+            initialValue="<p>This is the initial content of the editor.</p>"
+            init={{
+              height: 500,
+              menubar: false,
+              plugins:
+                "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons",
 
-            menubar: 'file edit view insert format tools table help',
-            toolbar: 'undo redo | bold italic underline strikethrough | ' +
-            'fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | '+ 
-            'numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print |' +
-            'insertfile image media template link anchor codesample | ltr rtl',
+              menubar: "file edit view insert format tools table help",
+              toolbar:
+                "undo redo | bold italic underline strikethrough | " +
+                "fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent | " +
+                "numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print |" +
+                "insertfile image media template link anchor codesample | ltr rtl",
 
-            content_style: 'body { font-family: "Amariya-Regular"; font-size:14px }'
-          }}
-        />
+              content_style:
+                'body { font-family: "Amariya-Regular"; font-size:14px }',
+            }}
+          />
         </div>
-        
-
 
         {!isPending && <button className="newButton">حفظ </button>}
         {isPending && <button className="newButton">جارى الحفظ</button>}
       </form>
-      <button type="click" onClick={log}>Log editor content</button>
-
+      <button type="click" onClick={log}>
+        Log editor content
+      </button>
     </div>
   );
 };

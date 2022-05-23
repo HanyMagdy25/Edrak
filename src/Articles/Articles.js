@@ -188,13 +188,13 @@ const Articles = () => {
             </div>
 
             {/* الكلمات الرائجة */}
-            <h3
+            {/* <h3
               style={{ fontSize: "23px", fontWeight: "200", marginTop: "20px" }}
             >
               الكلمات الرائجة
             </h3>
-            <hr />
-            <div className="hashtags">
+            <hr /> */}
+            {/* <div className="hashtags">
               <span>
                 <a
                   href="#"
@@ -265,7 +265,7 @@ const Articles = () => {
                   الحرب
                 </a>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

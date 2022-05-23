@@ -9,6 +9,8 @@ const AddWriter = () => {
   const [photo, setPhoto] = useState();
   const [about, setAbout] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const [showPic, setShowPic] = useState(null);
+
 
   // const token = localStorage.getItem("token");
   //   console.log("from writer:",token)
@@ -45,6 +47,13 @@ const AddWriter = () => {
   //   return <Redirect to="/login" />
   // }
 
+  const onImageChange = (e) => {
+    // const [file] = e.target.files;
+    // console.log("photo",photo)
+    setShowPic(URL?.createObjectURL(e.target.files[0]));
+    console.log("showPic",showPic)
+  };
+
   return (
     <div className="add-page">
       <form onSubmit={handleSubmit}>
@@ -64,8 +73,11 @@ const AddWriter = () => {
             placeholder="صورة الكاتب"
             onChange={(e) => {
               setPhoto(e.target.files[0]);
+              onImageChange(e)
             }}
           />
+          {showPic ? <img src={showPic} alt="writer"/> : ""}
+          
         </div>
         <div className="datails-content">
           <label>لينك الفيس بوك</label>

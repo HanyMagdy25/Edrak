@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
+  min-height: calc(100vh - 90px - 190px);
   /* margin-top: 30px;
     background-color: aquamarine; */
 }
@@ -16,8 +17,9 @@
 .tv-container-img {
   /* display: flex; */
   width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  position: relative;
 }
 .tv-container-img img {
   /* display: flex; */
@@ -28,10 +30,12 @@
   /* background-color: aqua; */
   position: absolute;
   /* transform: translate(-50%,-50%); */
-  top: 300px;
+  /* top: 300px; */
   /* width: 60px; */
   font-size: 60px;
   color: var(--white);
+  top: 50%;
+  left: 50%;
 }
 .tvinside-inside .img-tvinside-container .paly-vid {
   /* position: absolute;

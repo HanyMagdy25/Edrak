@@ -32,6 +32,7 @@ const AllArticles = () => {
           <tr>
             <th>العنوان</th>
             <th>الكاتب</th>
+            <th>المشاركات</th>
             <th>التاريخ</th>
             <th>مسح</th>
             <th>تعديل</th>
@@ -42,6 +43,7 @@ const AllArticles = () => {
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.writer}</td>
+              <td>{item.numberOfShare}</td>
               <td>{item.createdOn}</td>
               <td>
                 <span onClick={() => handleDelete(item.id)}>

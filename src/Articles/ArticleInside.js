@@ -3,7 +3,7 @@ import "./ArticleInside.css";
 import BigCard from "../Cards/BigCard";
 import HeaderLeft from "../Header/HeaderLeft";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
-import Paragraph from "./Paragraph";
+// import Paragraph from "./Paragraph";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncEdrak, getAllEdrak } from "../Redux/EdrakSlice";
 import { useParams } from "react-router-dom";
@@ -32,7 +32,7 @@ const ArticleInside = () => {
   const [edrakAuthors, setEdrakAuthors] = useState([]);
 
   const { _id } = useParams();
-  console.log("id:", _id);
+  // console.log("id:", _id);
   let dispatch = useDispatch();
   const edraks = useSelector(getAllEdrak);
   useEffect(() => {
@@ -44,14 +44,14 @@ const ArticleInside = () => {
       })
       .then((data) => {
         setEdrakAuthors(data.msg);
-        console.log("77 edrakAuthors", data);
+        // console.log("77 edrakAuthors", data);
       });
   }, []);
 
   useEffect(() => {
     dispatch(fetchAsyncEdrak());
   }, [dispatch]);
-  console.log("new edraks", edraks);
+  // console.log("new edraks", edraks);
 
   const articleIn = edraks.find((a) => a._id === _id);
   console.log("article in :", articleIn);
@@ -105,9 +105,9 @@ const ArticleInside = () => {
       .then((res) => {
         return res.json();
       })
-      .then((data) => {
-        console.log("share counter :", data);
-      });
+      // .then((data) => {
+      //   console.log("share counter :", data);
+      // });
   };
 
   return (
@@ -118,20 +118,27 @@ const ArticleInside = () => {
             <div className="global-simi-btn">{articleIn.type ==="undefined" ? "فكر": articleIn.type }</div>
             <h1 className="header-headline">{articleIn.name}</h1>
             <div className="about-author-article">
-              <h6>{articleIn.writer}</h6>
+              <h5>{articleIn.writer}</h5>
               <div className="share-icon">
-                <h6>
+                <h5>
                   <i className="fa-solid fa-share-nodes"></i>{" "}
                   {articleIn.numberOfShare}
-                </h6>
+                </h5>
               </div>
               <div className="cal">
-                <h6>
+                <h5>
                   <i className="fa-solid fa-calendar-days"></i>{" "}
                   {articleIn.createdOn.substring(0, 10)}
-                </h6>
+                </h5>
               </div>
             </div>
+
+            <div className="editor-trans">
+             {articleIn?.editor ? <h5>{articleIn.editor}</h5>: "" } 
+             {articleIn?.trans ? <h5>{articleIn.trans}</h5>: "" } 
+             {articleIn?.editor_2 ? <h5>{articleIn.editor_2}</h5>: "" } 
+            </div>
+
             <div className="social-icons-small-articalInside">
               <span
                 onClick={() => {
