@@ -48,14 +48,14 @@
   .cardPodcast {
     width: 100%;
     height: auto;
-
     display: flex;
     flex-direction: column;
-
-    margin: 15px 0;
+    margin: 20px 0;
   }
   .cardPodcast img {
     width: 100%;
+    max-width: 100%;
+    min-width: 100%;
   }
   .podcast-content {
     display: flex;
@@ -67,5 +67,16 @@
     justify-content: space-between;
     margin-top: 10px;
     padding: 0 0px 0 0;
+  }
+  .about-author-cardPodcast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--off-white);
+    font-family: "Amariya-Bold";
+    margin-top: 10px;
+    font-size: 16px;
   }
 }

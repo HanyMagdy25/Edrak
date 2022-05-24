@@ -52,7 +52,6 @@
   color: var(--black);
   padding: 2px 20px;
   font-size: 25px;
-
 }
 /* ==== about author of the book */
 .about-author {
@@ -67,7 +66,7 @@
   margin-bottom: 30px;
   font-size: 22px;
 }
-.about-author-article{
+.about-author-article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -79,7 +78,7 @@
   /* margin-bottom: 30px; */
   font-size: 20px;
 }
-.about-author-article h5{
+.about-author-article h5 {
   font-size: 20px;
 }
 .about-author i {
@@ -164,7 +163,7 @@
 }
 
 /*========================= تلفزيون ادراك ==============================*/
-.tv-edrak-in-header{
+.tv-edrak-in-header {
   width: 80%;
 }
 .edrak-tv {
@@ -280,5 +279,15 @@
   }
   .most-popular-container {
     width: 90%;
+  }
+  .about-author-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--off-white);
+    margin-top: 0px;
+    margin-bottom: 15px;
   }
 }

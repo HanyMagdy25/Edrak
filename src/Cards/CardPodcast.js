@@ -9,7 +9,9 @@ const CardPodcast = ({ item }) => {
       {/* here we use a default Image called 'card1b' */}
       <img src={item.icon} alt="article" />
       <div className="podcast-content">
-        <div className="global-simi-btn-red">{item.type ==="undefined" ? "فكر": item.type }</div>
+        <div className="global-simi-btn-red">
+          {item.type === "undefined" ? "فكر" : item.type}
+        </div>
         <h2>{item.name}</h2>
         <p>{item.about}</p>
         <div className="about-author-cardPodcast">

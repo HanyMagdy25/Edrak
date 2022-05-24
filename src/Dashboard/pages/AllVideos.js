@@ -25,14 +25,15 @@ const AllVideos = () => {
     fetch(`https://depax-blog-backend.herokuapp.com/video/${id}`, {
       method: "DELETE",
       credentials: "include",
-    }).then((data) => data.json())
-    .then((res) => {
-      if (res.status === "success") {
-        window.location.reload()
-      } else {
-        alert(res.msg)
-      }
-    });
+    })
+      .then((data) => data.json())
+      .then((res) => {
+        if (res.status === "success") {
+          window.location.reload();
+        } else {
+          alert(res.msg);
+        }
+      });
   };
 
   return (
@@ -54,8 +55,8 @@ const AllVideos = () => {
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.writer}</td>
-              <td>{item.type==="undefined" ? "غير محدد" : item.type}</td>
-              <td>{item?.createdOn?.substring(0,10)}</td>
+              <td>{item.type === "undefined" ? "غير محدد" : item.type}</td>
+              <td>{item?.createdOn?.substring(0, 10)}</td>
               <td>
                 <span onClick={() => handleDelete(item._id)}>
                   <i className="fa-solid fa-trash"></i>

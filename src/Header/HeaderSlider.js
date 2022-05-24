@@ -9,7 +9,7 @@ const HeaderSlider = ({ slide }) => {
           <img src={slide.img} className="img-header" alt="headerImage" />
         </div>
         <div className="header-right-content">
-          <div className="global-simi-btn">{slide.type}</div>
+          <div className="global-simi-btn">{slide.type ==="undefined" ? "فكر": slide.type }</div>
           <h2 className="header-headline">{slide.name}</h2>
           <p className="header-paragragh">{slide.about}</p>
           <div  className="about-author">
